@@ -1,0 +1,602 @@
+[09/13 07:08:13      0s] 
+[09/13 07:08:13      0s] Cadence Tempus(TM) Timing Signoff Solution.
+[09/13 07:08:13      0s] Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+[09/13 07:08:13      0s] 
+[09/13 07:08:13      0s] Version:	v20.11-s131_1, built Tue Aug 11 14:23:05 PDT 2020
+[09/13 07:08:13      0s] Options:	
+[09/13 07:08:13      0s] Date:		Mon Sep 13 07:08:13 2021
+[09/13 07:08:13      0s] Host:		portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (12cores*12cpus*Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz 12288KB)
+[09/13 07:08:13      0s] OS:		CentOS Linux release 7.8.2003 (Core)
+[09/13 07:08:13      0s] 
+[09/13 07:08:13      0s] License:
+[09/13 07:08:13      0s] 		tpsxl	Tempus Timing Signoff Solution XL	20.1	checkout succeeded
+[09/13 07:08:13      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[09/13 07:08:21      7s] @(#)CDS: Tempus Timing Signoff Solution v20.11-s131_1 (64bit) 08/11/2020 14:23 (Linux 2.6.32-431.11.2.el6.x86_64)
+[09/13 07:08:21      7s] @(#)CDS: NanoRoute 20.11-s131_1 NR200802-2257/20_11-UB (database version 18.20.512) {superthreading v2.9}
+[09/13 07:08:21      7s] @(#)CDS: AAE 20.11-s009 (64bit) 08/11/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[09/13 07:08:21      7s] @(#)CDS: CTE 20.11-s059_1 () Aug  2 2020 05:46:30 ( )
+[09/13 07:08:21      7s] @(#)CDS: SYNTECH 20.11-s028_1 () Aug  1 2020 06:14:27 ( )
+[09/13 07:08:21      7s] @(#)CDS: CPE v20.11-s014
+[09/13 07:08:21      7s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[09/13 07:08:21      7s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[09/13 07:08:21      7s] @(#)CDS: RCDB 11.15.0
+[09/13 07:08:21      7s] @(#)CDS: STYLUS 20.10-p011_1 (06/03/2020 04:47 PDT)
+[09/13 07:08:21      7s] Change the soft stacksize limit to 0.2%RAM (112 mbytes). Set global soft_stack_size_limit to change the value.
+[09/13 07:08:21      7s] **INFO: (TMPDIR-1001): The environment variable TMPDIR is not set.
+Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_29796_Zf8zTf'.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_29796_Zf8zTf'.
+[09/13 07:08:37      9s] <CMD> read_design ../tempus/innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+[09/13 07:08:37      9s] # Tempus Timing Signoff Solution 20.11-s131_1
+[09/13 07:08:37      9s] # read_design
+[09/13 07:08:37      9s] #  dir ../tempus/innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+[09/13 07:08:37      9s] Set Default Input Pin Transition as 0.1 ps.
+[09/13 07:08:37      9s] Loading design 'swerv_wrapper' saved by 'Innovus' '19.11-s128_1' on 'Thu Aug 19 18:05:03 2021'.
+[09/13 07:08:38     10s] #% Begin Load MMMC data ... (date=09/13 07:08:38, mem=569.7M)
+[09/13 07:08:38     10s] Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+[09/13 07:08:38     10s] #% End Load MMMC data ... (date=09/13 07:08:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=569.9M, current mem=569.9M)
+[09/13 07:08:38     10s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/technology.lef' ...
+[09/13 07:08:38     10s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/viarule_generate.lef' ...
+[09/13 07:08:38     10s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/sites.lef' ...
+[09/13 07:08:38     10s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef' ...
+[09/13 07:08:38     10s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_BUMP_6U1X2T8XLB_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_ALLF_CORESUPPLY_EG_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_CSF_BASIC_EG_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_PR_LR_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_ALLF_FBBRBB_SUBSTRATEBIAS_LR_EG_soc.lef' ...
+[09/13 07:08:39     11s] Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef' ...
+[09/13 07:08:39     11s] Loading view definition file from ../tempus/innovusFiles/APC_final_con_bumps.dat/viewDefinition.tcl
+[09/13 07:08:39     11s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs/C28SOI_SC_12_CLK_LR_tt28_0.90V_25C.lib.gz' ...
+[09/13 07:08:39     11s] Read 332 cells in library 'C28SOI_SC_12_CLK_LR' 
+[09/13 07:08:39     11s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs/C28SOI_SC_12_CORE_LR_tt28_0.90V_25C.lib.gz' ...
+[09/13 07:08:40     12s] Read 383 cells in library 'C28SOI_SC_12_CORE_LR' 
+[09/13 07:08:40     12s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs/C28SOI_IO_EXT_CSF_BASIC_EG_tt28_0.90V_1.80V_25C.lib.gz' ...
+[09/13 07:08:40     12s] Read 82 cells in library 'C28SOI_IO_EXT_CSF_BASIC_EG' 
+[09/13 07:08:40     12s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz' ...
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_ANTPROTGVFILLERSNPW8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+[09/13 07:08:40     12s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[09/13 07:08:40     12s] Read 32 cells in library 'C28SOI_SC_12_PR_LR' 
+[09/13 07:08:40     12s] Reading nominal_library_set timing library '/home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' ...
+[09/13 07:08:40     12s] Read 3 cells in library 'SPHD_HIPERF_Tl_210506' 
+[09/13 07:08:40     12s] Ending "PreSetAnalysisView" (total cpu=0:00:01.2, real=0:00:01.0, peak res=650.6M, current mem=576.7M)
+[09/13 07:08:40     12s] *** End library_loading (cpu=0.02min, real=0.02min, mem=13.5M, fe_cpu=0.21min, fe_real=0.45min, fe_mem=767.5M) ***
+[09/13 07:08:40     12s] #% Begin Load netlist data ... (date=09/13 07:08:40, mem=576.8M)
+[09/13 07:08:40     12s] *** Begin netlist parsing (mem=767.5M) ***
+[09/13 07:08:40     12s] Reading verilogBinary netlist '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/swerv_wrapper.v.bin'
+[09/13 07:08:40     12s] Reading binary database version 2 in 1-threaded mode
+[09/13 07:08:40     12s] 
+[09/13 07:08:40     12s] *** Memory Usage v#2 (Current mem = 961.535M, initial mem = 271.789M) ***
+[09/13 07:08:40     12s] *** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=961.5M) ***
+[09/13 07:08:40     12s] #% End Load netlist data ... (date=09/13 07:08:40, total cpu=0:00:00.4, real=0:00:00.0, peak res=732.6M, current mem=721.9M)
+[09/13 07:08:40     12s] Reading pin dir info from /tmp/ssv_tmpdir_29796_Zf8zTf/.bbx_29796.
+[09/13 07:08:40     12s] Top level cell is swerv_wrapper.
+[09/13 07:08:41     12s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:01.0, peak res=765.2M, current mem=765.2M)
+[09/13 07:08:41     12s] 2 empty module found.
+[09/13 07:08:41     12s] Building hierarchical netlist for Cell swerv_wrapper ...
+[09/13 07:08:41     13s] *** Netlist is unique.
+[09/13 07:08:41     13s] ** info: there are 1000 modules.
+[09/13 07:08:41     13s] ** info: there are 73450 stdCell insts.
+[09/13 07:08:41     13s] ** info: there are 1422 Pad insts.
+[09/13 07:08:41     13s] 
+[09/13 07:08:41     13s] *** Memory Usage v#2 (Current mem = 1210.578M, initial mem = 271.789M) ***
+[09/13 07:08:41     13s] Set Default Net Delay as 1000 ps.
+[09/13 07:08:41     13s] Set Default Net Load as 0.5 pF. 
+[09/13 07:08:41     13s] Set Default Input Pin Transition as 0.1 ps.
+[09/13 07:08:41     13s] Set Shrink Factor to 0.90000
+[09/13 07:08:41     13s] Loading preference file ../tempus/innovusFiles/APC_final_con_bumps.dat/gui.pref.tcl ...
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'ConstraintUserXGrid' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'ConstraintUserYGrid' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'ConstraintUserXOffset' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'ConstraintUserYOffset' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'SnapAllCorners' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'UserGridUnit' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'MinFPModuleSize' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'MinFlightLineWidth' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'MaxFlightLineNetTerms' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'LevelFlight' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'DirectionSink' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'DirectionSource' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'ShowNumberBlockConnection' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'StrecthRestriction' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'StretchRectilinear' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'MoveRestriction' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'DisplayRelFPlan' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'LegalizeMacro' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'DisplayFPlanFlightLine' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (UI-156):	preference name 'DisplayPinName' is not supported in Tempus Timing Signoff Solution.
+[09/13 07:08:41     13s] **WARN: (EMS-27):	Message (UI-156) has exceeded the current message display limit of 20.
+[09/13 07:08:41     13s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:41     13s] ##  Process: 28            (User Set)               
+[09/13 07:08:41     13s] ##     Node: (not set)                           
+[09/13 07:08:41     13s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[09/13 07:08:41     13s] **WARN: (IMPSYC-6134):	Setting analysis mode to setup does not have any impact on timing analysis as simultaneous setup/hold mode analysis is on. Use '-late' option to report setup timing reports.
+[09/13 07:08:41     13s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[09/13 07:08:41     13s] #WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[09/13 07:08:41     13s] Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+[09/13 07:08:41     13s] addStripe will allow jog to connect padcore ring and block ring.
+[09/13 07:08:41     13s] 
+[09/13 07:08:41     13s] Stripes will not extend to closest target.
+[09/13 07:08:41     13s] When breaking rings, the power planner will consider the existence of blocks.
+[09/13 07:08:41     13s] addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+[09/13 07:08:41     13s] The entire stripe set will break at the domain if one of the nets is not in the domain.
+[09/13 07:08:41     13s] Stripes will not be created over regions without power planning wires.
+[09/13 07:08:41     13s] Offset for stripe breaking is set to 0.
+[09/13 07:08:41     13s] Stripes will stop at the boundary of the specified area.
+[09/13 07:08:41     13s] The power planner will set stripe antenna targets to none (no trimming allowed).
+[09/13 07:08:41     13s] Extraction setup Delayed 
+[09/13 07:08:41     13s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1238.9M, current mem=961.8M)
+[09/13 07:08:41     13s] Reading timing constraints file '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc' ...
+[09/13 07:08:41     13s] Current (total cpu=0:00:13.7, real=0:00:28.0, peak res=1238.9M, current mem=1173.1M)
+[09/13 07:08:42     14s] Number of path exceptions in the constraint file = 2
+[09/13 07:08:42     14s] Number of paths exceptions after getting compressed = 2
+[09/13 07:08:42     14s] INFO (CTE): Constraints read successfully.
+[09/13 07:08:42     14s] Ending "Constraint file reading stats" (total cpu=0:00:00.4, real=0:00:01.0, peak res=1222.9M, current mem=1222.9M)
+[09/13 07:08:42     14s] Current (total cpu=0:00:14.1, real=0:00:29.0, peak res=1238.9M, current mem=1222.9M)
+[09/13 07:08:42     14s] Reading latency file '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/views/nominal_analysis_view/latency.sdc' ...
+[09/13 07:08:42     14s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[09/13 07:08:42     14s] Creating Cell Server ...(0, 1, 1, 1)
+[09/13 07:08:42     14s] Summary for sequential cells identification: 
+[09/13 07:08:42     14s]   Identified SBFF number: 106
+[09/13 07:08:42     14s]   Identified MBFF number: 0
+[09/13 07:08:42     14s]   Identified SB Latch number: 0
+[09/13 07:08:42     14s]   Identified MB Latch number: 0
+[09/13 07:08:42     14s]   Not identified SBFF number: 0
+[09/13 07:08:42     14s]   Not identified MBFF number: 0
+[09/13 07:08:42     14s]   Not identified SB Latch number: 0
+[09/13 07:08:42     14s]   Not identified MB Latch number: 0
+[09/13 07:08:42     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:42     14s] Total number of combinational cells: 527
+[09/13 07:08:42     14s] Total number of sequential cells: 190
+[09/13 07:08:42     14s] Total number of tristate cells: 0
+[09/13 07:08:42     14s] Total number of level shifter cells: 0
+[09/13 07:08:42     14s] Total number of power gating cells: 0
+[09/13 07:08:42     14s] Total number of isolation cells: 0
+[09/13 07:08:42     14s] Total number of power switch cells: 0
+[09/13 07:08:42     14s] Total number of pulse generator cells: 0
+[09/13 07:08:42     14s] Total number of always on buffers: 0
+[09/13 07:08:42     14s] Total number of retention cells: 0
+[09/13 07:08:42     14s] List of usable buffers: C12T28SOI_LR_BFX100_P0 C12T28SOI_LR_BFX134_P0 C12T28SOI_LR_BFX13_P0 C12T28SOI_LR_BFX16_P0 C12T28SOI_LR_BFX21_P0 C12T28SOI_LR_BFX25_P0 C12T28SOI_LR_BFX29_P0 C12T28SOI_LR_BFX33_P0 C12T28SOI_LR_BFX42_P0 C12T28SOI_LR_BFX4_P0 C12T28SOI_LR_BFX50_P0 C12T28SOI_LR_BFX58_P0 C12T28SOI_LR_BFX67_P0 C12T28SOI_LR_BFX6_P0 C12T28SOI_LR_BFX75_P0 C12T28SOI_LR_BFX84_P0 C12T28SOI_LR_BFX8_P0 C12T28SOI_LR_CNBFX133_P0 C12T28SOI_LR_CNBFX133_P10 C12T28SOI_LR_CNBFX133_P16 C12T28SOI_LR_CNBFX133_P4 C12T28SOI_LR_CNBFX15_P0 C12T28SOI_LR_CNBFX15_P10 C12T28SOI_LR_CNBFX15_P16 C12T28SOI_LR_CNBFX15_P4 C12T28SOI_LR_CNBFX22_P0 C12T28SOI_LR_CNBFX22_P10 C12T28SOI_LR_CNBFX22_P16 C12T28SOI_LR_CNBFX22_P4 C12T28SOI_LR_CNBFX30_P0 C12T28SOI_LR_CNBFX30_P10 C12T28SOI_LR_CNBFX30_P16 C12T28SOI_LR_CNBFX30_P4 C12T28SOI_LR_CNBFX38_P0 C12T28SOI_LR_CNBFX38_P10 C12T28SOI_LR_CNBFX38_P16 C12T28SOI_LR_CNBFX38_P4 C12T28SOI_LR_CNBFX44_P0 C12T28SOI_LR_CNBFX44_P10 C12T28SOI_LR_CNBFX44_P16 C12T28SOI_LR_CNBFX44_P4 C12T28SOI_LR_CNBFX4_P0 C12T28SOI_LR_CNBFX4_P10 C12T28SOI_LR_CNBFX4_P16 C12T28SOI_LR_CNBFX4_P4 C12T28SOI_LR_CNBFX52_P0 C12T28SOI_LR_CNBFX52_P10 C12T28SOI_LR_CNBFX52_P16 C12T28SOI_LR_CNBFX52_P4 C12T28SOI_LR_CNBFX59_P0 C12T28SOI_LR_CNBFX59_P10 C12T28SOI_LR_CNBFX59_P16 C12T28SOI_LR_CNBFX59_P4 C12T28SOI_LR_CNBFX70_P0 C12T28SOI_LR_CNBFX70_P10 C12T28SOI_LR_CNBFX70_P16 C12T28SOI_LR_CNBFX70_P4 C12T28SOI_LR_CNBFX7_P0 C12T28SOI_LR_CNBFX7_P10 C12T28SOI_LR_CNBFX7_P16 C12T28SOI_LR_CNBFX7_P4 C12T28SOI_LR_CNBFX94_P0 C12T28SOI_LR_CNBFX94_P10 C12T28SOI_LR_CNBFX94_P16 C12T28SOI_LR_CNBFX94_P4
+[09/13 07:08:42     14s] Total number of usable buffers: 65
+[09/13 07:08:42     14s] List of unusable buffers:
+[09/13 07:08:42     14s] Total number of unusable buffers: 0
+[09/13 07:08:42     14s] List of usable inverters: C12T28SOI_LR_IVX100_P0 C12T28SOI_LR_IVX134_P0 C12T28SOI_LR_IVX13_P0 C12T28SOI_LR_IVX17_P0 C12T28SOI_LR_IVX21_P0 C12T28SOI_LR_IVX25_P0 C12T28SOI_LR_IVX29_P0 C12T28SOI_LR_IVX33_P0 C12T28SOI_LR_IVX4_P0 C12T28SOI_LR_IVX50_P0 C12T28SOI_LR_IVX58_P0 C12T28SOI_LR_IVX67_P0 C12T28SOI_LR_IVX6_P0 C12T28SOI_LR_IVX75_P0 C12T28SOI_LR_IVX84_P0 C12T28SOI_LR_IVX8_P0 C12T28SOI_LR_CNIVX133_P0 C12T28SOI_LR_CNIVX133_P10 C12T28SOI_LR_CNIVX133_P16 C12T28SOI_LR_CNIVX133_P4 C12T28SOI_LR_CNIVX16_P0 C12T28SOI_LR_CNIVX16_P10 C12T28SOI_LR_CNIVX16_P16 C12T28SOI_LR_CNIVX16_P4 C12T28SOI_LR_CNIVX23_P0 C12T28SOI_LR_CNIVX23_P10 C12T28SOI_LR_CNIVX23_P16 C12T28SOI_LR_CNIVX23_P4 C12T28SOI_LR_CNIVX31_P0 C12T28SOI_LR_CNIVX31_P10 C12T28SOI_LR_CNIVX31_P16 C12T28SOI_LR_CNIVX31_P4 C12T28SOI_LR_CNIVX39_P0 C12T28SOI_LR_CNIVX39_P10 C12T28SOI_LR_CNIVX39_P16 C12T28SOI_LR_CNIVX39_P4 C12T28SOI_LR_CNIVX47_P0 C12T28SOI_LR_CNIVX47_P10 C12T28SOI_LR_CNIVX47_P16 C12T28SOI_LR_CNIVX47_P4 C12T28SOI_LR_CNIVX55_P0 C12T28SOI_LR_CNIVX55_P10 C12T28SOI_LR_CNIVX55_P16 C12T28SOI_LR_CNIVX55_P4 C12T28SOI_LR_CNIVX5_P0 C12T28SOI_LR_CNIVX5_P10 C12T28SOI_LR_CNIVX5_P16 C12T28SOI_LR_CNIVX5_P4 C12T28SOI_LR_CNIVX61_P0 C12T28SOI_LR_CNIVX61_P10 C12T28SOI_LR_CNIVX61_P16 C12T28SOI_LR_CNIVX61_P4 C12T28SOI_LR_CNIVX70_P0 C12T28SOI_LR_CNIVX70_P10 C12T28SOI_LR_CNIVX70_P16 C12T28SOI_LR_CNIVX70_P4 C12T28SOI_LR_CNIVX8_P0 C12T28SOI_LR_CNIVX8_P10 C12T28SOI_LR_CNIVX8_P16 C12T28SOI_LR_CNIVX8_P4 C12T28SOI_LR_CNIVX94_P0 C12T28SOI_LR_CNIVX94_P10 C12T28SOI_LR_CNIVX94_P4 C12T28SOI_LR_CNIVX94_P16
+[09/13 07:08:42     14s] Total number of usable inverters: 64
+[09/13 07:08:42     14s] List of unusable inverters:
+[09/13 07:08:42     14s] Total number of unusable inverters: 0
+[09/13 07:08:42     14s] List of identified usable delay cells: C12T28SOI_LR_DLYHFM4X15_P0 C12T28SOI_LR_DLYHFM4X15_P10 C12T28SOI_LR_DLYHFM4X15_P16 C12T28SOI_LR_DLYHFM4X15_P4 C12T28SOI_LR_DLYHFM4X7_P0 C12T28SOI_LR_DLYHFM4X7_P10 C12T28SOI_LR_DLYHFM4X7_P16 C12T28SOI_LR_DLYHFM4X7_P4 C12T28SOI_LR_DLYHFM8X15_P0 C12T28SOI_LR_DLYHFM8X15_P10 C12T28SOI_LR_DLYHFM8X15_P16 C12T28SOI_LR_DLYHFM8X15_P4 C12T28SOI_LR_DLYHFM8X54_P0 C12T28SOI_LR_DLYHFM8X54_P10 C12T28SOI_LR_DLYHFM8X54_P16 C12T28SOI_LR_DLYHFM8X54_P4 C12T28SOI_LR_DLYHFM8X7_P0 C12T28SOI_LR_DLYHFM8X7_P10 C12T28SOI_LR_DLYHFM8X7_P4 C12T28SOI_LR_DLYHFM8X7_P16
+[09/13 07:08:42     14s] Total number of identified usable delay cells: 20
+[09/13 07:08:42     14s] List of identified unusable delay cells:
+[09/13 07:08:42     14s] Total number of identified unusable delay cells: 0
+[09/13 07:08:42     14s] Creating Cell Server, finished. 
+[09/13 07:08:42     14s] 
+[09/13 07:08:42     14s] Deleting Cell Server ...
+[09/13 07:08:42     14s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1225.0M, current mem=1225.0M)
+[09/13 07:08:42     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:42     14s] Summary for sequential cells identification: 
+[09/13 07:08:42     14s]   Identified SBFF number: 106
+[09/13 07:08:42     14s]   Identified MBFF number: 0
+[09/13 07:08:42     14s]   Identified SB Latch number: 0
+[09/13 07:08:42     14s]   Identified MB Latch number: 0
+[09/13 07:08:42     14s]   Not identified SBFF number: 0
+[09/13 07:08:42     14s]   Not identified MBFF number: 0
+[09/13 07:08:42     14s]   Not identified SB Latch number: 0
+[09/13 07:08:42     14s]   Not identified MB Latch number: 0
+[09/13 07:08:42     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Setting StdDelay to 5.10
+[09/13 07:08:42     14s] Creating Cell Server, finished. 
+[09/13 07:08:42     14s] 
+[09/13 07:08:42     14s] Set Default Input Pin Transition as 0.1 ps.
+[09/13 07:08:42     14s] Loading preRoute extraction data from directory '../tempus/innovusFiles/APC_final_con_bumps.dat/extraction/' ...
+[09/13 07:08:42     14s] Mismatch found in EE kit versions ee_3.0 ee_2.0
+[09/13 07:08:42     14s] Extraction setup Started 
+[09/13 07:08:42     14s] Summary of Active RC-Corners : 
+[09/13 07:08:42     14s]  
+[09/13 07:08:42     14s]  Analysis View: nominal_analysis_view
+[09/13 07:08:42     14s]     RC-Corner Name        : nominal_rc_corner
+[09/13 07:08:42     14s]     RC-Corner Index       : 0
+[09/13 07:08:42     14s]     RC-Corner Temperature : 25 Celsius
+[09/13 07:08:42     14s]     RC-Corner Cap Table   : ''
+[09/13 07:08:42     14s]     RC-Corner PostRoute Res Factor        : 1
+[09/13 07:08:42     14s]     RC-Corner PostRoute Cap Factor        : 1
+[09/13 07:08:42     14s]     RC-Corner PostRoute XCap Factor       : 1
+[09/13 07:08:42     14s]     RC-Corner Technology file: '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/mmmc/nominal_rc_corner/qrcTechFile'
+[09/13 07:08:42     14s] **WARN: (IMPIMEX-10014):	The current design data being restored: '../tempus/innovusFiles/APC_final_con_bumps.dat' has been saved with an older structure. When restoring a subset of views for this database, derate information for inactive delay corners may be inaccesible in the current session. A newer database structure allows more flexibility for change the active view list in-session. To update the current database, you need to restore the design with all views active - and then the next save will update it to the new model.
+[09/13 07:08:42     14s] #% Begin Load power constraints ... (date=09/13 07:08:42, mem=1227.0M)
+[09/13 07:08:42     14s] #% End Load power constraints ... (date=09/13 07:08:42, total cpu=0:00:00.0, real=0:00:00.0, peak res=1227.2M, current mem=1227.2M)
+[09/13 07:08:42     14s] #% Begin load AAE data ... (date=09/13 07:08:42, mem=1227.2M)
+[09/13 07:08:42     14s] **WARN: (IMPESI-3468):	User needs to specify -equivalent_waveform_model propagation first before specifying -waveform_compression_mode accurate|clock_detailed .
+[09/13 07:08:42     14s] AAE DB initialization (MEM=1557.41 CPU=0:00:00.0 REAL=0:00:00.0) 
+[09/13 07:08:42     14s] **WARN: (IMPESI-621):	Timing window restoration data eosdb.dat not found. PBA-SI results may not match in save/restore flow.
+[09/13 07:08:42     14s] #% End load AAE data ... (date=09/13 07:08:42, total cpu=0:00:00.2, real=0:00:00.0, peak res=1243.4M, current mem=1243.4M)
+[09/13 07:08:42     14s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.11-s128_1. They will be removed in the next release. 
+[09/13 07:08:42     14s] timing_enable_default_delay_arc
+[09/13 07:08:42     14s] Loading  (swerv_wrapper)
+[09/13 07:08:42     14s] Traverse HInst (swerv_wrapper)
+[09/13 07:08:42     14s] Deleting Cell Server ...
+[09/13 07:08:42     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:42     14s] Summary for sequential cells identification: 
+[09/13 07:08:42     14s]   Identified SBFF number: 106
+[09/13 07:08:42     14s]   Identified MBFF number: 0
+[09/13 07:08:42     14s]   Identified SB Latch number: 0
+[09/13 07:08:42     14s]   Identified MB Latch number: 0
+[09/13 07:08:42     14s]   Not identified SBFF number: 0
+[09/13 07:08:42     14s]   Not identified MBFF number: 0
+[09/13 07:08:42     14s]   Not identified SB Latch number: 0
+[09/13 07:08:42     14s]   Not identified MB Latch number: 0
+[09/13 07:08:42     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Setting StdDelay to 5.10
+[09/13 07:08:42     14s] Creating Cell Server, finished. 
+[09/13 07:08:42     14s] 
+[09/13 07:08:42     14s] Deleting Cell Server ...
+[09/13 07:08:42     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:42     14s] Summary for sequential cells identification: 
+[09/13 07:08:42     14s]   Identified SBFF number: 106
+[09/13 07:08:42     14s]   Identified MBFF number: 0
+[09/13 07:08:42     14s]   Identified SB Latch number: 0
+[09/13 07:08:42     14s]   Identified MB Latch number: 0
+[09/13 07:08:42     14s]   Not identified SBFF number: 0
+[09/13 07:08:42     14s]   Not identified MBFF number: 0
+[09/13 07:08:42     14s]   Not identified SB Latch number: 0
+[09/13 07:08:42     14s]   Not identified MB Latch number: 0
+[09/13 07:08:42     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:42     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:42     14s]  Setting StdDelay to 5.10
+[09/13 07:08:42     14s] Creating Cell Server, finished. 
+[09/13 07:08:42     14s] 
+[09/13 07:08:42     14s] Deleting Cell Server ...
+[09/13 07:08:42     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:43     14s] Summary for sequential cells identification: 
+[09/13 07:08:43     14s]   Identified SBFF number: 106
+[09/13 07:08:43     14s]   Identified MBFF number: 0
+[09/13 07:08:43     14s]   Identified SB Latch number: 0
+[09/13 07:08:43     14s]   Identified MB Latch number: 0
+[09/13 07:08:43     14s]   Not identified SBFF number: 0
+[09/13 07:08:43     14s]   Not identified MBFF number: 0
+[09/13 07:08:43     14s]   Not identified SB Latch number: 0
+[09/13 07:08:43     14s]   Not identified MB Latch number: 0
+[09/13 07:08:43     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Setting StdDelay to 5.10
+[09/13 07:08:43     14s] Creating Cell Server, finished. 
+[09/13 07:08:43     14s] 
+[09/13 07:08:43     14s] Deleting Cell Server ...
+[09/13 07:08:43     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:43     14s] Summary for sequential cells identification: 
+[09/13 07:08:43     14s]   Identified SBFF number: 106
+[09/13 07:08:43     14s]   Identified MBFF number: 0
+[09/13 07:08:43     14s]   Identified SB Latch number: 0
+[09/13 07:08:43     14s]   Identified MB Latch number: 0
+[09/13 07:08:43     14s]   Not identified SBFF number: 0
+[09/13 07:08:43     14s]   Not identified MBFF number: 0
+[09/13 07:08:43     14s]   Not identified SB Latch number: 0
+[09/13 07:08:43     14s]   Not identified MB Latch number: 0
+[09/13 07:08:43     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Setting StdDelay to 5.10
+[09/13 07:08:43     14s] Creating Cell Server, finished. 
+[09/13 07:08:43     14s] 
+[09/13 07:08:43     14s] Deleting Cell Server ...
+[09/13 07:08:43     14s] Creating Cell Server ...(0, 0, 0, 0)
+[09/13 07:08:43     14s] Summary for sequential cells identification: 
+[09/13 07:08:43     14s]   Identified SBFF number: 106
+[09/13 07:08:43     14s]   Identified MBFF number: 0
+[09/13 07:08:43     14s]   Identified SB Latch number: 0
+[09/13 07:08:43     14s]   Identified MB Latch number: 0
+[09/13 07:08:43     14s]   Not identified SBFF number: 0
+[09/13 07:08:43     14s]   Not identified MBFF number: 0
+[09/13 07:08:43     14s]   Not identified SB Latch number: 0
+[09/13 07:08:43     14s]   Not identified MB Latch number: 0
+[09/13 07:08:43     14s]   Number of sequential cells which are not FFs: 84
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Visiting view : nominal_analysis_view
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = 0
+[09/13 07:08:43     14s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[09/13 07:08:43     14s]  Setting StdDelay to 5.10
+[09/13 07:08:43     14s] Creating Cell Server, finished. 
+[09/13 07:08:43     14s] 
+[09/13 07:08:43     14s] Deleting Cell Server ...
+[09/13 07:08:50     21s] <CMD> read_spef ../innovus/swerv_wrapper.spef
+[09/13 07:08:50     21s] Used active corner nominal_rc_corner for reading SPEF file as option '-rc_corner <cornerName>' is not specified in MMMC mode.
+[09/13 07:08:50     21s] read_spef Option :  ../innovus/swerv_wrapper.spef -noStarN 
+[09/13 07:08:50     21s] 
+[09/13 07:08:50     21s] SPEF files for RC Corner nominal_rc_corner:
+[09/13 07:08:50     21s] Top-level spef file '../innovus/swerv_wrapper.spef'.
+[09/13 07:08:50     21s] Start spef parsing (MEM=1599.71).
+[09/13 07:08:50     21s] Number of corners: 1
+[09/13 07:08:50     21s] Number of parallel threads processing the nets is: 1
+[09/13 07:08:50     21s] Maximum backlog used in parser: 50.
+[09/13 07:08:50     21s] Reading multiple SPEF files in parallel.
+[09/13 07:08:50     21s] RCDB /tmp/ssv_tmpdir_29796_Zf8zTf/swerv_wrapper_29796_TEAvqH.rcdb.d/swerv_wrapper.rcdb.d Creation Started (CPU Time= 0:00:00.0  MEM= 1607.7M)
+[09/13 07:08:50     21s] Creating parasitic data file '/tmp/ssv_tmpdir_29796_Zf8zTf/swerv_wrapper_29796_TEAvqH.rcdb.d/swerv_wrapper.rcdb.d' for storing RC.
+[09/13 07:08:55     32s] SPEF file ../innovus/swerv_wrapper.spef.
+[09/13 07:08:55     32s] The SPEF file, '../innovus/swerv_wrapper.spef', has encountered the error/warning message(s) during its reading.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN5297_dbg_n_946:87) found in D_NET (rst_l) that starts on line 180328. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN4769_n_1449:5) found in D_NET (rst_l) that starts on line 180328. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/lsu/bus_intf/FE_OFN1582_pad_lsu_axi_rdata_0:2) found in D_NET (dbg_rst_l) that starts on line 180401. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3547_dbg_sbcs_reg_19:4) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2957_pad_sb_axi_rdata_10:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2950_pad_sb_axi_rdata_9:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2910_pad_sb_axi_rdata_4:3) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2628_pad_rst_vec_4:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OCPN140269_FE_MDBN117:6) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN139954_FE_MDBN117:17) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN138767_FE_OFN3215_pad_sb_axi_rdata_49:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3550_dbg_sbcs_reg_17:23) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2957_pad_sb_axi_rdata_10:3) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2935_pad_sb_axi_rdata_7:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2927_pad_sb_axi_rdata_6:3) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2919_pad_sb_axi_rdata_5:6) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2621_pad_rst_vec_3:5) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN138792_FE_OFN3009_pad_sb_axi_rdata_17:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3549_dbg_sbcs_reg_17:5) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3547_dbg_sbcs_reg_19:4) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (EMS-27):	Message (SPEF-1124) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7973_ic_rd_hit_2) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429113. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7972_ic_rd_hit_0) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429156. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7971_ic_rd_hit_3) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429191. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7970_ic_tag_perr) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429218. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7969_ic_rd_data_9) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429271. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7968_ic_rd_data_13) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429295. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7967_ic_rd_data_18) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429313. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7966_ic_rd_data_25) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429340. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7965_ic_rd_data_31) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429363. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7964_ic_rd_data_20) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429393. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7963_ic_rd_data_33) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429430. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7962_ic_rd_data_21) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429453. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7961_ic_rd_data_29) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429474. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7960_ic_rd_data_90) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429494. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7959_ic_rd_data_7) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429530. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7958_ic_rd_data_19) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429551. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7957_ic_rd_data_8) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429582. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7956_ic_rd_data_4) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429611. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7955_ic_rd_data_87) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429650. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7954_ic_rd_data_2) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429670. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (EMS-27):	Message (SPEF-1132) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC379_pad_clk:Z) for D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC382_pad_clk:A) for D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**ERROR: (SPEF-1134):	Invalid resistor node (FE_OFC382_pad_clk:A) does not belong to net found in D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**WARN: (SPEF-1135):	Invalid resistor node (FE_OFC379_pad_clk:Z) found in D_NET (FE_OFN384_pad_clk) that starts on line 446841. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'FE_OFN384_pad_clk ( having pins FE_OFC371_pad_clk/Z FE_OFC4656_pad_clk/A )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC372_pad_clk:Z) for D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC376_pad_clk:A) for D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**WARN: (SPEF-1135):	Invalid resistor node (FE_OFC372_pad_clk:Z) found in D_NET (FE_OFN377_pad_clk) that starts on line 446972. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1134):	Invalid resistor node (FE_OFC376_pad_clk:A) does not belong to net found in D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**WARN: (SPEF-1152):	Net 'FE_OFN377_pad_clk ( having pins FE_OFC364_pad_clk/Z FE_OFC4530_pad_clk/A )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67131:C) for D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (dmi_wrapper/g4634__9315:A) for D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1134):	Invalid resistor node (dmi_wrapper/g4634__9315:A) does not belong to net found in D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67131:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[31] ( having pins dmi_wrapper/g4634__9315/B swerv/g67288/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[31]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67130:C) for D_NET (dmi_wrapper/rd_data[30]) that starts on line 447075.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67130:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[30]) that starts on line 447075.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[30] ( having pins dmi_wrapper/g3492/A swerv/g67287/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[30]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66933:C) for D_NET (dmi_wrapper/rd_data[29]) that starts on line 447130.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66933:C) found in D_NET (dmi_wrapper/rd_data[29]) that starts on line 447130. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[29] ( having pins dmi_wrapper/g4553__5477/S2 swerv/g67092/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[29]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67129:C) for D_NET (dmi_wrapper/rd_data[28]) that starts on line 447191.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67129:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[28]) that starts on line 447191.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[28] ( having pins dmi_wrapper/g4614__5107/B swerv/g67286/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[28]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67128:C) for D_NET (dmi_wrapper/rd_data[27]) that starts on line 447253.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67128:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[27]) that starts on line 447253.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[27] ( having pins dmi_wrapper/g4613__2398/B swerv/g67285/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[27]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67127:C) for D_NET (dmi_wrapper/rd_data[26]) that starts on line 447328.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67127:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[26]) that starts on line 447328.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[26] ( having pins dmi_wrapper/g4612__5477/B swerv/g67284/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[26]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67126:C) for D_NET (dmi_wrapper/rd_data[25]) that starts on line 447394.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67126:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[25]) that starts on line 447394.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[25] ( having pins dmi_wrapper/g4611__6417/B swerv/g66878/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[25]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67125:C) for D_NET (dmi_wrapper/rd_data[24]) that starts on line 447458.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67125:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[24]) that starts on line 447458.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[24] ( having pins dmi_wrapper/g4610__7410/B swerv/g67282/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[24]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67123:C) for D_NET (dmi_wrapper/rd_data[23]) that starts on line 447532.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67123:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[23]) that starts on line 447532.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[23] ( having pins dmi_wrapper/g4609__1666/B swerv/g67280/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[23]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67045:C) for D_NET (dmi_wrapper/rd_data[22]) that starts on line 447600.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67045:C) found in D_NET (dmi_wrapper/rd_data[22]) that starts on line 447600. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[22] ( having pins dmi_wrapper/g4608__2346/B swerv/g67203/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[22]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67042:C) for D_NET (dmi_wrapper/rd_data[21]) that starts on line 447674.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67042:C) found in D_NET (dmi_wrapper/rd_data[21]) that starts on line 447674. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[21] ( having pins dmi_wrapper/g4592__5122/B swerv/g67200/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[21]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67040:C) for D_NET (dmi_wrapper/rd_data[20]) that starts on line 447762.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67040:C) found in D_NET (dmi_wrapper/rd_data[20]) that starts on line 447762. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[20] ( having pins dmi_wrapper/g4606__2883/B swerv/g66815/D1 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[20]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66649:D3) for D_NET (dmi_wrapper/rd_data[19]) that starts on line 447827.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66649:D3) found in D_NET (dmi_wrapper/rd_data[19]) that starts on line 447827. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[19] ( having pins dmi_wrapper/g4605__9945/B swerv/g66814/D3 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[19]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67037:C) for D_NET (dmi_wrapper/rd_data[18]) that starts on line 447872.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67037:C) found in D_NET (dmi_wrapper/rd_data[18]) that starts on line 447872. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[18] ( having pins dmi_wrapper/g4604__9315/B swerv/g67195/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[18]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66648:D3) for D_NET (dmi_wrapper/rd_data[17]) that starts on line 447919.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66648:D3) found in D_NET (dmi_wrapper/rd_data[17]) that starts on line 447919. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[17] ( having pins dmi_wrapper/g4603__6161/B swerv/g66812/D3 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[17]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **WARN: (EMS-27):	Message (SPEF-1127) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66647:D3) found in D_NET (dmi_wrapper/rd_data[16]) that starts on line 447985. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[16] ( having pins dmi_wrapper/g4602__4733/C swerv/g67277/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[16]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g67034:C) found in D_NET (dmi_wrapper/rd_data[15]) that starts on line 448071. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[15] ( having pins dmi_wrapper/g4601__7482/C swerv/g67191/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[15]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66645:D1) found in D_NET (dmi_wrapper/rd_data[14]) that starts on line 448141. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[14] ( having pins dmi_wrapper/g4600__5115/C swerv/g67188/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[14]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66928:C) found in D_NET (dmi_wrapper/rd_data[13]) that starts on line 448215. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (EMS-27):	Message (SPEF-1152) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66710:C) found in D_NET (dmi_wrapper/rd_data[11]) that starts on line 448332. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66643:D1) found in D_NET (dmi_wrapper/rd_data[10]) that starts on line 448402. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1134):	Invalid resistor node (swerv/g66158:A) does not belong to net found in D_NET (dmi_wrapper/rd_data[9]) that starts on line 448476.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67026:C) found in D_NET (dmi_wrapper/rd_data[8]) that starts on line 448557. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66707:C) found in D_NET (dmi_wrapper/rd_data[7]) that starts on line 448624. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66709:C) found in D_NET (dmi_wrapper/rd_data[6]) that starts on line 448703. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67116:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[5]) that starts on line 448807.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67115:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[4]) that starts on line 448866.
+**ERROR: (SPEF-1134):	Invalid resistor node (dmi_wrapper/g4616__4319:B) does not belong to net found in D_NET (dmi_wrapper/rd_data[3]) that starts on line 448930.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66953:C) found in D_NET (dmi_wrapper/rd_data[3]) that starts on line 448930. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (SPEF-1135):	Invalid resistor node (swerv/g66926:C) found in D_NET (dmi_wrapper/rd_data[2]) that starts on line 449001. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+[09/13 07:08:55     32s] **WARN: (EMS-27):	Message (SPEF-1135) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1134):	Invalid resistor node (swerv/g57884:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[31]) that starts on line 449265.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67197:B) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[22]) that starts on line 450668.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58042:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[20]) that starts on line 450915.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58041:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[19]) that starts on line 451039.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58040:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[18]) that starts on line 451181.
+**WARN: (EMS-27):	Message (SPEF-1134) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1123):	Invalid capacitor node (mem/g53026:A) does not belong to net found in D_NET (mem/dccm_rd_addr_lo[14]) that starts on line 456464.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/lsu/lsu_lsc_ctl_csa_tree_add_202_53_groupi_g3503:S0) does not belong to net found in D_NET (mem/dccm_rd_addr_hi[5]) that starts on line 460033.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[5].dccm_bank_i_mem:D[38]) does not belong to net found in D_NET (mem/dccm_wr_data[38]) that starts on line 460842.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[29]) does not belong to net found in D_NET (mem/dccm_wr_data[29]) that starts on line 462866.
+**ERROR: (SPEF-1125):	Capacitor nodes (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[29],mem/Gen_dccm_enable.dccm_dccm_bank_dout[6][29]:3) do not belong to net found in D_NET (mem/dccm_wr_data[29]) that starts on line 462866.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[28]) does not belong to net found in D_NET (mem/dccm_wr_data[28]) that starts on line 463386.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[28]) does not belong to net found in D_NET (mem/dccm_wr_data[28]) that starts on line 463386.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/lsu/g119753:B) does not belong to net found in D_NET (mem/dccm_wr_data[18]) that starts on line 466604.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[1]) does not belong to net found in D_NET (mem/dccm_wr_data[1]) that starts on line 474711.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[1]) does not belong to net found in D_NET (mem/dccm_wr_data[1]) that starts on line 474711.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/ifu_mem_ctl/g34614:Z) does not belong to net found in D_NET (mem/ic_premux_data[113]) that starts on line 479148.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/ifu_mem_ctl/g25458:Z) does not belong to net found in D_NET (mem/ic_debug_way[3]) that starts on line 502746.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_pad_pad_pad_lsu_axi_awaddr[31]:761) does not belong to net found in D_NET (pad_pad_pad_pad_lsu_axi_awaddr[30]) that starts on line 600421.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_trace_rv_i_tval_ip[24]:56) does not belong to net found in D_NET (pad_trace_rv_i_tval_ip[12]) that starts on line 1304958.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_trace_rv_i_tval_ip[20]:83) does not belong to net found in D_NET (pad_trace_rv_i_tval_ip[19]) that starts on line 1307876.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g2926:Z) does not belong to net found in D_NET (dmi_wrapper/n_110) that starts on line 1361929.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4618__5526:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4617__8428:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4613__2398:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4610__7410:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g2924:Z) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**WARN: (EMS-27):	Message (SPEF-1123) has exceeded the current message display limit of 20.
+[09/13 07:08:55     32s] To increase the message display limit, refer to the product command reference manual.
+[09/13 07:08:55     32s] **ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_ifu_axi_araddr[29]) found in D_NET that starts on line 3340489.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_pad_pad_lsu_axi_awaddr[29]) found in D_NET that starts on line 3340775.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_lsu_axi_awaddr[27]) found in D_NET that starts on line 3340902.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_lsu_axi_awaddr[26]) found in D_NET that starts on line 3340934.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN128_core_rst_l) found in D_NET that starts on line 3416349.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN154_core_rst_l) found in D_NET that starts on line 4061006.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN183_core_rst_l) found in D_NET that starts on line 4610671.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN78_core_rst_l) found in D_NET that starts on line 5216396.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN75_core_rst_l) found in D_NET that starts on line 5217034.
+**ERROR: (SPEF-1149):	Net (mem/FE_OFN4272_dccm_wr_data_29) referenced in SPEF but has no D_NET data.
+Number of Resistors     : 1626338
+[09/13 07:08:55     32s] Number of Ground Caps   : 1263845
+[09/13 07:08:55     32s] Number of Coupling Caps : 709442
+[09/13 07:08:55     32s] 
+[09/13 07:08:55     32s] RCDB /tmp/ssv_tmpdir_29796_Zf8zTf/swerv_wrapper_29796_TEAvqH.rcdb.d/swerv_wrapper.rcdb.d Creation Completed (CPU Time= 0:00:11.2  MEM= 1759.7M)
+[09/13 07:08:55     32s] End spef parsing (MEM=1688.68 CPU=0:00:11.2 REAL=0:00:05.0).
+[09/13 07:08:55     32s] Spef for RC Corner 'nominal_rc_corner' was previously specified. Dropping the previous specification.
+[09/13 07:08:55     32s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=1678.676M)
+[09/13 07:08:55     32s] Opening parasitic data file '/tmp/ssv_tmpdir_29796_Zf8zTf/swerv_wrapper_29796_TEAvqH.rcdb.d/swerv_wrapper.rcdb.d' for reading (mem: 1678.676M)
+[09/13 07:08:55     32s] Closing parasitic data file '/tmp/ssv_tmpdir_29796_Zf8zTf/swerv_wrapper_29796_TEAvqH.rcdb.d/swerv_wrapper.rcdb.d': 0 access done (mem: 1682.676M)
+[09/13 07:08:55     32s] Lumped Parasitic Loading Completed (total cpu=0:00:00.1, real=0:00:00.0, current mem=1682.676M)
+[09/13 07:08:55     32s] 44390 nets are missing in SPEF file. The names of these nets are saved in ./nominal_rc_corner.missing_nets.rpt.
+[09/13 07:08:55     32s] **WARN: (IMPEXT-3423):	Detected 50852 nets with incomplete RC network. Low-value resistances have been added by the software to complete the RC network of these nets. Review the list of affected nets in the './swerv_wrapper.nominal_rc_corner.incomplete_res.net' file to ensure they are not along the critical path because results of timing analysis performed on nets with incomplete RC network can be inaccurate.
+[09/13 07:09:00     32s] <CMD> current_design swerv_wrapper
+[09/13 07:09:22     33s] <CMD> create_clock -name "clk"      -period 1.0 -waveform {0.0 0.5} [get_ports clk]
+[09/13 07:09:22     33s] **ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+[09/13 07:09:22     33s] <CMD> create_clock -name "clk_IO"   -period 1.0 -waveform {0.0 0.5}
+[09/13 07:09:22     33s] **ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+[09/13 07:09:22     33s] <CMD> create_clock -name "jtag_tck" -period 100.0 -waveform {0.0 50.0} [get_ports jtag_tck]
+[09/13 07:09:22     33s] **ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+[09/13 07:11:47     37s] <CMD> read_sdc ./swerv_oscar.sdc
+[09/13 07:11:47     37s] **WARN: (IMPSYC-3133):	The unloadTimingCon command is not supported in the MMMC environment.
+[09/13 07:11:47     37s]           To modify the active set of constraints you can use one of the following means:
+[09/13 07:11:47     37s]           - Use the set_analysis_view command to change the set of active views.
+[09/13 07:11:47     37s]           - Use the update_analysis_view command to change the constraint mode associated with an active view.
+[09/13 07:11:47     37s]           - Use the update_constraint_mode command to change the set of SDC files pointed to be active modes.
+[09/13 07:13:25     39s] <CMD> report_clocks
+[09/13 07:15:14     42s] <CMD> update_constraint_mode
+[09/13 07:15:14     42s] 
+[09/13 07:15:14     42s] Usage: update_constraint_mode [-help] [-name <modeName>] {[[-sdc_files {file1.sdc file2.sdc ...}] [-ilm_sdc_files {file1.sdc file2.sdc ...}][-tcl_vars {{var_name1 value1} {var_name2 value2} {var_name3 value3} ...}] [-reset_latency_files ]] }
+[09/13 07:15:14     42s] 
+[09/13 07:15:14     42s] **ERROR: (IMPTCM-32):	Wrong number of arguments specified for command "MMMC::update_constraint_mode".
+
+[09/13 07:15:42     42s] <CMD> update_constraint_mode -sdc ./swerv_oscar.sdc
+[09/13 07:15:42     42s] **ERROR: (TCLCMD-994):	Can not find 'constraint mode' object with the name '(null)'. This can happen when the specified name of any MMMC object is incorrectly spelled or has been removed from the running session.
+
+[09/13 07:16:07     43s] <CMD> update_constraint_mode -sdc ./swerv_oscar.sdc -name nominal_analysis_view
+[09/13 07:16:07     43s] **ERROR: (TCLCMD-994):	Can not find 'constraint mode' object with the name 'nominal_analysis_view'. This can happen when the specified name of any MMMC object is incorrectly spelled or has been removed from the running session.
+
+[09/13 07:16:58     44s] <CMD> exit
+[09/13 07:16:58     44s] 
+[09/13 07:16:58     44s] *** Memory Usage v#2 (Current mem = 1682.676M, initial mem = 271.789M) ***
+[09/13 07:16:58     44s] 
+[09/13 07:16:58     44s] *** Summary of all messages that are not suppressed in this session:
+[09/13 07:16:58     44s] Severity  ID               Count  Summary                                  
+[09/13 07:16:58     44s] WARNING   IMPEXT-3423          1  Detected %d nets with incomplete RC netw...
+[09/13 07:16:58     44s] WARNING   UI-156              82  preference name '%s' is not supported in...
+[09/13 07:16:58     44s] WARNING   IMPSYC-3133          1  The unloadTimingCon command is not suppo...
+[09/13 07:16:58     44s] WARNING   IMPSYC-6134          1  Setting analysis mode to %s does not hav...
+[09/13 07:16:58     44s] WARNING   IMPESI-621           1  Timing window restoration data eosdb.dat...
+[09/13 07:16:58     44s] WARNING   IMPESI-3468          1  User needs to specify -equivalent_wavefo...
+[09/13 07:16:58     44s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[09/13 07:16:58     44s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[09/13 07:16:58     44s] ERROR     IMPTCM-32            1  Wrong number of arguments specified for ...
+[09/13 07:16:58     44s] WARNING   SPEF-1152        50852  Net '%s' is not fully specified as per i...
+[09/13 07:16:58     44s] ERROR     SPEF-1123         1836  Invalid capacitor node (%s) does not bel...
+[09/13 07:16:58     44s] ERROR     SPEF-1125            1  Capacitor nodes (%s) do not belong to ne...
+[09/13 07:16:58     44s] WARNING   SPEF-1124        98380  Invalid capacitor node (%s) found in D_N...
+[09/13 07:16:58     44s] ERROR     SPEF-1127        170528  Invalid CONN connection found (%s) for D...
+[09/13 07:16:58     44s] WARNING   SPEF-1132        20928  An invalid or ignored D_NET reference (%...
+[09/13 07:16:58     44s] WARNING   SPEF-1135        96464  Invalid resistor node (%s) found in D_NE...
+[09/13 07:16:58     44s] ERROR     SPEF-1134        74297  Invalid resistor node (%s) does not belo...
+[09/13 07:16:58     44s] ERROR     SPEF-1109            9  Duplicated D_NET reference (%s) found in...
+[09/13 07:16:58     44s] ERROR     SPEF-1149            1  Net (%s) referenced in SPEF but has no D...
+[09/13 07:16:58     44s] WARNING   IMPIMEX-10014        1  The current design data being restored: ...
+[09/13 07:16:58     44s] ERROR     TCLCMD-994           2  Can not find '%s' object with the name '...
+[09/13 07:16:58     44s] ERROR     TCLCMD-1048          3  constraints are specified but no constra...
+[09/13 07:16:58     44s] WARNING   TECHLIB-302         28  No function defined for cell '%s'. The c...
+[09/13 07:16:58     44s] *** Message Summary: 266742 warning(s), 246678 error(s)
+[09/13 07:16:58     44s] 
+[09/13 07:16:58     44s] --- Ending "Tempus Timing Signoff Solution" (totcpu=0:00:44.5, real=0:08:45, mem=1682.7M) ---

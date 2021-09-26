@@ -1,0 +1,20 @@
+#######################################################
+#                                                     
+#  Tempus Timing Signoff Solution Command Logging File                     
+#  Created on Mon Sep 13 07:05:20 2021                
+#                                                     
+#######################################################
+
+#@(#)CDS: Tempus Timing Signoff Solution v20.11-s131_1 (64bit) 08/11/2020 14:23 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 20.11-s131_1 NR200802-2257/20_11-UB (database version 18.20.512) {superthreading v2.9}
+#@(#)CDS: AAE 20.11-s009 (64bit) 08/11/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 20.11-s059_1 () Aug  2 2020 05:46:30 ( )
+#@(#)CDS: SYNTECH 20.11-s028_1 () Aug  1 2020 06:14:27 ( )
+#@(#)CDS: CPE v20.11-s014
+
+read_design ../tempus/innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+read_sdc ./swerv_oscar.sdc
+read_spef ../innovus/swerv_wrapper.spef
+check_timing
+create_clock [get_nets {pad_clk}]  -name pad_clk -period 1.000000 -waveform {0.000000 0.500000}
+exit

@@ -1,0 +1,24 @@
+#######################################################
+#                                                     
+#  Tempus Timing Signoff Solution Command Logging File                     
+#  Created on Mon Sep 13 06:55:22 2021                
+#                                                     
+#######################################################
+
+#@(#)CDS: Tempus Timing Signoff Solution v20.11-s131_1 (64bit) 08/11/2020 14:23 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 20.11-s131_1 NR200802-2257/20_11-UB (database version 18.20.512) {superthreading v2.9}
+#@(#)CDS: AAE 20.11-s009 (64bit) 08/11/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 20.11-s059_1 () Aug  2 2020 05:46:30 ( )
+#@(#)CDS: SYNTECH 20.11-s028_1 () Aug  1 2020 06:14:27 ( )
+#@(#)CDS: CPE v20.11-s014
+
+read_design ../tempus/innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+read_sdc ./swerv_oscar.sdc
+read_spef ../innovus/swerv_wrapper.spef
+set_delay_cal_mode -siAware false
+check_timing
+report_clock_propagation -clock pad_clk -terv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+report_clock_propagation -clock clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+set_propagated_clock [all_clocks]
+exit

@@ -1,0 +1,691 @@
+#######################################################
+#                                                     
+#  Tempus Timing Signoff Solution Command Logging File                     
+#  Created on Mon Sep 13 07:17:13 2021                
+#                                                     
+#######################################################
+
+#@(#)CDS: Tempus Timing Signoff Solution v20.11-s131_1 (64bit) 08/11/2020 14:23 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 20.11-s131_1 NR200802-2257/20_11-UB (database version 18.20.512) {superthreading v2.9}
+#@(#)CDS: AAE 20.11-s009 (64bit) 08/11/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 20.11-s059_1 () Aug  2 2020 05:46:30 ( )
+#@(#)CDS: SYNTECH 20.11-s028_1 () Aug  1 2020 06:14:27 ( )
+#@(#)CDS: CPE v20.11-s014
+
+read_design ../tempus/innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+read_sdc ./swerv_oscar.sdc
+read_spef ../innovus/swerv_wrapper.spef
+report_clocks
+set_interactive_constraint_modes nominal_constraints     
+report_clocks
+create_clock -name "clk_IO"   -period 1.0 -waveform {0.0 0.5}
+report_clocks
+set_clock_transition 0.2 [all_clocks]
+report_clocks
+set_propagated_clock [all_clocks]
+report_clocks
+check_timing
+create_clock [get_nets {pad_clk}]  -name pad_clk -period 1.0 -waveform {0.0 0.5}
+create_clock [get_pins {i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO}]  -name pad_clk -period 1.0 -waveform {0.0 0.5}
+report_clocks
+set_propagated_clock [all_clocks]
+report_clocks
+check_timing
+report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+report_delay_calculation
+report_delay_calculation -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO
+report_delay_calculation -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO -to swerv/FE_OFC352_pad_clk/A
+report_timing -from swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -to swerv/FE_OFC5902_FE_MDBN72
+report_timing -from swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -to swerv/FE_OFC5902_FE_MDBN72 -unconstrained
+update_timing -all
+update_timing -full
+report_delay_calculation -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO -to swerv/FE_OFC352_pad_clk/A
+report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+deselectObject Net pad_clk
+selectObject Net UNCONNECTED991
+selectObject Net UNCONNECTED990
+selectObject Net UNCONNECTED989
+selectObject Net UNCONNECTED988
+selectObject Net UNCONNECTED987
+selectObject Net UNCONNECTED986
+selectObject Net UNCONNECTED985
+deselectObject Net UNCONNECTED991
+deselectObject Net UNCONNECTED990
+deselectObject Net UNCONNECTED989
+deselectObject Net UNCONNECTED988
+deselectObject Net UNCONNECTED987
+deselectObject Net UNCONNECTED986
+deselectObject Net UNCONNECTED985
+selectObject Net UNCONNECTED991
+selectObject Net UNCONNECTED990
+selectObject Net UNCONNECTED989
+selectObject Net UNCONNECTED988
+selectObject Net UNCONNECTED987
+selectObject Net UNCONNECTED986
+selectObject Net UNCONNECTED985
+deselectObject Net UNCONNECTED991
+deselectObject Net UNCONNECTED990
+deselectObject Net UNCONNECTED989
+deselectObject Net UNCONNECTED988
+deselectObject Net UNCONNECTED987
+deselectObject Net UNCONNECTED986
+deselectObject Net UNCONNECTED985
+selectInst FE_OFC353_pad_clk
+deselectInst FE_OFC353_pad_clk
+selectInst FE_OFC353_pad_clk
+deselectInst FE_OFC353_pad_clk
+selectInst FE_OFC353_pad_clk
+deselectInst FE_OFC353_pad_clk
+panPage 0 1
+redraw
+fit
+create_clock [get_pins {swerv/FE_OFC352_pad_clk/Y}]  -name pad_clk_buffer -period 1.0 -waveform {0.0 0.5}
+create_clock [get_pins {swerv/FE_OFC352_pad_clk/B}]  -name pad_clk_buffer -period 1.0 -waveform {0.0 0.5}
+create_clock [get_pins {swerv/FE_OFC352_pad_clk/Z}]  -name pad_clk_buffer -period 1.0 -waveform {0.0 0.5}
+set_propagated_clock [all_clocks]
+update_timing -full
+report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+report_clock_propagation -clock pad_clk_bufer -to swerv/FE_OFC357_pad_clk/A -verbose
+report_clocks
+report_clock_propagation -clock pad_clk_buffer -to swerv/FE_OFC357_pad_clk/A -verbose
+report_clock_propagation -clock pad_clk_buffer -to FE_OFC357_pad_clk/A -verbose
+get_analysis_mode
+ctd_win -id ctdMain
+selectObject Net FE_OFN366_pad_clk
+zoomSelected
+check_timing
+deselectObject Net FE_OFN366_pad_clk
+selectObject IO_Pin clk
+zoomSelected
+deselectObject IO_Pin clk
+selectInst mem/Gen_dccm_enable.dccm_RC_CG_HIER_INST4/RC_CGIC_INST
+zoomSelected
+update_timing -full
+report_clocks
+report_clocks > report_clocks.rpt
+report_timing -path_type summary_slack_only -late -max_paths 3000 > report_timing_summary_slack_3000paths.rpt
+report_timing -late -max_path 1 -nworst 1 >
+report_timing -late -max_path 1 -nworst 1 > report_timing_late_1path.rpt
+report_timing -early -max_path 1 -nworst 1 > report_timing_early_1path.rpt
+check_timing > check_timing.rpt
+deselectInst mem/Gen_dccm_enable.dccm_RC_CG_HIER_INST4/RC_CGIC_INST
+selectInst swerv/FE_OFC409_FE_OFN368_pad_clk
+selectInst swerv/FE_OFC359_pad_clk
+selectObject Net swerv/FE_OFN422_FE_OFN368_pad_clk
+selectInst swerv/FE_OFC4251_pad_clk
+selectObject Net swerv/FE_OFN372_pad_clk
+selectInst swerv/FE_OFC362_pad_clk
+selectObject Net swerv/FE_OFN4264_n
+selectInst swerv/FE_OFC4532_pad_clk
+selectObject Net swerv/FE_OFN375_pad_clk
+selectInst swerv/FE_OFC365_pad_clk
+selectObject Net swerv/FE_OFN4545_n
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+selectInst FE_OFC353_pad_clk
+selectInst swerv/FE_OFC352_pad_clk
+selectObject Net pad_clk
+selectInst FE_OFC353_pad_clk
+selectObject Net pad_clk
+selectInst FE_OFC353_pad_clk
+selectInst FE_OFC357_pad_clk
+selectObject Net FE_OFN366_pad_clk
+selectInst FE_OFC408_FE_OFN370_pad_clk
+selectObject Net FE_OFN370_pad_clk
+selectInst FE_OFC361_pad_clk
+selectObject Net FE_OFN421_FE_OFN370_pad_clk
+selectInst FE_OFC4249_pad_clk
+selectObject Net FE_OFN374_pad_clk
+selectInst FE_OFC364_pad_clk
+selectObject Net FE_OFN4262_n
+selectInst FE_OFC4530_pad_clk
+selectObject Net FE_OFN377_pad_clk
+selectObject IO_Pin jtag_tck
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_jtag_tck
+selectObject Net jtag_tck
+selectObject IO_Pin clk
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+selectObject Net clk
+zoomSelected
+deselectObject Net clk
+deselectObject IO_Pin clk
+deselectObject Net jtag_tck
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_jtag_tck
+deselectObject IO_Pin jtag_tck
+deselectObject Net FE_OFN377_pad_clk
+deselectInst FE_OFC4530_pad_clk
+deselectObject Net FE_OFN4262_n
+deselectInst FE_OFC364_pad_clk
+deselectObject Net FE_OFN374_pad_clk
+deselectInst FE_OFC4249_pad_clk
+deselectObject Net FE_OFN421_FE_OFN370_pad_clk
+deselectInst FE_OFC361_pad_clk
+deselectObject Net FE_OFN370_pad_clk
+deselectInst FE_OFC408_FE_OFN370_pad_clk
+deselectObject Net FE_OFN366_pad_clk
+deselectInst FE_OFC357_pad_clk
+deselectObject Net pad_clk
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst FE_OFC353_pad_clk
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+deselectObject Net swerv/FE_OFN4545_n
+deselectInst swerv/FE_OFC365_pad_clk
+deselectObject Net swerv/FE_OFN375_pad_clk
+deselectInst swerv/FE_OFC4532_pad_clk
+deselectObject Net swerv/FE_OFN4264_n
+deselectInst swerv/FE_OFC362_pad_clk
+deselectObject Net swerv/FE_OFN372_pad_clk
+deselectInst swerv/FE_OFC4251_pad_clk
+deselectObject Net swerv/FE_OFN422_FE_OFN368_pad_clk
+deselectInst swerv/FE_OFC359_pad_clk
+deselectInst swerv/FE_OFC409_FE_OFN368_pad_clk
+selectInst FE_OFC353_pad_clk
+zoomSelected
+deselectInst FE_OFC353_pad_clk
+selectInst swerv/FE_OFC409_FE_OFN368_pad_clk
+zoomSelected
+deselectInst swerv/FE_OFC409_FE_OFN368_pad_clk
+selectInst FE_OFC364_pad_clk
+selectObject Net FE_OFN4262_n
+selectInst FE_OFC4530_pad_clk
+selectObject Net FE_OFN377_pad_clk
+selectInst FE_OFC367_pad_clk
+selectObject Net FE_OFN4543_n
+selectInst FE_OFC4618_pad_clk
+selectObject Net FE_OFN380_pad_clk
+zoomSelected
+deselectObject Net FE_OFN380_pad_clk
+deselectInst FE_OFC4618_pad_clk
+deselectObject Net FE_OFN4543_n
+deselectInst FE_OFC367_pad_clk
+deselectObject Net FE_OFN377_pad_clk
+deselectInst FE_OFC4530_pad_clk
+deselectObject Net FE_OFN4262_n
+deselectInst FE_OFC364_pad_clk
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[18]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[19]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[9]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[1]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[21]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[22]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[20]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[17]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[10]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[11]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[16]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[12]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[14]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[15]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[13]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[23]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[3]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[4]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[24]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[5]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[7]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[8]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[6]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[31]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[25]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[26]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[30]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[27]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[29]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[2]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[28]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[17]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[18]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[9]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[19]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[20]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[21]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[1]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[16]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[10]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[15]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[11]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[13]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[14]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[12]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[22]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[3]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[4]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[23]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[5]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[7]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[8]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[6]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[31]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[24]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[25]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[30]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[26]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[27]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[2]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[28]}
+selectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[29]}
+selectInst {swerv/lsu/lsu_i0_valid_dc3ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_lsu_pkt_vlddc3ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/dccm_ctl_Gen_dccm_enable.dccm_rden_dc3ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/clkdomain_lsu_freeze_c1_dc3_clkenff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_misaligned_fault_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_addr_in_pic_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/stbuf_ldst_dual_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_addr_in_dccm_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_access_fault_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/bus_intf/ldst_dual_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/lsu/lsu_lsc_ctl_addr_external_dc2ff_dff_dout_reg[0]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[2]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[29]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[9]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[28]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[26]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[25]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[27]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[30]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[8]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[31]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[24]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[14]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[23]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[12]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[0]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[22]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[21]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[16]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[20]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[1]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[17]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[19]}
+selectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[18]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[2]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[29]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[9]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[28]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[26]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[25]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[27]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[30]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[8]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[31]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[24]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[23]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[0]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[22]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[21]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[16]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[20]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[1]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[17]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[19]}
+selectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[18]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[29]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[28]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[26]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[25]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[27]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[30]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[31]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[24]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[23]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[17]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[19]}
+selectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[18]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[47]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[48]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[9]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[49]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[50]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[51]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[4]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[46]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[3]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[40]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[45]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[41]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[43]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[44]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[42]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[52]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[61]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[62]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[53]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[63]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[7]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[8]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[6]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[60]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[54]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[55]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[5]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[56]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[58]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[59]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[57]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[39]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[17]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[18]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[38]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[19]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[20]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[21]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[1]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[16]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[0]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[10]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[15]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[11]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[13]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[14]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[12]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[22]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[32]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[33]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[23]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[34]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[36]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[37]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[35]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[31]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[24]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[25]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[30]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[26]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[27]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[2]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[28]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[29]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[2]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[9]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[8]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[0]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[16]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[1]}
+selectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[19]}
+selectInst swerv/dma_ctrl/FE_OFC3970_dma_bus_clk
+selectObject Net swerv/dma_ctrl/FE_OFN3982_dma_bus_clk
+selectObject Net swerv/dma_ctrl/FE_OFN4044_rc_gclk_18373
+zoomSelected
+deselectObject Net swerv/dma_ctrl/FE_OFN4044_rc_gclk_18373
+deselectObject Net swerv/dma_ctrl/FE_OFN3982_dma_bus_clk
+deselectInst swerv/dma_ctrl/FE_OFC3970_dma_bus_clk
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[19]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[1]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[16]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[0]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[8]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[9]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_addr_dff_dff_dout_reg[2]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[29]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[28]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[2]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[27]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[26]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[30]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[25]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[24]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[31]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[35]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[37]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[36]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[34]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[23]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[33]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[32]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[22]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[12]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[14]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[13]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[11]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[15]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[10]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[0]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[16]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[1]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[21]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[20]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[19]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[38]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[18]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[17]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[39]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[57]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[59]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[58]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[56]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[5]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[55]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[54]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[60]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[6]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[8]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[7]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[63]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[53]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[62]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[61]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[52]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[42]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[44]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[43]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[41]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[45]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[40]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[3]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[46]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[4]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[51]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[50]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[49]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[9]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[48]}
+deselectInst {swerv/dma_ctrl/GenFifo[0].fifo_data_dff_dff_dout_reg[47]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[18]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[19]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[17]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[23]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[24]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[31]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[30]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[27]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[25]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[26]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[28]}
+deselectInst {swerv/dma_ctrl/GenFifo[1].fifo_addr_dff_dff_dout_reg[29]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[18]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[19]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[17]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[1]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[20]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[16]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[21]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[22]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[0]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[23]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[24]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[31]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[8]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[30]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[27]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[25]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[26]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[28]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[9]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[29]}
+deselectInst {swerv/dma_ctrl/GenFifo[2].fifo_addr_dff_dff_dout_reg[2]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[18]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[19]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[17]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[1]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[20]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[16]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[21]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[22]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[0]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[12]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[23]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[14]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[24]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[31]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[8]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[30]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[27]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[25]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[26]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[28]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[9]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[29]}
+deselectInst {swerv/dma_ctrl/GenFifo[3].fifo_addr_dff_dff_dout_reg[2]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_addr_external_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/bus_intf/ldst_dual_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_access_fault_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_addr_in_dccm_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/stbuf_ldst_dual_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_addr_in_pic_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_misaligned_fault_dc2ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/clkdomain_lsu_freeze_c1_dc3_clkenff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/dccm_ctl_Gen_dccm_enable.dccm_rden_dc3ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_lsc_ctl_lsu_pkt_vlddc3ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/lsu_i0_valid_dc3ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[29]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[28]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[2]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[27]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[26]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[30]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[25]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[24]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[31]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[6]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[8]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[7]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[5]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[23]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[4]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[3]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[22]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[12]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[14]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[13]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[11]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[15]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[10]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[16]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[1]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[21]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[20]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[19]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[9]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[18]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_hi_dc3ff_dff_dout_reg[17]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[0]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[28]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[2]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[29]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[27]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[30]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[26]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[25]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[31]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[6]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[8]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[7]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[5]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[24]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[4]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[3]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[23]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[13]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[15]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[14]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[12]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[16]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[11]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[10]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[17]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[20]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[22]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[21]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[1]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[9]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[19]}
+deselectInst {swerv/lsu/stbuf_stbuf_fwddata_lo_dc3ff_dff_dout_reg[18]}
+selectObject Net swerv/FE_OFN369_pad_clk
+zoomSelected
+deselectObject Net swerv/FE_OFN369_pad_clk
+selectObject IO_Pin clk
+zoomSelected
+deselectObject IO_Pin clk
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+selectInst FE_OFC353_pad_clk
+selectInst swerv/FE_OFC352_pad_clk
+selectObject Net pad_clk
+selectInst FE_OFC353_pad_clk
+selectInst FE_OFC357_pad_clk
+selectObject Net FE_OFN366_pad_clk
+selectInst FE_OFC408_FE_OFN370_pad_clk
+selectObject Net FE_OFN370_pad_clk
+selectInst FE_OFC361_pad_clk
+selectObject Net FE_OFN421_FE_OFN370_pad_clk
+selectInst FE_OFC4249_pad_clk
+selectObject Net FE_OFN374_pad_clk
+selectObject IO_Pin jtag_tck
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_jtag_tck
+selectObject IO_Pin clk
+selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+selectObject Net clk
+zoomSelected
+deselectObject Net clk
+deselectObject IO_Pin clk
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_jtag_tck
+deselectObject IO_Pin jtag_tck
+deselectObject Net FE_OFN374_pad_clk
+deselectInst FE_OFC4249_pad_clk
+deselectObject Net FE_OFN421_FE_OFN370_pad_clk
+deselectInst FE_OFC361_pad_clk
+deselectObject Net FE_OFN370_pad_clk
+deselectInst FE_OFC408_FE_OFN370_pad_clk
+deselectObject Net FE_OFN366_pad_clk
+deselectInst FE_OFC357_pad_clk
+deselectObject Net pad_clk
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst FE_OFC353_pad_clk
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+selectInst swerv/FE_OFC365_pad_clk
+zoomSelected
+deselectInst swerv/FE_OFC365_pad_clk
+selectObject IO_Pin clk
+zoomSelected
+deselectObject IO_Pin clk
+selectObject IO_Pin clk
+zoomSelected
+deselectObject IO_Pin clk
+selectObject Net pad_clk
+zoomSelected
+deselectObject Net pad_clk
+selectInst FE_OFC353_pad_clk
+zoomSelected
+deselectInst FE_OFC353_pad_clk
+selectInst {mem/icm_ic_tag_inst_adr_ff_dout_reg[14]}
+zoomSelected
+deselectInst {mem/icm_ic_tag_inst_adr_ff_dout_reg[14]}
+selectObject Net swerv/ifu_aln/FE_OFN5375_q1ff_l1clk
+zoomSelected
+deselectObject Net swerv/ifu_aln/FE_OFN5375_q1ff_l1clk
+selectInst {swerv/ifu_aln/q1ff_dff_dout_reg[56]}
+zoomSelected
+deselectInst {swerv/ifu_aln/q1ff_dff_dout_reg[56]}
+selectInst swerv/FE_OFC352_pad_clk
+zoomSelected
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst swerv/FE_OFC352_pad_clk
+selectInst swerv/FE_OFC352_pad_clk
+zoomSelected
+deselectInst swerv/FE_OFC352_pad_clk
+deselectInst swerv/FE_OFC352_pad_clk

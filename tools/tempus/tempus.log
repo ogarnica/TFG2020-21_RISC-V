@@ -1,0 +1,1747 @@
+
+Cadence Tempus(TM) Timing Signoff Solution.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.11-s131_1, built Tue Aug 11 14:23:05 PDT 2020
+Options:	
+Date:		Thu Sep  9 19:48:13 2021
+Host:		portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (12cores*12cpus*Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz 12288KB)
+OS:		CentOS Linux release 7.8.2003 (Core)
+
+License:
+		tpsxl	Tempus Timing Signoff Solution XL	20.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (112 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_9996_DwoCk8'.
+<CMD> read_design ./innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+# Tempus Timing Signoff Solution 20.11-s131_1
+# read_design
+#  dir ./innovusFiles/APC_final_con_bumps.dat swerv_wrapper
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'swerv_wrapper' saved by 'Innovus' '19.11-s128_1' on 'Thu Aug 19 18:05:03 2021'.
+#% Begin Load MMMC data ... (date=09/09 19:49:06, mem=575.5M)
+Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+#% End Load MMMC data ... (date=09/09 19:49:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=575.7M, current mem=575.7M)
+nominal_rc_corner
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/technology.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/viarule_generate.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/sites.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_BUMP_6U1X2T8XLB_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_ALLF_CORESUPPLY_EG_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_CSF_BASIC_EG_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_SC_12_PR_LR_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/C28SOI_IO_EXT_ALLF_FBBRBB_SUBSTRATEBIAS_LR_EG_soc.lef' ...
+Reading pin direction from '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef' ...
+Loading view definition file from ./innovusFiles/APC_final_con_bumps.dat/viewDefinition.tcl
+Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs/C28SOI_SC_12_CLK_LR_tt28_0.90V_25C.lib.gz' ...
+Read 332 cells in library 'C28SOI_SC_12_CLK_LR' 
+Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs/C28SOI_SC_12_CORE_LR_tt28_0.90V_25C.lib.gz' ...
+Read 383 cells in library 'C28SOI_SC_12_CORE_LR' 
+Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs/C28SOI_IO_EXT_CSF_BASIC_EG_tt28_0.90V_1.80V_25C.lib.gz' ...
+Read 82 cells in library 'C28SOI_IO_EXT_CSF_BASIC_EG' 
+Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_ANTPROTGVFILLERSNPW8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+**WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 32 cells in library 'C28SOI_SC_12_PR_LR' 
+Reading nominal_library_set timing library '/home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' ...
+Read 3 cells in library 'SPHD_HIPERF_Tl_210506' 
+*** End library_loading (cpu=0.02min, real=0.02min, mem=16.5M, fe_cpu=0.23min, fe_real=0.92min, fe_mem=781.5M) ***
+#% Begin Load netlist data ... (date=09/09 19:49:08, mem=582.2M)
+*** Begin netlist parsing (mem=781.5M) ***
+Reading verilogBinary netlist '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/swerv_wrapper.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#2 (Current mem = 967.535M, initial mem = 279.789M) ***
+*** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=967.5M) ***
+#% End Load netlist data ... (date=09/09 19:49:08, total cpu=0:00:00.4, real=0:00:00.0, peak res=736.9M, current mem=725.5M)
+Reading pin dir info from /tmp/ssv_tmpdir_9996_DwoCk8/.bbx_9996.
+Top level cell is swerv_wrapper.
+2 empty module found.
+Building hierarchical netlist for Cell swerv_wrapper ...
+*** Netlist is unique.
+** info: there are 1000 modules.
+** info: there are 73450 stdCell insts.
+** info: there are 1422 Pad insts.
+
+*** Memory Usage v#2 (Current mem = 1216.578M, initial mem = 279.789M) ***
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file ./innovusFiles/APC_final_con_bumps.dat/gui.pref.tcl ...
+**WARN: (UI-156):	preference name 'ConstraintUserXGrid' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'ConstraintUserYGrid' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'ConstraintUserXOffset' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'ConstraintUserYOffset' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'SnapAllCorners' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'UserGridUnit' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'MinFPModuleSize' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'MinFlightLineWidth' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'MaxFlightLineNetTerms' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'LevelFlight' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'DirectionSink' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'DirectionSource' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'ShowNumberBlockConnection' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'StrecthRestriction' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'StretchRectilinear' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'MoveRestriction' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'DisplayRelFPlan' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'LegalizeMacro' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'DisplayFPlanFlightLine' is not supported in Tempus Timing Signoff Solution.
+**WARN: (UI-156):	preference name 'DisplayPinName' is not supported in Tempus Timing Signoff Solution.
+**WARN: (EMS-27):	Message (UI-156) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+##  Process: 28            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+**WARN: (IMPSYC-6134):	Setting analysis mode to setup does not have any impact on timing analysis as simultaneous setup/hold mode analysis is on. Use '-late' option to report setup timing reports.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+Reading timing constraints file '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc' ...
+Current (total cpu=0:00:15.0, real=0:00:56.0, peak res=1243.9M, current mem=1177.3M)
+swerv_wrapper
+Number of path exceptions in the constraint file = 2
+Number of paths exceptions after getting compressed = 2
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.4, real=0:00:01.0, peak res=1227.2M, current mem=1227.2M)
+Current (total cpu=0:00:15.4, real=0:00:57.0, peak res=1243.9M, current mem=1227.2M)
+Reading latency file '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/views/nominal_analysis_view/latency.sdc' ...
+Total number of combinational cells: 527
+Total number of sequential cells: 190
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: C12T28SOI_LR_BFX100_P0 C12T28SOI_LR_BFX134_P0 C12T28SOI_LR_BFX13_P0 C12T28SOI_LR_BFX16_P0 C12T28SOI_LR_BFX21_P0 C12T28SOI_LR_BFX25_P0 C12T28SOI_LR_BFX29_P0 C12T28SOI_LR_BFX33_P0 C12T28SOI_LR_BFX42_P0 C12T28SOI_LR_BFX4_P0 C12T28SOI_LR_BFX50_P0 C12T28SOI_LR_BFX58_P0 C12T28SOI_LR_BFX67_P0 C12T28SOI_LR_BFX6_P0 C12T28SOI_LR_BFX75_P0 C12T28SOI_LR_BFX84_P0 C12T28SOI_LR_BFX8_P0 C12T28SOI_LR_CNBFX133_P0 C12T28SOI_LR_CNBFX133_P10 C12T28SOI_LR_CNBFX133_P16 C12T28SOI_LR_CNBFX133_P4 C12T28SOI_LR_CNBFX15_P0 C12T28SOI_LR_CNBFX15_P10 C12T28SOI_LR_CNBFX15_P16 C12T28SOI_LR_CNBFX15_P4 C12T28SOI_LR_CNBFX22_P0 C12T28SOI_LR_CNBFX22_P10 C12T28SOI_LR_CNBFX22_P16 C12T28SOI_LR_CNBFX22_P4 C12T28SOI_LR_CNBFX30_P0 C12T28SOI_LR_CNBFX30_P10 C12T28SOI_LR_CNBFX30_P16 C12T28SOI_LR_CNBFX30_P4 C12T28SOI_LR_CNBFX38_P0 C12T28SOI_LR_CNBFX38_P10 C12T28SOI_LR_CNBFX38_P16 C12T28SOI_LR_CNBFX38_P4 C12T28SOI_LR_CNBFX44_P0 C12T28SOI_LR_CNBFX44_P10 C12T28SOI_LR_CNBFX44_P16 C12T28SOI_LR_CNBFX44_P4 C12T28SOI_LR_CNBFX4_P0 C12T28SOI_LR_CNBFX4_P10 C12T28SOI_LR_CNBFX4_P16 C12T28SOI_LR_CNBFX4_P4 C12T28SOI_LR_CNBFX52_P0 C12T28SOI_LR_CNBFX52_P10 C12T28SOI_LR_CNBFX52_P16 C12T28SOI_LR_CNBFX52_P4 C12T28SOI_LR_CNBFX59_P0 C12T28SOI_LR_CNBFX59_P10 C12T28SOI_LR_CNBFX59_P16 C12T28SOI_LR_CNBFX59_P4 C12T28SOI_LR_CNBFX70_P0 C12T28SOI_LR_CNBFX70_P10 C12T28SOI_LR_CNBFX70_P16 C12T28SOI_LR_CNBFX70_P4 C12T28SOI_LR_CNBFX7_P0 C12T28SOI_LR_CNBFX7_P10 C12T28SOI_LR_CNBFX7_P16 C12T28SOI_LR_CNBFX7_P4 C12T28SOI_LR_CNBFX94_P0 C12T28SOI_LR_CNBFX94_P10 C12T28SOI_LR_CNBFX94_P16 C12T28SOI_LR_CNBFX94_P4
+Total number of usable buffers: 65
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: C12T28SOI_LR_IVX100_P0 C12T28SOI_LR_IVX134_P0 C12T28SOI_LR_IVX13_P0 C12T28SOI_LR_IVX17_P0 C12T28SOI_LR_IVX21_P0 C12T28SOI_LR_IVX25_P0 C12T28SOI_LR_IVX29_P0 C12T28SOI_LR_IVX33_P0 C12T28SOI_LR_IVX4_P0 C12T28SOI_LR_IVX50_P0 C12T28SOI_LR_IVX58_P0 C12T28SOI_LR_IVX67_P0 C12T28SOI_LR_IVX6_P0 C12T28SOI_LR_IVX75_P0 C12T28SOI_LR_IVX84_P0 C12T28SOI_LR_IVX8_P0 C12T28SOI_LR_CNIVX133_P0 C12T28SOI_LR_CNIVX133_P10 C12T28SOI_LR_CNIVX133_P16 C12T28SOI_LR_CNIVX133_P4 C12T28SOI_LR_CNIVX16_P0 C12T28SOI_LR_CNIVX16_P10 C12T28SOI_LR_CNIVX16_P16 C12T28SOI_LR_CNIVX16_P4 C12T28SOI_LR_CNIVX23_P0 C12T28SOI_LR_CNIVX23_P10 C12T28SOI_LR_CNIVX23_P16 C12T28SOI_LR_CNIVX23_P4 C12T28SOI_LR_CNIVX31_P0 C12T28SOI_LR_CNIVX31_P10 C12T28SOI_LR_CNIVX31_P16 C12T28SOI_LR_CNIVX31_P4 C12T28SOI_LR_CNIVX39_P0 C12T28SOI_LR_CNIVX39_P10 C12T28SOI_LR_CNIVX39_P16 C12T28SOI_LR_CNIVX39_P4 C12T28SOI_LR_CNIVX47_P0 C12T28SOI_LR_CNIVX47_P10 C12T28SOI_LR_CNIVX47_P16 C12T28SOI_LR_CNIVX47_P4 C12T28SOI_LR_CNIVX55_P0 C12T28SOI_LR_CNIVX55_P10 C12T28SOI_LR_CNIVX55_P16 C12T28SOI_LR_CNIVX55_P4 C12T28SOI_LR_CNIVX5_P0 C12T28SOI_LR_CNIVX5_P10 C12T28SOI_LR_CNIVX5_P16 C12T28SOI_LR_CNIVX5_P4 C12T28SOI_LR_CNIVX61_P0 C12T28SOI_LR_CNIVX61_P10 C12T28SOI_LR_CNIVX61_P16 C12T28SOI_LR_CNIVX61_P4 C12T28SOI_LR_CNIVX70_P0 C12T28SOI_LR_CNIVX70_P10 C12T28SOI_LR_CNIVX70_P16 C12T28SOI_LR_CNIVX70_P4 C12T28SOI_LR_CNIVX8_P0 C12T28SOI_LR_CNIVX8_P10 C12T28SOI_LR_CNIVX8_P16 C12T28SOI_LR_CNIVX8_P4 C12T28SOI_LR_CNIVX94_P0 C12T28SOI_LR_CNIVX94_P10 C12T28SOI_LR_CNIVX94_P4 C12T28SOI_LR_CNIVX94_P16
+Total number of usable inverters: 64
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: C12T28SOI_LR_DLYHFM4X15_P0 C12T28SOI_LR_DLYHFM4X15_P10 C12T28SOI_LR_DLYHFM4X15_P16 C12T28SOI_LR_DLYHFM4X15_P4 C12T28SOI_LR_DLYHFM4X7_P0 C12T28SOI_LR_DLYHFM4X7_P10 C12T28SOI_LR_DLYHFM4X7_P16 C12T28SOI_LR_DLYHFM4X7_P4 C12T28SOI_LR_DLYHFM8X15_P0 C12T28SOI_LR_DLYHFM8X15_P10 C12T28SOI_LR_DLYHFM8X15_P16 C12T28SOI_LR_DLYHFM8X15_P4 C12T28SOI_LR_DLYHFM8X54_P0 C12T28SOI_LR_DLYHFM8X54_P10 C12T28SOI_LR_DLYHFM8X54_P16 C12T28SOI_LR_DLYHFM8X54_P4 C12T28SOI_LR_DLYHFM8X7_P0 C12T28SOI_LR_DLYHFM8X7_P10 C12T28SOI_LR_DLYHFM8X7_P4 C12T28SOI_LR_DLYHFM8X7_P16
+Total number of identified usable delay cells: 20
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Set Default Input Pin Transition as 0.1 ps.
+Loading preRoute extraction data from directory './innovusFiles/APC_final_con_bumps.dat/extraction/' ...
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: nominal_analysis_view
+    RC-Corner Name        : nominal_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+    RC-Corner Technology file: '/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/libs/mmmc/nominal_rc_corner/qrcTechFile'
+**WARN: (IMPIMEX-10014):	The current design data being restored: './innovusFiles/APC_final_con_bumps.dat' has been saved with an older structure. When restoring a subset of views for this database, derate information for inactive delay corners may be inaccesible in the current session. A newer database structure allows more flexibility for change the active view list in-session. To update the current database, you need to restore the design with all views active - and then the next save will update it to the new model.
+#% Begin Load power constraints ... (date=09/09 19:49:10, mem=1231.2M)
+'set_default_switching_activity' finished successfully.
+#% End Load power constraints ... (date=09/09 19:49:10, total cpu=0:00:00.0, real=0:00:00.0, peak res=1231.4M, current mem=1231.4M)
+#% Begin load AAE data ... (date=09/09 19:49:10, mem=1231.5M)
+**WARN: (IMPESI-3468):	User needs to specify -equivalent_waveform_model propagation first before specifying -waveform_compression_mode accurate|clock_detailed .
+AAE DB initialization (MEM=1563.41 CPU=0:00:00.0 REAL=0:00:00.0) 
+**WARN: (IMPESI-621):	Timing window restoration data eosdb.dat not found. PBA-SI results may not match in save/restore flow.
+#% End load AAE data ... (date=09/09 19:49:10, total cpu=0:00:00.2, real=0:00:00.0, peak res=1249.8M, current mem=1249.8M)
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.11-s128_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+Loading  (swerv_wrapper)
+Traverse HInst (swerv_wrapper)
+<CMD> read_sdc ../innovus/swerv_wrapper.sdc
+**WARN: (IMPSYC-3133):	The unloadTimingCon command is not supported in the MMMC environment.
+          To modify the active set of constraints you can use one of the following means:
+          - Use the set_analysis_view command to change the set of active views.
+          - Use the update_analysis_view command to change the constraint mode associated with an active view.
+          - Use the update_constraint_mode command to change the set of SDC files pointed to be active modes.
+<CMD> read_spef ../innovus/swerv_wrapper.spef
+Used active corner nominal_rc_corner for reading SPEF file as option '-rc_corner <cornerName>' is not specified in MMMC mode.
+
+SPEF files for RC Corner nominal_rc_corner:
+Top-level spef file '../innovus/swerv_wrapper.spef'.
+Start spef parsing (MEM=1605.71).
+SPEF file ../innovus/swerv_wrapper.spef.
+The SPEF file, '../innovus/swerv_wrapper.spef', has encountered the error/warning message(s) during its reading.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN5297_dbg_n_946:87) found in D_NET (rst_l) that starts on line 180328. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN4769_n_1449:5) found in D_NET (rst_l) that starts on line 180328. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/lsu/bus_intf/FE_OFN1582_pad_lsu_axi_rdata_0:2) found in D_NET (dbg_rst_l) that starts on line 180401. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3547_dbg_sbcs_reg_19:4) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2957_pad_sb_axi_rdata_10:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2950_pad_sb_axi_rdata_9:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2910_pad_sb_axi_rdata_4:3) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2628_pad_rst_vec_4:2) found in D_NET (rst_vec[30]) that starts on line 180478. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OCPN140269_FE_MDBN117:6) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN139954_FE_MDBN117:17) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN138767_FE_OFN3215_pad_sb_axi_rdata_49:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3550_dbg_sbcs_reg_17:23) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2957_pad_sb_axi_rdata_10:3) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2935_pad_sb_axi_rdata_7:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2927_pad_sb_axi_rdata_6:3) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2919_pad_sb_axi_rdata_5:6) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN2621_pad_rst_vec_3:5) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN138792_FE_OFN3009_pad_sb_axi_rdata_17:2) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3549_dbg_sbcs_reg_17:5) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1124):	Invalid capacitor node (swerv/FE_OFN3547_dbg_sbcs_reg_19:4) found in D_NET (rst_vec[29]) that starts on line 180599. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (EMS-27):	Message (SPEF-1124) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7973_ic_rd_hit_2) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429113. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7972_ic_rd_hit_0) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429156. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7971_ic_rd_hit_3) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429191. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7970_ic_tag_perr) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429218. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7969_ic_rd_data_9) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429271. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7968_ic_rd_data_13) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429295. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7967_ic_rd_data_18) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429313. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7966_ic_rd_data_25) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429340. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7965_ic_rd_data_31) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429363. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7964_ic_rd_data_20) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429393. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7963_ic_rd_data_33) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429430. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7962_ic_rd_data_21) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429453. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7961_ic_rd_data_29) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429474. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7960_ic_rd_data_90) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429494. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7959_ic_rd_data_7) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429530. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7958_ic_rd_data_19) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429551. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7957_ic_rd_data_8) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429582. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7956_ic_rd_data_4) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429611. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7955_ic_rd_data_87) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429650. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1132):	An invalid or ignored D_NET reference (FE_OCPN7954_ic_rd_data_2) is detected in D_NET. The net name doesn't have corresponding net in the netlist. This D_NET starts on line 429670. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (EMS-27):	Message (SPEF-1132) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC379_pad_clk:Z) for D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC382_pad_clk:A) for D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**ERROR: (SPEF-1134):	Invalid resistor node (FE_OFC382_pad_clk:A) does not belong to net found in D_NET (FE_OFN384_pad_clk) that starts on line 446841.
+**WARN: (SPEF-1135):	Invalid resistor node (FE_OFC379_pad_clk:Z) found in D_NET (FE_OFN384_pad_clk) that starts on line 446841. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'FE_OFN384_pad_clk ( having pins FE_OFC371_pad_clk/Z FE_OFC4656_pad_clk/A )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC372_pad_clk:Z) for D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (FE_OFC376_pad_clk:A) for D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**WARN: (SPEF-1135):	Invalid resistor node (FE_OFC372_pad_clk:Z) found in D_NET (FE_OFN377_pad_clk) that starts on line 446972. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**ERROR: (SPEF-1134):	Invalid resistor node (FE_OFC376_pad_clk:A) does not belong to net found in D_NET (FE_OFN377_pad_clk) that starts on line 446972.
+**WARN: (SPEF-1152):	Net 'FE_OFN377_pad_clk ( having pins FE_OFC364_pad_clk/Z FE_OFC4530_pad_clk/A )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67131:C) for D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (dmi_wrapper/g4634__9315:A) for D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1134):	Invalid resistor node (dmi_wrapper/g4634__9315:A) does not belong to net found in D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67131:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[31]) that starts on line 446993.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[31] ( having pins dmi_wrapper/g4634__9315/B swerv/g67288/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[31]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67130:C) for D_NET (dmi_wrapper/rd_data[30]) that starts on line 447075.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67130:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[30]) that starts on line 447075.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[30] ( having pins dmi_wrapper/g3492/A swerv/g67287/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[30]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66933:C) for D_NET (dmi_wrapper/rd_data[29]) that starts on line 447130.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66933:C) found in D_NET (dmi_wrapper/rd_data[29]) that starts on line 447130. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[29] ( having pins dmi_wrapper/g4553__5477/S2 swerv/g67092/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[29]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67129:C) for D_NET (dmi_wrapper/rd_data[28]) that starts on line 447191.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67129:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[28]) that starts on line 447191.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[28] ( having pins dmi_wrapper/g4614__5107/B swerv/g67286/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[28]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67128:C) for D_NET (dmi_wrapper/rd_data[27]) that starts on line 447253.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67128:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[27]) that starts on line 447253.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[27] ( having pins dmi_wrapper/g4613__2398/B swerv/g67285/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[27]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67127:C) for D_NET (dmi_wrapper/rd_data[26]) that starts on line 447328.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67127:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[26]) that starts on line 447328.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[26] ( having pins dmi_wrapper/g4612__5477/B swerv/g67284/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[26]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67126:C) for D_NET (dmi_wrapper/rd_data[25]) that starts on line 447394.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67126:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[25]) that starts on line 447394.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[25] ( having pins dmi_wrapper/g4611__6417/B swerv/g66878/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[25]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67125:C) for D_NET (dmi_wrapper/rd_data[24]) that starts on line 447458.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67125:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[24]) that starts on line 447458.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[24] ( having pins dmi_wrapper/g4610__7410/B swerv/g67282/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[24]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67123:C) for D_NET (dmi_wrapper/rd_data[23]) that starts on line 447532.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67123:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[23]) that starts on line 447532.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[23] ( having pins dmi_wrapper/g4609__1666/B swerv/g67280/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[23]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67045:C) for D_NET (dmi_wrapper/rd_data[22]) that starts on line 447600.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67045:C) found in D_NET (dmi_wrapper/rd_data[22]) that starts on line 447600. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[22] ( having pins dmi_wrapper/g4608__2346/B swerv/g67203/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[22]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67042:C) for D_NET (dmi_wrapper/rd_data[21]) that starts on line 447674.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67042:C) found in D_NET (dmi_wrapper/rd_data[21]) that starts on line 447674. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[21] ( having pins dmi_wrapper/g4592__5122/B swerv/g67200/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[21]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67040:C) for D_NET (dmi_wrapper/rd_data[20]) that starts on line 447762.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67040:C) found in D_NET (dmi_wrapper/rd_data[20]) that starts on line 447762. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[20] ( having pins dmi_wrapper/g4606__2883/B swerv/g66815/D1 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[20]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66649:D3) for D_NET (dmi_wrapper/rd_data[19]) that starts on line 447827.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66649:D3) found in D_NET (dmi_wrapper/rd_data[19]) that starts on line 447827. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[19] ( having pins dmi_wrapper/g4605__9945/B swerv/g66814/D3 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[19]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g67037:C) for D_NET (dmi_wrapper/rd_data[18]) that starts on line 447872.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67037:C) found in D_NET (dmi_wrapper/rd_data[18]) that starts on line 447872. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[18] ( having pins dmi_wrapper/g4604__9315/B swerv/g67195/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[18]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**ERROR: (SPEF-1127):	Invalid CONN connection found (swerv/g66648:D3) for D_NET (dmi_wrapper/rd_data[17]) that starts on line 447919.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66648:D3) found in D_NET (dmi_wrapper/rd_data[17]) that starts on line 447919. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[17] ( having pins dmi_wrapper/g4603__6161/B swerv/g66812/D3 swerv/dbg_dmi_rddata_reg_dffs_dout_reg[17]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**WARN: (EMS-27):	Message (SPEF-1127) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66647:D3) found in D_NET (dmi_wrapper/rd_data[16]) that starts on line 447985. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[16] ( having pins dmi_wrapper/g4602__4733/C swerv/g67277/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[16]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67034:C) found in D_NET (dmi_wrapper/rd_data[15]) that starts on line 448071. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[15] ( having pins dmi_wrapper/g4601__7482/C swerv/g67191/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[15]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66645:D1) found in D_NET (dmi_wrapper/rd_data[14]) that starts on line 448141. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1152):	Net 'dmi_wrapper/rd_data[14] ( having pins dmi_wrapper/g4600__5115/C swerv/g67188/C swerv/dbg_dmi_rddata_reg_dffs_dout_reg[14]/Q )' is not fully specified as per its connectivity in design netlist. Missing ports have been added to the net using low RC values. The timing accuracy is not reliable for such nets.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66928:C) found in D_NET (dmi_wrapper/rd_data[13]) that starts on line 448215. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (EMS-27):	Message (SPEF-1152) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66710:C) found in D_NET (dmi_wrapper/rd_data[11]) that starts on line 448332. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66643:D1) found in D_NET (dmi_wrapper/rd_data[10]) that starts on line 448402. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g66158:A) does not belong to net found in D_NET (dmi_wrapper/rd_data[9]) that starts on line 448476.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g67026:C) found in D_NET (dmi_wrapper/rd_data[8]) that starts on line 448557. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66707:C) found in D_NET (dmi_wrapper/rd_data[7]) that starts on line 448624. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66709:C) found in D_NET (dmi_wrapper/rd_data[6]) that starts on line 448703. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67116:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[5]) that starts on line 448807.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67115:C) does not belong to net found in D_NET (dmi_wrapper/rd_data[4]) that starts on line 448866.
+**ERROR: (SPEF-1134):	Invalid resistor node (dmi_wrapper/g4616__4319:B) does not belong to net found in D_NET (dmi_wrapper/rd_data[3]) that starts on line 448930.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66953:C) found in D_NET (dmi_wrapper/rd_data[3]) that starts on line 448930. The net name doesn't have corresponding net in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (SPEF-1135):	Invalid resistor node (swerv/g66926:C) found in D_NET (dmi_wrapper/rd_data[2]) that starts on line 449001. The name doesn't have corresponding pin or port in the netlist. Check the SPEF file is valid, correct as needed and read it again.
+**WARN: (EMS-27):	Message (SPEF-1135) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g57884:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[31]) that starts on line 449265.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g67197:B) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[22]) that starts on line 450668.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58042:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[20]) that starts on line 450915.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58041:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[19]) that starts on line 451039.
+**ERROR: (SPEF-1134):	Invalid resistor node (swerv/g58040:D) does not belong to net found in D_NET (dmi_wrapper/reg_wr_data[18]) that starts on line 451181.
+**WARN: (EMS-27):	Message (SPEF-1134) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/g53026:A) does not belong to net found in D_NET (mem/dccm_rd_addr_lo[14]) that starts on line 456464.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/lsu/lsu_lsc_ctl_csa_tree_add_202_53_groupi_g3503:S0) does not belong to net found in D_NET (mem/dccm_rd_addr_hi[5]) that starts on line 460033.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[5].dccm_bank_i_mem:D[38]) does not belong to net found in D_NET (mem/dccm_wr_data[38]) that starts on line 460842.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[29]) does not belong to net found in D_NET (mem/dccm_wr_data[29]) that starts on line 462866.
+**ERROR: (SPEF-1125):	Capacitor nodes (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[29],mem/Gen_dccm_enable.dccm_dccm_bank_dout[6][29]:3) do not belong to net found in D_NET (mem/dccm_wr_data[29]) that starts on line 462866.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[28]) does not belong to net found in D_NET (mem/dccm_wr_data[28]) that starts on line 463386.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[28]) does not belong to net found in D_NET (mem/dccm_wr_data[28]) that starts on line 463386.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/lsu/g119753:B) does not belong to net found in D_NET (mem/dccm_wr_data[18]) that starts on line 466604.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[6].dccm_bank_i_mem:D[1]) does not belong to net found in D_NET (mem/dccm_wr_data[1]) that starts on line 474711.
+**ERROR: (SPEF-1123):	Invalid capacitor node (mem/Gen_dccm_enable.dccm_mem_bank[4].dccm_bank_i_mem:D[1]) does not belong to net found in D_NET (mem/dccm_wr_data[1]) that starts on line 474711.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/ifu_mem_ctl/g34614:Z) does not belong to net found in D_NET (mem/ic_premux_data[113]) that starts on line 479148.
+**ERROR: (SPEF-1123):	Invalid capacitor node (swerv/ifu_mem_ctl/g25458:Z) does not belong to net found in D_NET (mem/ic_debug_way[3]) that starts on line 502746.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_pad_pad_pad_lsu_axi_awaddr[31]:761) does not belong to net found in D_NET (pad_pad_pad_pad_lsu_axi_awaddr[30]) that starts on line 600421.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_trace_rv_i_tval_ip[24]:56) does not belong to net found in D_NET (pad_trace_rv_i_tval_ip[12]) that starts on line 1304958.
+**ERROR: (SPEF-1123):	Invalid capacitor node (pad_trace_rv_i_tval_ip[20]:83) does not belong to net found in D_NET (pad_trace_rv_i_tval_ip[19]) that starts on line 1307876.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g2926:Z) does not belong to net found in D_NET (dmi_wrapper/n_110) that starts on line 1361929.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4618__5526:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4617__8428:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4613__2398:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g4610__7410:A) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**ERROR: (SPEF-1123):	Invalid capacitor node (dmi_wrapper/g2924:Z) does not belong to net found in D_NET (dmi_wrapper/n_111) that starts on line 1361960.
+**WARN: (EMS-27):	Message (SPEF-1123) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_ifu_axi_araddr[29]) found in D_NET that starts on line 3340489.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_pad_pad_lsu_axi_awaddr[29]) found in D_NET that starts on line 3340775.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_lsu_axi_awaddr[27]) found in D_NET that starts on line 3340902.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (pad_pad_lsu_axi_awaddr[26]) found in D_NET that starts on line 3340934.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN128_core_rst_l) found in D_NET that starts on line 3416349.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN154_core_rst_l) found in D_NET that starts on line 4061006.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN183_core_rst_l) found in D_NET that starts on line 4610671.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN78_core_rst_l) found in D_NET that starts on line 5216396.
+**ERROR: (SPEF-1109):	Duplicated D_NET reference (swerv/FE_OFN75_core_rst_l) found in D_NET that starts on line 5217034.
+**ERROR: (SPEF-1149):	Net (mem/FE_OFN4272_dccm_wr_data_29) referenced in SPEF but has no D_NET data.
+Number of Resistors     : 1626338
+Number of Ground Caps   : 1263845
+Number of Coupling Caps : 709442
+
+End spef parsing (MEM=1689.68 CPU=0:00:11.2 REAL=0:00:04.0).
+44390 nets are missing in SPEF file. The names of these nets are saved in ./nominal_rc_corner.missing_nets.rpt.
+**WARN: (IMPEXT-3423):	Detected 50852 nets with incomplete RC network. Low-value resistances have been added by the software to complete the RC network of these nets. Review the list of affected nets in the './swerv_wrapper.nominal_rc_corner.incomplete_res.net' file to ensure they are not along the critical path because results of timing analysis performed on nets with incomplete RC network can be inaccurate.
+<CMD> report_clocks
+      -------------------------------------------------------------------------------------------------  
+                                                  Clock Descriptions                                               
+      -------------------------------------------------------------------------------------------------  
+                                                                                      Attributes          
+      -------------------------------------------------------------------------------------------------  
+        Clock      Source            View             Period    Lead    Trail   Generated   Propagated   
+         Name                                                                                            
+      -------------------------------------------------------------------------------------------------  
+       clk        clk      nominal_analysis_view     1.000   0.000    0.500       n           n        
+       jtag_tck   jtag_tck   nominal_analysis_view   100.000   0.000   50.000       n           n        
+      -------------------------------------------------------------------------------------------------  
+ambiguous command name "propagate*": propagateActivity propagateTcf propagateTcfFe propagate_activity propagatetcf propagatetcffe
+wrong # args: should be "clock subcommand ?arg ...?"
+ambiguous command name "*clock*": _all_clock_gates _get_clock aae_report_double_clocking add_clock_tree_source_group_roots all_clocks analyze_clock_em analyze_paths_by_clock_domain ccopt_check_clock_tree_convergence ccopt_create_clock_user_module_port_bits ccopt_debug_clock_tree_timing ccopt_debug_clock_trees changeclocknetnondefaultrule changeclockstatus changeuseclocknetstatus check_ccopt_clock_tree_convergence check_ccopt_clock_trees check_clock_design checkclocktreecellhalo checkestclockroute ckgetclockleafpin ckgetclockminmaxdelay cleanupspecifyclocktree clearclockdisplay clearclockdomains clock clockDesign clockDesignHelp clockDesignMMHelp clockDesignManualMM clockDesignManualMMHelp clone_clock_cells ...
+...too many match (>30)
+clk jtag_tck
+invalid command name "clock_tree_timing"
+invalid command name "debug_clock_tree_timing"
+**ERROR: (IMPCCOPT-2004):	Cannot run 'ccopt_debug_clock_tree_timing' as no clock trees are defined.
+
+invalid command name "check_glock_design"
+<CMD> check_clock_design
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**ERROR: (IMPSE-25):	You are using a Limited Access feature that requires special setup before you can use it. Please contact Cadence support for more information on how to access this feature.
+nominal_constraints
+min: C28SOI_SC_12_CLK_LR/%NOM_PVT
+max: C28SOI_SC_12_CLK_LR/%NOM_PVT
+<CMD> all_setup_analysis_views
+<CMD> all_hold_analysis_views
+<CMD> all_setup_analysis_views
+<CMD> all_hold_analysis_views
+**ERROR: (IMPSYC-6137):	Command 'set_op_cond' is obsolete as the software moves to using Multi-Mode/Multi-Corner (MMMC) architecture for design import. Operating conditions must be set using the -opcond and -opcond_library options of the MMMC commands create_delay_corner and update_delay_corner. For more information on creating MMMC configurations and for a full list of design import related commands to be made obsolete, see Performing Multi-Mode Multi-Corner Timing Analysis and Optimization.
+<CMD> update_timing -full
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Name: swerv_wrapper
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1562.51)
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49101' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49100' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49099' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49098' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49097' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49096' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49095' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49108' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49107' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49106' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49105' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49104' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49103' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49102' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49109' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49110' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49111' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43253' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43252' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43251' has no receivers. SI analysis is not performed.
+**WARN: (EMS-62):	Message <IMPESI-3095> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message by
+using the set_message -limit <number> command.
+The message limit can be removed by using the set_message -no_limit command.
+Note that setting a very large number using the set_message -limit command
+or removing the message limit using the set_message -no_limit command can
+significantly increase the log file size.
+To suppress a message, use the set_message -suppress command.
+**WARN: (IMPESI-3140):	Bumpy transitions may exist in the design which may lead to inaccurate delay computation. To report/analyze the nets having bumpy transition, please enable delay report and use command 'report_noise -bumpy_waveform -threshold 0' after timing analysis. Delay report is enabled by setting 'set_si_mode -enable_delay_report true' before timing analysis.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[7], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**WARN: (EMS-62):	Message <IMPESI-3201> has exceeded the default message display limit of 20.
+To avoid this warning, increase the display limit per unique message by
+using the set_message -limit <number> command.
+The message limit can be removed by using the set_message -no_limit command.
+Note that setting a very large number using the set_message -limit command
+or removing the message limit using the set_message -no_limit command can
+significantly increase the log file size.
+To suppress a message, use the set_message -suppress command.
+AAE_INFO-618: Total number of nets in the design is 129815,  79.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1575.02 CPU=0:00:26.9 REAL=0:00:27.0)
+End delay calculation (fullDC). (MEM=1567.02 CPU=0:00:28.2 REAL=0:00:28.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/ssv_tmpdir_9996_DwoCk8/.AAE_dTnq6L/.AAE_9996/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1566.8M)
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:00.0, MEM = 1566.8M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=1515.81)
+AAE_INFO-618: Total number of nets in the design is 129815,  0.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1557.2 CPU=0:00:00.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1557.2 CPU=0:00:00.5 REAL=0:00:00.0)
+<CMD> report_timing
+Path 1: VIOLATED Late External Delay Assertion 
+Endpoint:   swerv/sb_axi_wdata[48] (^) checked with  leading edge of 'clk'
+Beginpoint: swerv/sb_axi_arsize[0] (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: nominal_analysis_view
+Other End Arrival Time          0.000
+- External Delay                2.500
++ Phase Shift                   1.000
+- Uncertainty                   0.350
+= Required Time                -1.850
+- Arrival Time                 22.178
+= Slack Time                  -24.028
+     Clock Rise Edge                      0.000
+     + Input Delay                        5.500
+     = Beginpoint Arrival Time            5.500
+      ---------------------------------------------------------------------------------------------------------------
+      Instance                                Arc                 Cell                      Delay   Arrival  Required  
+                                                                                                    Time     Time  
+      ---------------------------------------------------------------------------------------------------------------
+      swerv                                   sb_axi_arsize[0] v  swerv                     -       5.500    -18.528  
+      swerv/FE_MDBC117_g59203                 A v -> Z v          C12T28SOI_LR_CNBFX52_P0   0.332   5.832    -18.196  
+      swerv/FE_OFC6440_FE_MDBN117             A v -> Z ^          C12T28SOI_LR_IVX50_P0     0.029   5.861    -18.167  
+      swerv/FE_PSC93_FE_OFN150861_FE_MDBN117  A ^ -> Z ^          C12T28SOI_LR_BFX67_P0     0.027   5.888    -18.140  
+      swerv/FE_OFC6441_FE_MDBN117             A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.007   5.895    -18.133  
+      swerv/FE_PSC92_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   5.914    -18.114  
+      swerv/FE_PSC91_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.023   5.937    -18.091  
+      swerv/g59203                            A v -> Z v          C12T28SOI_LR_OR2X16_P0    0.047   5.984    -18.044  
+      swerv/FE_OFC5748_n_1652                 A v -> Z ^          C12T28SOI_LR_IVX67_P0     0.014   5.998    -18.030  
+      swerv/FE_OFC5777_n_1652                 A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.019   6.017    -18.011  
+      swerv/FE_OCPC6634_FE_OFN131248_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.034    -17.994  
+      swerv/FE_OFC5786_n                      A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.051    -17.977  
+      swerv/FE_OFC5787_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.069    -17.959  
+      swerv/FE_OFC5788_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.088    -17.940  
+      swerv/FE_OFC5789_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.106    -17.922  
+      swerv/FE_OFC5790_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.125    -17.903  
+      swerv/FE_OFC5791_n                      A ^ -> Z v          C12T28SOI_LR_IVX50_P0     0.008   6.133    -17.895  
+      swerv/FE_OFC5854_n                      A v -> Z ^          C12T28SOI_LR_IVX100_P0    0.009   6.141    -17.887  
+      swerv/FE_OCPC6637_FE_OFN131255_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.158    -17.870  
+      swerv/FE_OFC5855_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.176    -17.851  
+      swerv/FE_OFC5856_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.195    -17.833  
+      swerv/FE_OFC5857_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.020   6.215    -17.813  
+      swerv/FE_OFC5858_n                      A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.006   6.222    -17.806  
+      swerv/FE_OCPC6633_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   6.241    -17.787  
+      swerv/FE_OCPC6631_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.020   6.261    -17.767  
+      swerv/FE_OCPC6636_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.022   6.283    -17.745  
+      swerv/g59057                            B v -> Z ^          C12T28SOI_LRS_NOR2X55_P0  0.021   6.305    -17.723  
+      swerv/FE_OFC5847_n_1770                 A ^ -> Z ^          C12T28SOI_LR_BFX25_P0     0.040   6.345    -17.683  
+      swerv/g58895                            B ^ -> Z v          C12T28SOI_LR_AOI22X4_P0   0.030   6.375    -17.652  
+      swerv/g58774                            A v -> Z ^          C12T28SOI_LR_NAND2X5_P0   15.739  22.115   -1.913  
+      swerv                                   sb_axi_wdata[48] ^  swerv                     -       22.178   -1.850  
+      ---------------------------------------------------------------------------------------------------------------
+
+
+Usage: report_timing [-help] [-check_clocks]
+                     [-check_type {setup hold clock_gating_setup clock_gating_hold clock_gating_pulse_width data_setup data_hold recovery removal pulse_width clock_period clock_separation skew no_change_setup no_change_hold}]
+                     [-debug {unconstrained time_borrow cppr_point constraint_arc}] [-delay_limit <float>] [-derate_summary]
+                     [-fall_through <pin_list>] [-format <column_list>] [-hpin] [-max_slack <float>] [-min_slack <float>] [-net]
+                     [-path_exceptions {applied ignored all}] [-path_group <groupname_list>]
+                     [-path_type {end summary full full_clock end_slack_only summary_slack_only}] [-quiet]
+                     [-retime {aocv path_slew_propagation aocv_path_slew_propagation waveform_propagation}]
+                     [-retime_format {manual retime_compare retime_replace}] [-retime_mode {path exhaustive infinite_depth}] [-skip_io_paths]
+                     [-through <pin_list>] [-through_fall <pin_list>] [-through_rise <pin_list>] [-unique_pins] [-worst_rc_corner]
+                     [> <filename[.gz]>] [>> <filename[.gz]>] [-late | -early ] [-rise | -fall ] [-begin_end_pair | [[ -max_paths <integer>] [-nworst <integer>]]] [-unconstrained | -point_to_point ] [-collection | -machine_readable | -tcl_list ] [-not_through <object_list> | -not_rise_through <object_list> | -not_fall_through <object_list> ] [ [-from <pin_list> | -from_rise <pin_list> | -from_fall <pin_list> ] [-clock_from <clk_signame_list> [-edge_from {lead trail}]] [-to <pin_list> | -to_rise <pin_list> | -to_fall <pin_list> ] [-clock_to <clk_signame_list> [-edge_to {lead trail}]] ] [-view <viewName> ]
+
+-help                                    # Prints out the command usage
+-begin_end_pair                          # Reports all violating paths between unique source and target begin and end pins (bool, optional)
+-check_clocks                            # Generates reports based on timing paths on the clock network instead of the standard timing to data
+                                         # endpoints (bool, optional)
+-check_type {setup hold clock_gating_setup clock_gating_hold clock_gating_pulse_width data_setup data_hold recovery removal pulse_width clock_period clock_separation skew no_change_setup no_change_hold}
+                                         # Reports only the paths that end at the specified timing check (enum, optional)
+-clock_from <clk_signame_list>           # Reports the paths going through specified launching clocks (string, optional)
+-clock_to <clk_signame_list>             # Reports the paths going through specified capturing clocks (string, optional)
+-collection                              # Returns a collection of timing paths (bool, optional)
+-debug {unconstrained time_borrow cppr_point constraint_arc}
+                                         # Used for debugging various features of the path (enum, optional)
+-delay_limit <float>                     # path delay limit for unconstrained paths (float, optional)
+-derate_summary                          # Generates an LOCV derating summary table for the launch and capture paths, in addition to the timing
+                                         # report (bool, optional)
+-early                                   # Generates the timing report for early paths (bool, optional)
+-edge_from {lead trail}                  # Reports the paths going through specified edge of launching clocks (enum, optional)
+-edge_to {lead trail}                    # Reports the paths going through specified edge of capturing clocks (enum, optional)
+-fall                                    # Reports the path with the falling edge on the endpoint (bool, optional)
+-fall_through <pin_list>                 # Reports the paths going through falling transition of specified pins (string, optional)
+-format <column_list>                    # Formats the report according to the column_list (string, optional)
+-from <pin_list>                         # Reports the paths going through specified from pins (string, optional)
+-from_fall <pin_list>                    # Reports the paths going through falling transition of specified from pins (string, optional)
+-from_rise <pin_list>                    # Reports the paths going through rising transition of specified from pins (string, optional)
+-hpin                                    # Prints all hierarchical crossings of an arc under hpin column in report_timing table (bool, optional)
+-late                                    # Generates the timing report for late paths (bool, optional)
+-machine_readable                        # Generates detailed timing report in machine-readable format (bool, optional)
+-max_paths <integer>                     # Reports the specified number of worst paths in the design, regardless of the endpoint (int, optional)
+-max_slack <float>                       # Reports only those paths with slack equal to or less than the value of float are reported
+                                         # (float, optional)
+-min_slack <float>                       # Reports only those paths whose slack is greater than the specified value (float, optional)
+-net                                     # Adds a row for the net arc (bool, optional)
+-not_fall_through <object_list>          # Reports paths that do not traverse through the falling transition of specified object list
+                                         # (string, optional)
+-not_rise_through <object_list>          # Reports paths that do not traverse through the rising transition of specified object list
+                                         # (string, optional)
+-not_through <object_list>               # Reports paths that do not traverse through the specified object list (string, optional)
+-nworst <integer>                        # Specifies the number of paths to be enumerated for each endpoint (int, optional)
+-path_exceptions {applied ignored all}   # Includes information of path exceptions applied and considered for the reported path (enum, optional)
+-path_group <groupname_list>             # Reports only paths contained in the groups specified in groupname_list (string, optional)
+-path_type {end summary full full_clock end_slack_only summary_slack_only}
+                                         # The path_type option lets you choose the format of the report by path type (enum, optional)
+-point_to_point                          # Traces the worst delay path between a pair of from-to pins (bool, optional)
+-quiet                                   # Specifies to exit quietly without issuing error (bool, optional)
+-retime {aocv path_slew_propagation aocv_path_slew_propagation waveform_propagation}
+                                         # Reanalyzes the specified set of paths using the specified method (enum, optional)
+-retime_format {manual retime_compare retime_replace}
+                                         # The retime format option lets you set the format of the report for retime related fields (enum, optional)
+-retime_mode {path exhaustive infinite_depth}
+                                         # Reanalyzes the specified set of paths using the specified method (enum, optional)
+-rise                                    # Reports the path with the rising edge on the endpoint (bool, optional)
+-skip_io_paths                           # Specifies whether I/O paths are to be ignored (bool, optional)
+-tcl_list                                # Produces the report in Tcl list format instead of a tabular format (bool, optional)
+-through <pin_list>                      # Reports the paths going through specified pins (string, optional)
+-through_fall <pin_list>                 # Reports the paths going through falling transition of specified pins (string, optional)
+-through_rise <pin_list>                 # Reports the paths going through rising transition of specified pins (string, optional)
+-to <pin_list>                           # Reports the paths going through specified to pins (string, optional)
+-to_fall <pin_list>                      # Reports the paths going through falling transition of specified to pins (string, optional)
+-to_rise <pin_list>                      # Reports the paths going through rising transition of specified to pins (string, optional)
+-unconstrained                           # Reports only the unconstrained paths (bool, optional)
+-unique_pins                             # Reports paths through unique set of pins (bool, optional)
+-view <viewName>                         # Generates a timing report for the specified analysis view only. By default all active views are analyzed
+                                         # (string, optional)
+-worst_rc_corner                         # Identifies worst interconnect parameter combination that leads to minimum slack (desired) and generates
+                                         # a report for the corner (bool, optional)
+> <filename[.gz]>                        # Redirects output to specified file (redirect_operator, optional)
+>> <filename[.gz]>                       # Redirects output to specified file (redirect_operator, optional)
+
+
+<CMD> report_timing -check_clocks
+No constrained timing paths found.
+Design may not be constrained or  library is missing timing information.
+
+<CMD> report_timing -
+
+Usage: report_timing [-help] [-check_clocks]
+                     [-check_type {setup hold clock_gating_setup clock_gating_hold clock_gating_pulse_width data_setup data_hold recovery removal pulse_width clock_period clock_separation skew no_change_setup no_change_hold}]
+                     [-debug {unconstrained time_borrow cppr_point constraint_arc}] [-delay_limit <float>] [-derate_summary]
+                     [-fall_through <pin_list>] [-format <column_list>] [-hpin] [-max_slack <float>] [-min_slack <float>] [-net]
+                     [-path_exceptions {applied ignored all}] [-path_group <groupname_list>]
+                     [-path_type {end summary full full_clock end_slack_only summary_slack_only}] [-quiet]
+                     [-retime {aocv path_slew_propagation aocv_path_slew_propagation waveform_propagation}]
+                     [-retime_format {manual retime_compare retime_replace}] [-retime_mode {path exhaustive infinite_depth}] [-skip_io_paths]
+                     [-through <pin_list>] [-through_fall <pin_list>] [-through_rise <pin_list>] [-unique_pins] [-worst_rc_corner]
+                     [> <filename[.gz]>] [>> <filename[.gz]>] [-late | -early ] [-rise | -fall ] [-begin_end_pair | [[ -max_paths <integer>] [-nworst <integer>]]] [-unconstrained | -point_to_point ] [-collection | -machine_readable | -tcl_list ] [-not_through <object_list> | -not_rise_through <object_list> | -not_fall_through <object_list> ] [ [-from <pin_list> | -from_rise <pin_list> | -from_fall <pin_list> ] [-clock_from <clk_signame_list> [-edge_from {lead trail}]] [-to <pin_list> | -to_rise <pin_list> | -to_fall <pin_list> ] [-clock_to <clk_signame_list> [-edge_to {lead trail}]] ] [-view <viewName> ]
+
+-help                                    # Prints out the command usage
+-begin_end_pair                          # Reports all violating paths between unique source and target begin and end pins (bool, optional)
+-check_clocks                            # Generates reports based on timing paths on the clock network instead of the standard timing to data
+                                         # endpoints (bool, optional)
+-check_type {setup hold clock_gating_setup clock_gating_hold clock_gating_pulse_width data_setup data_hold recovery removal pulse_width clock_period clock_separation skew no_change_setup no_change_hold}
+                                         # Reports only the paths that end at the specified timing check (enum, optional)
+-clock_from <clk_signame_list>           # Reports the paths going through specified launching clocks (string, optional)
+-clock_to <clk_signame_list>             # Reports the paths going through specified capturing clocks (string, optional)
+-collection                              # Returns a collection of timing paths (bool, optional)
+-debug {unconstrained time_borrow cppr_point constraint_arc}
+                                         # Used for debugging various features of the path (enum, optional)
+-delay_limit <float>                     # path delay limit for unconstrained paths (float, optional)
+-derate_summary                          # Generates an LOCV derating summary table for the launch and capture paths, in addition to the timing
+                                         # report (bool, optional)
+-early                                   # Generates the timing report for early paths (bool, optional)
+-edge_from {lead trail}                  # Reports the paths going through specified edge of launching clocks (enum, optional)
+-edge_to {lead trail}                    # Reports the paths going through specified edge of capturing clocks (enum, optional)
+-fall                                    # Reports the path with the falling edge on the endpoint (bool, optional)
+-fall_through <pin_list>                 # Reports the paths going through falling transition of specified pins (string, optional)
+-format <column_list>                    # Formats the report according to the column_list (string, optional)
+-from <pin_list>                         # Reports the paths going through specified from pins (string, optional)
+-from_fall <pin_list>                    # Reports the paths going through falling transition of specified from pins (string, optional)
+-from_rise <pin_list>                    # Reports the paths going through rising transition of specified from pins (string, optional)
+-hpin                                    # Prints all hierarchical crossings of an arc under hpin column in report_timing table (bool, optional)
+-late                                    # Generates the timing report for late paths (bool, optional)
+-machine_readable                        # Generates detailed timing report in machine-readable format (bool, optional)
+-max_paths <integer>                     # Reports the specified number of worst paths in the design, regardless of the endpoint (int, optional)
+-max_slack <float>                       # Reports only those paths with slack equal to or less than the value of float are reported
+                                         # (float, optional)
+-min_slack <float>                       # Reports only those paths whose slack is greater than the specified value (float, optional)
+-net                                     # Adds a row for the net arc (bool, optional)
+-not_fall_through <object_list>          # Reports paths that do not traverse through the falling transition of specified object list
+                                         # (string, optional)
+-not_rise_through <object_list>          # Reports paths that do not traverse through the rising transition of specified object list
+                                         # (string, optional)
+-not_through <object_list>               # Reports paths that do not traverse through the specified object list (string, optional)
+-nworst <integer>                        # Specifies the number of paths to be enumerated for each endpoint (int, optional)
+-path_exceptions {applied ignored all}   # Includes information of path exceptions applied and considered for the reported path (enum, optional)
+-path_group <groupname_list>             # Reports only paths contained in the groups specified in groupname_list (string, optional)
+-path_type {end summary full full_clock end_slack_only summary_slack_only}
+                                         # The path_type option lets you choose the format of the report by path type (enum, optional)
+-point_to_point                          # Traces the worst delay path between a pair of from-to pins (bool, optional)
+-quiet                                   # Specifies to exit quietly without issuing error (bool, optional)
+-retime {aocv path_slew_propagation aocv_path_slew_propagation waveform_propagation}
+                                         # Reanalyzes the specified set of paths using the specified method (enum, optional)
+-retime_format {manual retime_compare retime_replace}
+                                         # The retime format option lets you set the format of the report for retime related fields (enum, optional)
+-retime_mode {path exhaustive infinite_depth}
+                                         # Reanalyzes the specified set of paths using the specified method (enum, optional)
+-rise                                    # Reports the path with the rising edge on the endpoint (bool, optional)
+-skip_io_paths                           # Specifies whether I/O paths are to be ignored (bool, optional)
+-tcl_list                                # Produces the report in Tcl list format instead of a tabular format (bool, optional)
+-through <pin_list>                      # Reports the paths going through specified pins (string, optional)
+-through_fall <pin_list>                 # Reports the paths going through falling transition of specified pins (string, optional)
+-through_rise <pin_list>                 # Reports the paths going through rising transition of specified pins (string, optional)
+-to <pin_list>                           # Reports the paths going through specified to pins (string, optional)
+-to_fall <pin_list>                      # Reports the paths going through falling transition of specified to pins (string, optional)
+-to_rise <pin_list>                      # Reports the paths going through rising transition of specified to pins (string, optional)
+-unconstrained                           # Reports only the unconstrained paths (bool, optional)
+-unique_pins                             # Reports paths through unique set of pins (bool, optional)
+-view <viewName>                         # Generates a timing report for the specified analysis view only. By default all active views are analyzed
+                                         # (string, optional)
+-worst_rc_corner                         # Identifies worst interconnect parameter combination that leads to minimum slack (desired) and generates
+                                         # a report for the corner (bool, optional)
+> <filename[.gz]>                        # Redirects output to specified file (redirect_operator, optional)
+>> <filename[.gz]>                       # Redirects output to specified file (redirect_operator, optional)
+
+
+<CMD> report_timing -clock_from clk -clock_to clk -check_type setup
+Path 1: VIOLATED Late External Delay Assertion 
+Endpoint:   swerv/sb_axi_wdata[48] (^) checked with  leading edge of 'clk'
+Beginpoint: swerv/sb_axi_arsize[0] (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: nominal_analysis_view
+Other End Arrival Time          0.000
+- External Delay                2.500
++ Phase Shift                   1.000
+- Uncertainty                   0.350
+= Required Time                -1.850
+- Arrival Time                 22.178
+= Slack Time                  -24.028
+     Clock Rise Edge                      0.000
+     + Input Delay                        5.500
+     = Beginpoint Arrival Time            5.500
+      ---------------------------------------------------------------------------------------------------------------
+      Instance                                Arc                 Cell                      Delay   Arrival  Required  
+                                                                                                    Time     Time  
+      ---------------------------------------------------------------------------------------------------------------
+      swerv                                   sb_axi_arsize[0] v  swerv                     -       5.500    -18.528  
+      swerv/FE_MDBC117_g59203                 A v -> Z v          C12T28SOI_LR_CNBFX52_P0   0.332   5.832    -18.196  
+      swerv/FE_OFC6440_FE_MDBN117             A v -> Z ^          C12T28SOI_LR_IVX50_P0     0.029   5.861    -18.167  
+      swerv/FE_PSC93_FE_OFN150861_FE_MDBN117  A ^ -> Z ^          C12T28SOI_LR_BFX67_P0     0.027   5.888    -18.140  
+      swerv/FE_OFC6441_FE_MDBN117             A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.007   5.895    -18.133  
+      swerv/FE_PSC92_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   5.914    -18.114  
+      swerv/FE_PSC91_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.023   5.937    -18.091  
+      swerv/g59203                            A v -> Z v          C12T28SOI_LR_OR2X16_P0    0.047   5.984    -18.044  
+      swerv/FE_OFC5748_n_1652                 A v -> Z ^          C12T28SOI_LR_IVX67_P0     0.014   5.998    -18.030  
+      swerv/FE_OFC5777_n_1652                 A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.019   6.017    -18.011  
+      swerv/FE_OCPC6634_FE_OFN131248_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.034    -17.994  
+      swerv/FE_OFC5786_n                      A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.051    -17.977  
+      swerv/FE_OFC5787_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.069    -17.959  
+      swerv/FE_OFC5788_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.088    -17.940  
+      swerv/FE_OFC5789_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.106    -17.922  
+      swerv/FE_OFC5790_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.125    -17.903  
+      swerv/FE_OFC5791_n                      A ^ -> Z v          C12T28SOI_LR_IVX50_P0     0.008   6.133    -17.895  
+      swerv/FE_OFC5854_n                      A v -> Z ^          C12T28SOI_LR_IVX100_P0    0.009   6.141    -17.887  
+      swerv/FE_OCPC6637_FE_OFN131255_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.158    -17.870  
+      swerv/FE_OFC5855_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.176    -17.851  
+      swerv/FE_OFC5856_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.195    -17.833  
+      swerv/FE_OFC5857_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.020   6.215    -17.813  
+      swerv/FE_OFC5858_n                      A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.006   6.222    -17.806  
+      swerv/FE_OCPC6633_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   6.241    -17.787  
+      swerv/FE_OCPC6631_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.020   6.261    -17.767  
+      swerv/FE_OCPC6636_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.022   6.283    -17.745  
+      swerv/g59057                            B v -> Z ^          C12T28SOI_LRS_NOR2X55_P0  0.021   6.305    -17.723  
+      swerv/FE_OFC5847_n_1770                 A ^ -> Z ^          C12T28SOI_LR_BFX25_P0     0.040   6.345    -17.683  
+      swerv/g58895                            B ^ -> Z v          C12T28SOI_LR_AOI22X4_P0   0.030   6.375    -17.652  
+      swerv/g58774                            A v -> Z ^          C12T28SOI_LR_NAND2X5_P0   15.739  22.115   -1.913  
+      swerv                                   sb_axi_wdata[48] ^  swerv                     -       22.178   -1.850  
+      ---------------------------------------------------------------------------------------------------------------
+
+<CMD> report_timing -clock_from clk -clock_to _jtag_clk -check_type setup
+**ERROR: (TCLNL-709):	report_timing: Invalid list of -clock_to: '_jtag_clk'
+<CMD> report_clocks
+      -------------------------------------------------------------------------------------------------  
+                                                  Clock Descriptions                                               
+      -------------------------------------------------------------------------------------------------  
+                                                                                      Attributes          
+      -------------------------------------------------------------------------------------------------  
+        Clock      Source            View             Period    Lead    Trail   Generated   Propagated   
+         Name                                                                                            
+      -------------------------------------------------------------------------------------------------  
+       clk        clk      nominal_analysis_view     1.000   0.000    0.500       n           n        
+       jtag_tck   jtag_tck   nominal_analysis_view   100.000   0.000   50.000       n           n        
+      -------------------------------------------------------------------------------------------------  
+<CMD> report_timing -clock_from clk -clock_to _jtag_clk -check_type setup
+**ERROR: (TCLNL-709):	report_timing: Invalid list of -clock_to: '_jtag_clk'
+<CMD> report_timing -clock_from clk -clock_to _jtag_tck -check_type setup
+**ERROR: (TCLNL-709):	report_timing: Invalid list of -clock_to: '_jtag_tck'
+<CMD> report_timing -clock_from clk -clock_to jtag_tck -check_type setup
+No constrained timing paths with given description found.
+
+<CMD> report_timing -clock_from jtag_tck -clock_to jtag_tck -check_type setup
+No constrained timing paths with given description found.
+
+<CMD> report_timing -clock_from clk -clock_to clk -check_type setup -max_paths 30000 > oscar_setupviolations.txt
+<CMD> ctd_win -id ctdMain
+Creating clock tree spec for modes (timing configs): nominal_constraints
+extract_clock_generator_skew_groups=true: create_ccopt_clock_tree_spec will generate skew groups with a name prefix of "_clock_gen" to balance clock generator connected flops with the clock generator they drive.
+Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis done. (took cpu=0:00:00.0 real=0:00:00.0)
+Updating latch analysis done.
+Analyzing clock structure...
+Analyzing clock structure done.
+Extracting original clock gating for jtag_tck...
+  clock_tree jtag_tck contains 1 sinks and 0 clock gates.
+    Found 1 implicit ignore or stop or exclude pin - run report_ccopt_clock_trees -list_special_pins for more details.
+  Extraction for jtag_tck complete.
+Extracting original clock gating for jtag_tck done.
+Extracting original clock gating for clk...
+  clock_tree clk contains 1 sinks and 0 clock gates.
+    Found 1 implicit ignore or stop or exclude pin - run report_ccopt_clock_trees -list_special_pins for more details.
+  Extraction for clk complete.
+Extracting original clock gating for clk done.
+The skew group clk/nominal_constraints was created. It contains 1 sinks and 1 sources.
+The skew group jtag_tck/nominal_constraints was created. It contains 1 sinks and 1 sources.
+Checking clock tree convergence...
+Checking clock tree convergence done.
+Clock tree timing engine global stage delay update for nominal_delay_corner:both.late...
+Clock tree timing engine global stage delay update for nominal_delay_corner:both.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+<CMD> selectObject IO_Pin clk
+<CMD_INTERNAL> zoomSelected
+<CMD> deselectObject IO_Pin clk
+<CMD> selectObject IO_Pin clk
+<CMD_INTERNAL> zoomSelected
+<CMD> deselectObject IO_Pin clk
+<CMD_INTERNAL> zoomSelected
+<CMD> deselectObject IO_Pin clk
+<CMD> selectObject IO_Pin clk
+<CMD> deselectObject IO_Pin clk
+<CMD> selectObject IO_Pin clk
+<CMD> selectObject IO_Pin clk
+<CMD> selectObject IO_Pin clk
+<CMD> deselectObject IO_Pin clk
+<CMD> selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+<CMD> deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+<CMD> selectObject Pin i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAZI
+<CMD> selectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+<CMD> deselectInst i_WIRECELL_EXT_CSF_FC_LIN_clk
+<CMD> selectObject Pin swerv/FE_OFC352_pad_clk/Z
+<CMD> selectObject Pin swerv/FE_OFC352_pad_clk/Z
+<CMD> deselectObject Pin swerv/FE_OFC352_pad_clk/Z
+<CMD> selectInst FE_OFC353_pad_clk
+<CMD> deselectInst FE_OFC353_pad_clk
+<CMD> selectObject Pin FE_OFC353_pad_clk/Z
+<CMD> selectObject Pin FE_OFC353_pad_clk/Z
+<CMD> deselectObject Pin FE_OFC353_pad_clk/Z
+<CMD> selectObject Pin FE_OFC357_pad_clk/Z
+<CMD> selectObject Pin FE_OFC357_pad_clk/Z
+<CMD> deselectObject Pin FE_OFC357_pad_clk/Z
+<CMD> selectObject Pin FE_OFC408_FE_OFN370_pad_clk/Z
+<CMD> selectObject Pin FE_OFC408_FE_OFN370_pad_clk/Z
+<CMD> deselectObject Pin FE_OFC408_FE_OFN370_pad_clk/Z
+<CMD> selectObject Pin FE_OFC361_pad_clk/Z
+<CMD> selectObject Pin FE_OFC361_pad_clk/Z
+<CMD> deselectObject Pin FE_OFC361_pad_clk/Z
+<CMD> selectObject Pin swerv/FE_OFC6200_FE_OFN365_pad_clk/Z
+<CMD> selectObject Pin swerv/FE_OFC6200_FE_OFN365_pad_clk/Z
+<CMD> deselectObject Pin swerv/FE_OFC6200_FE_OFN365_pad_clk/Z
+<CMD> selectInst swerv/FE_OFC356_pad_clk
+<CMD> deselectInst swerv/FE_OFC356_pad_clk
+<CMD> selectInst swerv/FE_OFC356_pad_clk
+<CMD> deselectInst swerv/FE_OFC356_pad_clk
+<CMD> selectInst swerv/FE_OFC6201_FE_OFN365_pad_clk
+<CMD> deselectInst swerv/FE_OFC6201_FE_OFN365_pad_clk
+<CMD> selectObject Pin swerv/FE_OFC6201_FE_OFN365_pad_clk/Z
+<CMD> selectObject Pin swerv/FE_OFC6201_FE_OFN365_pad_clk/Z
+<CMD> deselectObject Pin swerv/FE_OFC6201_FE_OFN365_pad_clk/Z
+<CMD> selectObject Pin {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/Q}
+<CMD> selectObject Pin {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/Q}
+<CMD> deselectObject Pin {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/Q}
+<CMD> selectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> deselectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> selectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> deselectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> selectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> deselectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> selectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> report_timing -from swerv/dec_tlu_mpvhalt_ff_dout_reg[6]
+No constrained timing paths found.
+Paths may be unconstrained (try '-unconstrained' option).
+
+<CMD> report_timing -from swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+No constrained timing paths found.
+Paths may be unconstrained (try '-unconstrained' option).
+
+<CMD> deselectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> selectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> deselectInst {swerv/dec_tlu_mpvhalt_ff_dout_reg[6]}
+<CMD> selectInst i_WIRECELL_EXT_CSF_FC_LIN_debug_brkpt_status
+<CMD> deselectInst i_WIRECELL_EXT_CSF_FC_LIN_debug_brkpt_status
+<CMD> selectObject Pin swerv/FE_MDBC72_dec_tlu_g110407/Z
+<CMD> selectObject Pin swerv/FE_MDBC72_dec_tlu_g110407/Z
+<CMD> deselectObject Pin swerv/FE_MDBC72_dec_tlu_g110407/Z
+<CMD> selectObject Pin swerv/FE_OFC5901_FE_MDBN72/Z
+<CMD> selectObject Pin swerv/FE_OFC5901_FE_MDBN72/Z
+<CMD> selectInst swerv/FE_OFC5902_FE_MDBN72
+<CMD> report_timing -from swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -to swerv/FE_OFC5902_FE_MDBN72
+No constrained timing paths with given description found.
+Paths may be unconstrained (try '-unconstrained' option) or  may not exist.
+
+ambiguous command name "report_path": report_path_exceptions report_path_groups
+<CMD> deselectInst swerv/FE_OFC5902_FE_MDBN72
+<CMD> selectObject Pin swerv/dec_tlu_g110407/D
+<CMD> selectObject Pin swerv/dec_tlu_g110407/D
+<CMD> deselectObject Pin swerv/FE_OFC6087_FE_OFN4635_dec_tlu_internal_dbg_halt_mode/A
+<CMD> selectObject Pin swerv/FE_OFC6087_FE_OFN4635_dec_tlu_internal_dbg_halt_mode/A
+<CMD> selectObject Pin swerv/FE_OFC6087_FE_OFN4635_dec_tlu_internal_dbg_halt_mode/A
+<CMD> selectObject Net swerv/dec_tlu_internal_dbg_halt_mode
+<CMD> deselectObject Net swerv/dec_tlu_internal_dbg_halt_mode
+<CMD> selectObject Pin swerv/dec_tlu_g110407/C
+<CMD> selectObject Pin swerv/dec_tlu_g110407/C
+<CMD> deselectObject Net swerv/FE_OFN3683_dec_tlu_n_1993
+<CMD> selectObject Pin swerv/dec_tlu_g110407/B
+<CMD> selectObject Pin swerv/dec_tlu_g110407/B
+clk jtag_tck
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+**ERROR: (TCLCMD-917):	Cannot find 'clocks' that match 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+
+Usage: get_property [-help] <var_name> <property> [-clock <clock_name>] [-quiet] [-view <view_name>]
+
+
+<CMD> get_clock_network_objects -clocks clk
+clk i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIOPAD
+<CMD> get_clock_network_objects
+clk i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIOPAD jtag_tck i_WIRECELL_EXT_CSF_FC_LIN_jtag_tck/ANAIOPAD
+<CMD> report_clock_propagation
+
+Usage: report_clock_propagation [-help] -clock <clock_list> [-max_paths <number of paths>] -to <pin_port_list> [-verbose] [-view <viewName>]
+                                [> <filename[.gz]>] [>> <filename[.gz]>]
+
+**ERROR: (IMPTCM-46):	Argument "-clock" is required for command "report_clock_propagation", either this option is not specified or an option prior to it is not specified correctly.
+
+<CMD> report_clock_propagation -clock clk
+
+Usage: report_clock_propagation [-help] -clock <clock_list> [-max_paths <number of paths>] -to <pin_port_list> [-verbose] [-view <viewName>]
+                                [> <filename[.gz]>] [>> <filename[.gz]>]
+
+**ERROR: (IMPTCM-46):	Argument "-to" is required for command "report_clock_propagation", either this option is not specified or an option prior to it is not specified correctly.
+
+<CMD> report_clock_propagation -clock clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+
+Clock: clk
+Point: swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+View:  nominal_analysis_view
+Reason 1: The clock's root 'clk' is not in the fanin network of the pin 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+<CMD> report_clock_propagation -clock clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+
+Clock: clk
+Point: swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+View:  nominal_analysis_view
+Reason 1: The clock's root 'clk' is not in the fanin network of the pin 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+<CMD> report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'pad_clk'
+**ERROR: (TCLCMD-999):	Could not find any clock matching the values specified for '-clocks'
+
+ambiguous command name "report_cell": report_cell_edge_spacing report_cell_edge_type report_cell_instance_timing report_cell_stack_area report_cell_stack_group report_cell_virtual_align
+<CMD> deselectObject Pin swerv/dec_tlu_g110407/B
+<CMD> report_cell_instance_timing i_WIRECELL_EXT_CSF_FC_LIN_clk
+      -----------------------------------------------------------------------------------------------  
+                                                Instance i_WIRECELL_EXT_CSF_FC_LIN_clk of WIRECELL_EXT_CSF_FC_LIN                                             
+      -----------------------------------------------------------------------------------------------  
+          Pin        Dir    Propagated   Arrival   Required   Slack   Phase                            
+                               Slew                                                                    
+      -----------------------------------------------------------------------------------------------  
+         ASRCN[6]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[5]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[4]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[3]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[2]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[1]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[0]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[6]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[5]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[4]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[3]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[2]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[1]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[0]    BIDI                                                    (nominal_analysis_view)   
+          ANAIO ^    BIDI        0.002     0.000                      @(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+          ANAIO v    BIDI        0.002     0.000                      @(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+         ANAIOPAD    BIDI                                                    (nominal_analysis_view)   
+            ANAZI    BIDI                                                    (nominal_analysis_view)   
+           REFIOA    BIDI                                                    (nominal_analysis_view)   
+           REFIOB    BIDI                                                    (nominal_analysis_view)   
+           REFIOB    INTL                                                    (nominal_analysis_view)   
+           REFIOA    INTL                                                    (nominal_analysis_view)   
+            ANAZI    INTL                                                    (nominal_analysis_view)   
+            ANAIO    INTL                                                    (nominal_analysis_view)   
+         ASRCP[0]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[1]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[2]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[3]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[4]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[5]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[6]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[0]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[1]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[2]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[3]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[4]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[5]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[6]    INTL                                                    (nominal_analysis_view)   
+       ANAIOPAD ^    INTL        0.002     0.000                      clk(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD v    INTL        0.002                                clk(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD ^    INTL        0.002                                clk(D)(N)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD v    INTL        0.002     0.500                      clk(D)(N)(nominal_analysis_view)*   
+                                                                                                       
+      -----------------------------------------------------------------------------------------------  
+      -------------------------------------------------------  
+                               Instance i_WIRECELL_EXT_CSF_FC_LIN_clk of                           
+                               WIRECELL_EXT_CSF_FC_LIN                           
+      -------------------------------------------------------  
+            Arc            Slew                                
+      -------------------------------------------------------  
+        From    To      In      Out     Load   Delay   Phase   
+      -------------------------------------------------------  
+<CMD> selectObject Pin i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIOPAD
+<CMD> deselectObject Pin i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIOPAD
+<CMD> selectObject Pin i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO
+<CMD> set_propagated_clock
+
+Usage: set_propagated_clock [-help] <pin_clock_list>
+
+**ERROR: (IMPTCM-32):	Wrong number of arguments specified for command "CTE::set_propagated_clock".
+
+<CMD> set_propagated_clock clk
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+<CMD> set_propagated_clock 
+
+Usage: set_propagated_clock [-help] <pin_clock_list>
+
+**ERROR: (IMPTCM-32):	Wrong number of arguments specified for command "CTE::set_propagated_clock".
+
+<CMD> set_propagated_clock                                                                                                                                                 nominal_analysis_view
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+invalid command name "swerv/dec_tlu_mhpmc5h_ff_dff_dout_reg[23]/RN"
+invalid command name "swerv/dec_tlu_mhpmc5h_ff_dff_dout_reg[23]/Q"
+invalid command name "set_propagated_clocks"
+<CMD> set_propagated_clock [all_clocks]
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+<CMD> ctd_win -id ctdMain
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+<CMD> create_clock [get_ports {clk}]  -name clk -period 1.000000 -waveform {0.000000 0.500000}
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+<CMD> create_clock [get_ports {clk}]  -name pad_clk -period 1.000000 -waveform {0.000000 0.500000}
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+pad_clk
+<CMD> create_clock [get_nets {pad_clk}]  -name pad_clk -period 1.000000 -waveform {0.000000 0.500000}
+**ERROR: (TCLCMD-1048):	constraints are specified but no constraint mode is enabled interactively.Following example shows how to apply interactive constraints.
+
+ambiguous command name "*constraint*": __syn2ambit_compress_constraints __syn2ambit_write_pbc_constraints _get_interactive_constraint_file_name _report_constraint_mode all_constraint_modes analyze_ccopt_skew_group_constraints apply_boundary_model_constraints changeioconstraints checkbinaryconstraintversion checkmsconstraint clear_all_space_constraint create_area_constraint create_boundary_constraint create_constraint_mode create_enclosure_constraint create_floorplan_constraint_exception create_forbidden_libcell_constraint create_halo_constraint create_location_constraint create_object_extension_constraint create_parallel_run_length_constraint create_projection_length_difference_constraint create_ptm_constraint_arc create_same_length_site_constraint create_space_constraint create_track_constraint create_width_constraint deleteintegrouteconstraint dump_constraints_stats explain_ccopt_skew_group_constraints fpigenbusguideconstraint ...
+...too many match (>30)
+<CMD> all_constraint_modes
+nominal_constraints
+wrong # args: should be "_report_constraint_mode modeName"
+<CMD> get_constraint_mode $modeName -sdc_files
+/home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+     |   + SDC Constraint Files: /home/cadence/TFG2020-21_RISC-V/tools/tempus/innovusFiles/APC_final_con_bumps.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc
+<CMD> set_interactive_constraint_modes
+**ERROR: (TCLCMD-982):	Missing required argument '<modeNames>' in command 'set_interactive_constraint_modes'
+
+<CMD> set_interactive_constraint_modes nominal_constraints
+<CMD> set_propagated_clock [all_clocks]
+<CMD> report_cell_instance_timing i_WIRECELL_EXT_CSF_FC_LIN_clk
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Name: swerv_wrapper
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1568.38)
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49101' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49100' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49099' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49098' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49097' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49096' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49095' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49108' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49107' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49106' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49105' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49104' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49103' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49102' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49109' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49110' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49111' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43253' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43252' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43251' has no receivers. SI analysis is not performed.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[7], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+AAE_INFO-618: Total number of nets in the design is 129815,  79.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1598.45 CPU=0:00:27.5 REAL=0:00:27.0)
+End delay calculation (fullDC). (MEM=1598.45 CPU=0:00:28.7 REAL=0:00:28.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/ssv_tmpdir_9996_DwoCk8/.AAE_dTnq6L/.AAE_9996/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1598.2M)
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:00.0, MEM = 1598.2M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=1542.25)
+AAE_INFO-618: Total number of nets in the design is 129815,  0.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1583.63 CPU=0:00:00.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1583.63 CPU=0:00:00.5 REAL=0:00:00.0)
+      -----------------------------------------------------------------------------------------------  
+                                                Instance i_WIRECELL_EXT_CSF_FC_LIN_clk of WIRECELL_EXT_CSF_FC_LIN                                             
+      -----------------------------------------------------------------------------------------------  
+          Pin        Dir    Propagated   Arrival   Required   Slack   Phase                            
+                               Slew                                                                    
+      -----------------------------------------------------------------------------------------------  
+         ASRCN[6]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[5]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[4]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[3]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[2]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[1]    BIDI                                                    (nominal_analysis_view)   
+         ASRCN[0]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[6]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[5]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[4]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[3]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[2]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[1]    BIDI                                                    (nominal_analysis_view)   
+         ASRCP[0]    BIDI                                                    (nominal_analysis_view)   
+          ANAIO ^    BIDI        0.002     0.000                      @(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+          ANAIO v    BIDI        0.002     0.000                      @(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+         ANAIOPAD    BIDI                                                    (nominal_analysis_view)   
+            ANAZI    BIDI                                                    (nominal_analysis_view)   
+           REFIOA    BIDI                                                    (nominal_analysis_view)   
+           REFIOB    BIDI                                                    (nominal_analysis_view)   
+           REFIOB    INTL                                                    (nominal_analysis_view)   
+           REFIOA    INTL                                                    (nominal_analysis_view)   
+            ANAZI    INTL                                                    (nominal_analysis_view)   
+            ANAIO    INTL                                                    (nominal_analysis_view)   
+         ASRCP[0]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[1]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[2]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[3]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[4]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[5]    INTL                                                    (nominal_analysis_view)   
+         ASRCP[6]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[0]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[1]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[2]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[3]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[4]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[5]    INTL                                                    (nominal_analysis_view)   
+         ASRCN[6]    INTL                                                    (nominal_analysis_view)   
+       ANAIOPAD ^    INTL        0.002     0.000                      clk(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD v    INTL        0.002                                clk(D)(P)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD ^    INTL        0.002                                clk(D)(N)(nominal_analysis_view)*   
+                                                                                                       
+       ANAIOPAD v    INTL        0.002     0.500                      clk(D)(N)(nominal_analysis_view)*   
+                                                                                                       
+      -----------------------------------------------------------------------------------------------  
+      -------------------------------------------------------  
+                               Instance i_WIRECELL_EXT_CSF_FC_LIN_clk of                           
+                               WIRECELL_EXT_CSF_FC_LIN                           
+      -------------------------------------------------------  
+            Arc            Slew                                
+      -------------------------------------------------------  
+        From    To      In      Out     Load   Delay   Phase   
+      -------------------------------------------------------  
+<CMD> report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'pad_clk'
+**ERROR: (TCLCMD-999):	Could not find any clock matching the values specified for '-clocks'
+
+<CMD> report_clock_propagation -clock clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+
+Clock: clk
+Point: swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+View:  nominal_analysis_view
+Reason 1: The clock's root 'clk' is not in the fanin network of the pin 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+<CMD> check_timing
+    -------------------------------------------------------------------------------  
+                                 TIMING CHECK SUMMARY                                
+    -------------------------------------------------------------------------------  
+     Warning                            Warning Description              Number of   
+                                                                         Warnings    
+    -------------------------------------------------------------------------------  
+    clock_expected           Clock not found where clock is expected    14528
+    no_drive                 No drive assertion                         535
+    no_input_delay           No input delay assertion with respect to clock   533
+    uncons_endpoint          Unconstrained signal arriving at end point 34548
+    -------------------------------------------------------------------------------
+<CMD> create_clock [get_nets {pad_clk}]  -name pad_clk -period 1.000000 -waveform {0.000000 0.500000}
+**ERROR: (TCLNL-312):	create_clock: Invalid list of pins: '0x478e'
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_WIRECELL_EXT_CSF_FC_LIN_clk'
+**ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_WIRECELL_EXT_CSF_FC_LIN_clk'
+i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO
+<CMD> create_clock [get_pins {i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO}]  -name pad_clk -period 1.000000 -waveform {0.000000 0.500000}
+<CMD> check_timing
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Name: swerv_wrapper
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1591.84)
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49101' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49100' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49099' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49098' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49097' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49096' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49095' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49108' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49107' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49106' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49105' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49104' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49103' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49102' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49109' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49110' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49111' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43253' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43252' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43251' has no receivers. SI analysis is not performed.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[7], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+AAE_INFO-618: Total number of nets in the design is 129815,  79.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1618.89 CPU=0:00:27.0 REAL=0:00:27.0)
+End delay calculation (fullDC). (MEM=1618.89 CPU=0:00:28.2 REAL=0:00:28.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/ssv_tmpdir_9996_DwoCk8/.AAE_dTnq6L/.AAE_9996/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1618.7M)
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:01.0, MEM = 1618.7M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=1561.69)
+AAE_INFO-618: Total number of nets in the design is 129815,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1606.36 CPU=0:00:01.1 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1606.36 CPU=0:00:01.2 REAL=0:00:01.0)
+    -------------------------------------------------------------------------------  
+                                 TIMING CHECK SUMMARY                                
+    -------------------------------------------------------------------------------  
+     Warning                            Warning Description              Number of   
+                                                                         Warnings    
+    -------------------------------------------------------------------------------  
+    clock_expected           Clock not found where clock is expected    14454
+    ideal_clock_waveform     Clock waveform is ideal                    1
+    no_drive                 No drive assertion                         535
+    no_input_delay           No input delay assertion with respect to clock   533
+    uncons_endpoint          Unconstrained signal arriving at end point 34431
+    -------------------------------------------------------------------------------
+<CMD> report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+
+Clock: pad_clk
+Point: swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+View:  nominal_analysis_view
+Reason 1: The clock 'pad_clk' propagation stops due to the inactive timing arc:
+ (i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO->swerv/FE_OFC352_pad_clk/A)
+The partial clock path:
+      ---------------------------------------------------------------------------------  
+                   Source                         Sink              ArcType   ArcSense   
+      ---------------------------------------------------------------------------------  
+       i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO               
+                                        swerv/FE_OFC352_pad_clk/A   (net)     (net)      
+      ---------------------------------------------------------------------------------  
+Reason 1: The clock's root 'i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO' is not in the fanin network of the pin 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+<CMD> set_propagated_clock [all_clocks]                        
+<CMD> check_timing
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Name: swerv_wrapper
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1614.57)
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49101' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49100' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49099' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49098' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49097' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49096' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49095' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49108' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49107' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49106' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49105' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49104' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49103' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49102' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49109' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49110' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49111' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43253' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43252' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43251' has no receivers. SI analysis is not performed.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[7], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+AAE_INFO-618: Total number of nets in the design is 129815,  79.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1647.55 CPU=0:00:26.9 REAL=0:00:27.0)
+End delay calculation (fullDC). (MEM=1647.55 CPU=0:00:28.1 REAL=0:00:28.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/ssv_tmpdir_9996_DwoCk8/.AAE_dTnq6L/.AAE_9996/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1647.3M)
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:01.0, MEM = 1647.3M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=1592.35)
+AAE_INFO-618: Total number of nets in the design is 129815,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1637.01 CPU=0:00:00.9 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1637.01 CPU=0:00:00.9 REAL=0:00:01.0)
+    -------------------------------------------------------------------------------  
+                                 TIMING CHECK SUMMARY                                
+    -------------------------------------------------------------------------------  
+     Warning                            Warning Description              Number of   
+                                                                         Warnings    
+    -------------------------------------------------------------------------------  
+    clock_expected           Clock not found where clock is expected    14454
+    no_drive                 No drive assertion                         535
+    no_input_delay           No input delay assertion with respect to clock   533
+    uncons_endpoint          Unconstrained signal arriving at end point 34431
+    -------------------------------------------------------------------------------
+<CMD> report_timing
+Path 1: VIOLATED Late External Delay Assertion 
+Endpoint:   swerv/sb_axi_wdata[48] (^) checked with  leading edge of 'clk'
+Beginpoint: swerv/sb_axi_arsize[0] (v) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: nominal_analysis_view
+Other End Arrival Time          0.000
+- External Delay                2.500
++ Phase Shift                   1.000
+- Uncertainty                   0.350
+= Required Time                -1.850
+- Arrival Time                 22.178
+= Slack Time                  -24.028
+     Clock Rise Edge                      0.000
+     + Input Delay                        5.500
+     = Beginpoint Arrival Time            5.500
+      ---------------------------------------------------------------------------------------------------------------
+      Instance                                Arc                 Cell                      Delay   Arrival  Required  
+                                                                                                    Time     Time  
+      ---------------------------------------------------------------------------------------------------------------
+      swerv                                   sb_axi_arsize[0] v  swerv                     -       5.500    -18.528  
+      swerv/FE_MDBC117_g59203                 A v -> Z v          C12T28SOI_LR_CNBFX52_P0   0.332   5.832    -18.196  
+      swerv/FE_OFC6440_FE_MDBN117             A v -> Z ^          C12T28SOI_LR_IVX50_P0     0.029   5.861    -18.167  
+      swerv/FE_PSC93_FE_OFN150861_FE_MDBN117  A ^ -> Z ^          C12T28SOI_LR_BFX67_P0     0.027   5.888    -18.140  
+      swerv/FE_OFC6441_FE_MDBN117             A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.007   5.895    -18.133  
+      swerv/FE_PSC92_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   5.914    -18.114  
+      swerv/FE_PSC91_FE_OFN150862_FE_MDBN117  A v -> Z v          C12T28SOI_LR_BFX58_P0     0.023   5.937    -18.091  
+      swerv/g59203                            A v -> Z v          C12T28SOI_LR_OR2X16_P0    0.047   5.984    -18.044  
+      swerv/FE_OFC5748_n_1652                 A v -> Z ^          C12T28SOI_LR_IVX67_P0     0.014   5.998    -18.030  
+      swerv/FE_OFC5777_n_1652                 A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.019   6.017    -18.011  
+      swerv/FE_OCPC6634_FE_OFN131248_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.034    -17.994  
+      swerv/FE_OFC5786_n                      A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.051    -17.977  
+      swerv/FE_OFC5787_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.069    -17.959  
+      swerv/FE_OFC5788_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.088    -17.940  
+      swerv/FE_OFC5789_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.106    -17.922  
+      swerv/FE_OFC5790_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.125    -17.903  
+      swerv/FE_OFC5791_n                      A ^ -> Z v          C12T28SOI_LR_IVX50_P0     0.008   6.133    -17.895  
+      swerv/FE_OFC5854_n                      A v -> Z ^          C12T28SOI_LR_IVX100_P0    0.009   6.141    -17.887  
+      swerv/FE_OCPC6637_FE_OFN131255_n        A ^ -> Z ^          C12T28SOI_LR_BFX100_P0    0.017   6.158    -17.870  
+      swerv/FE_OFC5855_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.176    -17.851  
+      swerv/FE_OFC5856_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.018   6.195    -17.833  
+      swerv/FE_OFC5857_n                      A ^ -> Z ^          C12T28SOI_LR_BFX134_P0    0.020   6.215    -17.813  
+      swerv/FE_OFC5858_n                      A ^ -> Z v          C12T28SOI_LR_IVX100_P0    0.006   6.222    -17.806  
+      swerv/FE_OCPC6633_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.019   6.241    -17.787  
+      swerv/FE_OCPC6631_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.020   6.261    -17.767  
+      swerv/FE_OCPC6636_FE_OFN131284_n        A v -> Z v          C12T28SOI_LR_BFX58_P0     0.022   6.283    -17.745  
+      swerv/g59057                            B v -> Z ^          C12T28SOI_LRS_NOR2X55_P0  0.021   6.305    -17.723  
+      swerv/FE_OFC5847_n_1770                 A ^ -> Z ^          C12T28SOI_LR_BFX25_P0     0.040   6.345    -17.683  
+      swerv/g58895                            B ^ -> Z v          C12T28SOI_LR_AOI22X4_P0   0.030   6.375    -17.652  
+      swerv/g58774                            A v -> Z ^          C12T28SOI_LR_NAND2X5_P0   15.739  22.115   -1.913  
+      swerv                                   sb_axi_wdata[48] ^  swerv                     -       22.178   -1.850  
+      ---------------------------------------------------------------------------------------------------------------
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'pad_clk'
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'pad_clk'
+<CMD> set_propagated_clock [get_port pad_clk]                        
+**ERROR: (TCLCMD-917):	Cannot find 'ports, pins, or clocks' that match ''
+<CMD> report_clocks
+      ----------------------------------------------------------------------------------------------------------------------------  
+                                                                Clock Descriptions                                                            
+      ----------------------------------------------------------------------------------------------------------------------------  
+                                                                                                                 Attributes          
+      ----------------------------------------------------------------------------------------------------------------------------  
+        Clock                   Source                          View             Period    Lead    Trail   Generated   Propagated   
+         Name                                                                                                                       
+      ----------------------------------------------------------------------------------------------------------------------------  
+       clk                      clk                   nominal_analysis_view     1.000   0.000    0.500       n           y        
+       jtag_tck                jtag_tck                 nominal_analysis_view   100.000   0.000   50.000       n           y        
+        pad_clk   i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO   nominal_analysis_view     1.000   0.000    0.500       n           y        
+      ----------------------------------------------------------------------------------------------------------------------------  
+<CMD> create_clock [get_pins {i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO}]  -name "pad_clk" -period 1.000000 -waveform {0.000000 0.500000}
+**WARN: (TCLCMD-1594):	A clock with name pad_clk was already defined in the design. Previously defined clock definition of pad_clk will be overwritten.
+**WARN: (TCLCMD-958):	Previously defined source objects for clock 'pad_clk' have been overwritten. To avoid overwrite, ensure that all source objects are passed to the 'create_clock' command at once.
+<CMD> report_clocks
+      ----------------------------------------------------------------------------------------------------------------------------  
+                                                                Clock Descriptions                                                            
+      ----------------------------------------------------------------------------------------------------------------------------  
+                                                                                                                 Attributes          
+      ----------------------------------------------------------------------------------------------------------------------------  
+        Clock                   Source                          View             Period    Lead    Trail   Generated   Propagated   
+         Name                                                                                                                       
+      ----------------------------------------------------------------------------------------------------------------------------  
+       clk                      clk                   nominal_analysis_view     1.000   0.000    0.500       n           y        
+       jtag_tck                jtag_tck                 nominal_analysis_view   100.000   0.000   50.000       n           y        
+        pad_clk   i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO   nominal_analysis_view     1.000   0.000    0.500       n           y        
+      ----------------------------------------------------------------------------------------------------------------------------  
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'pad_clk'
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'pad_clk'
+<CMD> set_propagated_clock [get_port pad_clk]                        
+**ERROR: (TCLCMD-917):	Cannot find 'ports, pins, or clocks' that match ''
+pad_clk
+<CMD> set_propagated_clock [get_clock pad_clk]                        
+<CMD> update_timing -full
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Name: swerv_wrapper
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=1645.23)
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49101' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49100' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49099' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49098' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49097' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49096' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49095' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49108' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49107' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49106' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49105' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49104' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49103' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49102' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49109' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49110' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED49111' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43253' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43252' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'UNCONNECTED43251' has no receivers. SI analysis is not performed.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[3], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[1], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[5], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+**ERROR: (IMPESI-3201):	Delay calculation failed for net pad_sb_axi_wstrb[7], and the default value has been used. please review the log file for all errors of this type and contact Cadence for assistance in resolving this issue.
+AAE_INFO-618: Total number of nets in the design is 129815,  79.5 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1670.21 CPU=0:00:27.7 REAL=0:00:28.0)
+End delay calculation (fullDC). (MEM=1670.21 CPU=0:00:28.9 REAL=0:00:29.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/ssv_tmpdir_9996_DwoCk8/.AAE_dTnq6L/.AAE_9996/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1670.0M)
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:00.0, MEM = 1670.0M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=1615)
+AAE_INFO-618: Total number of nets in the design is 129815,  0.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1658.67 CPU=0:00:00.9 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1658.67 CPU=0:00:00.9 REAL=0:00:01.0)
+<CMD> check_timing
+    -------------------------------------------------------------------------------  
+                                 TIMING CHECK SUMMARY                                
+    -------------------------------------------------------------------------------  
+     Warning                            Warning Description              Number of   
+                                                                         Warnings    
+    -------------------------------------------------------------------------------  
+    clock_expected           Clock not found where clock is expected    14454
+    no_drive                 No drive assertion                         535
+    no_input_delay           No input delay assertion with respect to clock   533
+    uncons_endpoint          Unconstrained signal arriving at end point 34431
+    -------------------------------------------------------------------------------
+<CMD> report_clock_propagation -clock pad_clk -to swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP -verbose
+
+Clock: pad_clk
+Point: swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP
+View:  nominal_analysis_view
+Reason 1: The clock 'pad_clk' propagation stops due to the inactive timing arc:
+ (i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO->swerv/FE_OFC352_pad_clk/A)
+The partial clock path:
+      ---------------------------------------------------------------------------------  
+                   Source                         Sink              ArcType   ArcSense   
+      ---------------------------------------------------------------------------------  
+       i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO               
+                                        swerv/FE_OFC352_pad_clk/A   (net)     (net)      
+      ---------------------------------------------------------------------------------  
+Reason 1: The clock's root 'i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO' is not in the fanin network of the pin 'swerv/dec_tlu_mpvhalt_ff_dout_reg[6]/CP'
+<CMD> report_clock_propagation -clock pad_clk -to swerv/FE_OFC352_pad_clk/A -verbose
+
+Clock: pad_clk
+Point: swerv/FE_OFC352_pad_clk/A
+View:  nominal_analysis_view
+Reason 1: The clock 'pad_clk' propagation stops due to the inactive timing arc:
+ (i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO->swerv/FE_OFC352_pad_clk/A)
+The partial clock path:
+      ---------------------------------------------------------------------------------  
+                   Source                         Sink              ArcType   ArcSense   
+      ---------------------------------------------------------------------------------  
+       i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO               
+                                        swerv/FE_OFC352_pad_clk/A   (net)     (net)      
+      ---------------------------------------------------------------------------------  
+Reason 1: The clock's root 'i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO' is not in the fanin network of the pin 'swerv/FE_OFC352_pad_clk/A'
+<CMD> report_timing -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO -to swerv/FE_OFC352_pad_clk/A -path_type full_clock -debug
+**ERROR: (TCLCMD-166):	No value provided for option '-debug'. The option '-debug' requires a value to be specified for it. Run 'report_timing -help' to see the basic syntax for this command. Run 'man report_timing' to see a complete description of the command and its options. Review the syntax and specify a legal value for option '-debug'.
+
+<CMD> report_timing -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO -to swerv/FE_OFC352_pad_clk/A -path_type full_clock -debug unconstrained
+No constrained timing paths with given description found.
+Paths may be unconstrained (try '-unconstrained' option) or  may not exist.
+
+<CMD> report_timing -from i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO -to swerv/FE_OFC352_pad_clk/A -path_type full_clock -debug unconstrained -unconstrained
+No unconstrained timing paths with given description found.
+Paths may be constrained or  may not exist.
+
+<CMD> report_clock_propagation -clock pad_clk -to swerv/FE_OFC352_pad_clk/A -verbose
+
+Clock: pad_clk
+Point: swerv/FE_OFC352_pad_clk/A
+View:  nominal_analysis_view
+Reason 1: The clock 'pad_clk' propagation stops due to the inactive timing arc:
+ (i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO->swerv/FE_OFC352_pad_clk/A)
+The partial clock path:
+      ---------------------------------------------------------------------------------  
+                   Source                         Sink              ArcType   ArcSense   
+      ---------------------------------------------------------------------------------  
+       i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO               
+                                        swerv/FE_OFC352_pad_clk/A   (net)     (net)      
+      ---------------------------------------------------------------------------------  
+Reason 1: The clock's root 'i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO' is not in the fanin network of the pin 'swerv/FE_OFC352_pad_clk/A'
+invalid command name "set_enable_timing"
+
+Usage: set_disable_timing [-help] <object_list> [-from <pin_name> -to <pin_name>]
+
+-help                # Prints out the command usage
+<object_list>        # List of instance, instance pin, library cell, library cell pin objects, collection of
+                     # library arcs or collection of timing arcs (string, required)
+-from <pin_name>     # Specifies the source pin of the cell arc (string, optional)
+-to <pin_name>       # Specifies the sink pin of the cell arc (string, optional)
+
+
+<CMD> deselectObject Pin i_WIRECELL_EXT_CSF_FC_LIN_clk/ANAIO
+<CMD> set_disable_timing swerv/clk
+Multiple matches found:
+      enable_legacy_metric
+      enable_wire_load_model_support
+      metric_enable
+      timing_constraint_enable_drv_limit_override
+      timing_constraint_enable_logging
+      timing_constraint_enable_report_invalid_begin_end_points
+      timing_constraint_enable_search_path
+      timing_constraint_enable_separate_multicycle_data_checks
+      timing_enable_all_fanin_fanout_levels_compatibility
+      timing_enable_aocv_slack_based
+      timing_enable_backward_compatible_path_adjust_mode
+      timing_enable_case_analysis_conflict_warning
+      timing_enable_clock2clock_clockgating_check
+      timing_enable_clock_phase_based_rise_fall_derating
+      timing_enable_data_through_clock_gating
+      timing_enable_default_delay_arc
+      timing_enable_derating_for_pulsewidth_checks
+      timing_enable_early_late_data_slews_for_setuphold_mode_checks
+      timing_enable_genclk_divide_by_inherit_parent_duty_cycle
+      timing_enable_genclk_edge_based_source_latency
+      timing_enable_genclk_source_path_register_limit
+      timing_enable_get_object_escaped_name_backward_compatible
+      timing_enable_latch_thru_mode
+      timing_enable_latency_through_clock_gating
+      timing_enable_minmax_delay_segmentation
+      timing_enable_mmmc_loop_handling
+      timing_enable_model_constraint_warnings
+      timing_enable_multi_drive_net_reduction_with_assertions
+      timing_enable_multi_threaded_reporting
+      timing_enable_multifrequency_latch_analysis
+      timing_enable_path_delay_to_unconstrained_endpoints_compatibility
+      timing_enable_pessimistic_cppr_for_reconvergent_clock_paths
+      timing_enable_power_ground_constants
+      timing_enable_preset_clear_arcs
+      timing_enable_pulsed_latch
+      timing_enable_sdc_compatible_data_check_mcp
+      timing_enable_si_cppr
+      timing_enable_simultaneous_setup_hold_mode
+      timing_enable_spatial_derate_mode
+      timing_enable_timing_window_pessimism_removal
+      timing_enable_tristate_clock_gating
+      timing_enable_uncertainty_for_clock_checks
+      timing_enable_uncertainty_for_pulsewidth_checks
+      timing_enable_wire_load_compatibility_mode
+      timing_path_based_enable_exhaustive_depth_bounded_by_gba
+      timing_path_based_enable_report_launch_clock_path
+      timing_path_based_enable_verbose_mode
+      timing_path_based_exhaustive_enable_design_coverage
+      timing_report_constraint_enable_extended_drv_format
+      timing_report_drv_enable_clock_source_as_clock
+      timing_report_drv_enable_frequency_per_view
+      timing_report_drv_enable_slew_threshold_scaling
+      timing_report_enable_cppr_point
+      timing_report_enable_markers
+      timing_report_enable_max_capacitance_drv_for_constants
+      timing_report_enable_max_path_limit_crossed
+      timing_report_enable_si_debug
+      timing_report_enable_unique_pins_multiple_capture_clock_paths
+      timing_report_enable_use_valid_start_end_points
+      timing_report_enable_verbose_ssta_mode
+      timing_report_enable_worst_interclock_skew
+      timing_sdf_enable_setuphold_scond_ccond
+
+
+Usage: set_disable_timing [-help] <object_list> [-from <pin_name> -to <pin_name>]
+
+-help                # Prints out the command usage
+<object_list>        # List of instance, instance pin, library cell, library cell pin objects, collection of library
+                     # arcs or collection of timing arcs (string, required)
+-from <pin_name>     # Specifies the source pin of the cell arc (string, optional)
+-to <pin_name>       # Specifies the sink pin of the cell arc (string, optional)
+
+
+<CMD> exit
+
+*** Memory Usage v#2 (Current mem = 1593.664M, initial mem = 279.789M) ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+ERROR     IMPSE-25             1  You are using a Limited Access feature t...
+WARNING   IMPEXT-3423          1  Detected %d nets with incomplete RC netw...
+WARNING   UI-156              82  preference name '%s' is not supported in...
+WARNING   IMPSYC-3133          1  The unloadTimingCon command is not suppo...
+WARNING   IMPSYC-6134          1  Setting analysis mode to %s does not hav...
+ERROR     IMPSYC-6137          1  Command '%s' is obsolete as the software...
+WARNING   IMPCK-8086           1  The command %s is obsolete and will be r...
+WARNING   IMPESI-3095      136975  Net: '%s' has no receivers. SI analysis ...
+WARNING   IMPESI-3140          1  Bumpy transitions may exist in the desig...
+WARNING   IMPESI-621           1  Timing window restoration data eosdb.dat...
+ERROR     IMPESI-3201        695  Delay calculation failed for net %s, and...
+WARNING   IMPESI-3468          1  User needs to specify -equivalent_wavefo...
+ERROR     IMPCCOPT-2004        1  Cannot run %s as no clock trees are defi...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+ERROR     IMPTCM-32            2  Wrong number of arguments specified for ...
+ERROR     IMPTCM-46            2  Argument "%s" is required for command "%...
+WARNING   SPEF-1152        50852  Net '%s' is not fully specified as per i...
+ERROR     SPEF-1123         1836  Invalid capacitor node (%s) does not bel...
+ERROR     SPEF-1125            1  Capacitor nodes (%s) do not belong to ne...
+WARNING   SPEF-1124        98380  Invalid capacitor node (%s) found in D_N...
+ERROR     SPEF-1127        170528  Invalid CONN connection found (%s) for D...
+WARNING   SPEF-1132        20928  An invalid or ignored D_NET reference (%...
+WARNING   SPEF-1135        96464  Invalid resistor node (%s) found in D_NE...
+ERROR     SPEF-1134        74297  Invalid resistor node (%s) does not belo...
+ERROR     SPEF-1109            9  Duplicated D_NET reference (%s) found in...
+ERROR     SPEF-1149            1  Net (%s) referenced in SPEF but has no D...
+WARNING   IMPIMEX-10014        1  The current design data being restored: ...
+ERROR     TCLCMD-166           1  No value provided for option '%s'. The o...
+WARNING   TCLCMD-513           6  The software could not find a matching o...
+ERROR     TCLCMD-917           6  Cannot find '%s' that match '%s'         
+WARNING   TCLCMD-958           1  Previously defined source objects for cl...
+ERROR     TCLCMD-982           1  Missing required argument '%s' in comman...
+ERROR     TCLCMD-999           2  Could not find any %s matching the value...
+ERROR     TCLCMD-1048          6  constraints are specified but no constra...
+WARNING   TCLCMD-1594          1  A clock with name %s was already defined...
+ERROR     TCLNL-312            1  %s: Invalid list of pins: '%s'           
+ERROR     TCLNL-709            3  %s: Invalid list of %s: '%s'             
+WARNING   TECHLIB-302         28  No function defined for cell '%s'. The c...
+*** Message Summary: 403727 warning(s), 247394 error(s)
+
+--- Ending "Tempus Timing Signoff Solution" (totcpu=1:48:32, real=83:06:53, mem=1593.7M) ---
