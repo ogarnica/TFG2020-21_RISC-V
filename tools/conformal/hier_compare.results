@@ -1,0 +1,15 @@
+Status          Golden                            Revised                         
+--------------------------------------------------------------------------------
+Non-equivalent: dec_decode_ctl                    dec_decode_ctl                  
+Non-equivalent: dma_ctrl                          dma_ctrl                        
+Non-equivalent: dmi_wrapper                       dmi_wrapper                     
+Non-equivalent: exu                               exu                             
+Non-equivalent: ifu_aln_ctl                       ifu_aln_ctl                     
+Non-equivalent: ifu_bp_ctl                        ifu_bp_ctl                      
+Non-equivalent: ifu_mem_ctl                       ifu_mem_ctl                     
+Non-equivalent: lsu                               lsu                             
+Non-equivalent: lsu_bus_intf                      lsu_bus_intf                    
+Non-equivalent: mem                               mem                             
+Non-equivalent: swerv                             swerv                           
+Non-equivalent: swerv_wrapper                     swerv_wrapper                   
+Total Non-equivalent modules   = 12
