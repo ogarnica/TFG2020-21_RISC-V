@@ -1,0 +1,43 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.11-s087_1, built Aug 13 2019 11:48:07
+
+# Date: Tue Aug 10 19:49:48 2021
+# Host: portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (12cores*12cpus*1physical cpu*Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz 12288KB)
+# OS:   CentOS Linux release 7.8.2003 (Core)
+
+pwd
+cd ..
+cd ..
+cd ..
+pwd
+set html_log_enable true
+set rptDir "./syn/report"
+set netDir "./syn/netlist"
+set logDir "./syn/log"
+source syn/script/proc.tcl
+set RV_ROOT $env(RV_ROOT)
+source syn/script/library_configuration.tcl
+set_db lp_insert_clock_gating true
+set_dont_use C12T28SOI_LRPHP_CNHLSX29_P0 false
+set_db use_tiehilo_for_const duplicate
+set stage "read_rtl"
+set logFile ${logDir}/read_rtl
+redirect    ${logFile}.log {source syn/script/read_rtl_swerv.tcl -verbose} -tee -msg -stderr
+source syn/script/padding.tcl
+set stage "operating_cond"
+set rptFile ${rptDir}/[report_name  $stage]
+set_wire_load_mode top
+current_design "swerv_wrapper"
+uniquify "swerv_wrapper"
+source syn/script/constraints.tcl
+report_constraint -check_type clock_period > ${rptFile}_constraints.rpt
+source syn/script/dont_use_scan_flops.tcl
+syn_gen
+write_hdl > ./syn/netlist/myNetlistGen.v
+syn_map
+write_hdl > ./syn/netlist/myNetlistMap.v
+syn_opt
+write_hdl > ./syn/netlist/myNetlistOpt.v
+add_tieoffs -high C12T28SOI_LR_TOHX8 -low C12T28SOI_LR_TOLX8 -all -verbose -max_fanout 1 dmi_wrapper
+add_tieoffs -high C12T28SOI_LR_TOHX8 -low C12T28SOI_LR_TOLX8 -all -verbose -max_fanout 1 swerv_wrapper
+write_hdl > ./syn/netlist/myNetlistOpt_postTIE.v
+write_sdc > ./syn/netlist/constraints.sdc
