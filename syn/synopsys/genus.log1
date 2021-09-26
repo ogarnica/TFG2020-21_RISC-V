@@ -1,0 +1,978 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 19.11-s087_1, built Tue Aug 13 02:48:07 PDT 2019
+Options: 
+Date:    Fri Jan 08 18:25:09 2021
+Host:    portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB) (16266828KB)
+PID:     15656
+OS:      CentOS Linux release 7.8.2003 (Core)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (5 seconds elapsed).
+
+WARNING: This version of the tool is 514 days old.
+@genus:root: 1> set html_log_enable true
+true
+@genus:root: 2> set rptDir "./rpt"
+./rpt
+@genus:root: 3> set netDir "./net"
+./net
+@genus:root: 4> set logDir "./log"
+./log
+@genus:root: 5> 
+@genus:root: 5> source ../../syn/cadence/proc.tcl
+Sourcing '../../syn/cadence/proc.tcl' (Fri Jan 08 18:25:39 CET 2021)...
+#@ Begin verbose source syn/cadence/proc.tcl
+@file(proc.tcl) 1: proc report_name ...
+@file(proc.tcl) 5: proc reports ...
+#@ End verbose source syn/cadence/proc.tcl
+@genus:root: 6> 
+@genus:root: 6> #----------------------------------------------------- 1. Environment variables
+@genus:root: 7> set RV_ROOT $env(RV_ROOT)
+/home/cadence/TFG2020-21_RISC-V/src/eh1
+@genus:root: 8> 
+@genus:root: 8> #----------------------------------------------------- 2. Set search paths
+@genus:root: 9> source ../../syn/cadence/library_configuration.tcl
+Sourcing '../../syn/cadence/library_configuration.tcl' (Fri Jan 08 18:25:39 CET 2021)...
+#@ Begin verbose source syn/cadence/library_configuration.tcl
+@file(library_configuration.tcl) 2: set_db init_hdl_search_path {/home/cadence/TFG2020-21_RISC-V/src/eh1/configs/snapshots/default \
+                             /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib \
+                             /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include \
+			     /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi}
+  Setting attribute of root '/': 'init_hdl_search_path' = /home/cadence/TFG2020-21_RISC-V/src/eh1/configs/snapshots/default  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi
+@file(library_configuration.tcl) 8: set_db init_lib_search_path {/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs \
+			     /home/cadence/TFG2020-21_RISC-V/syn/synopsys/QTM}
+  Setting attribute of root '/': 'init_lib_search_path' = /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs  /home/cadence/TFG2020-21_RISC-V/syn/synopsys/QTM
+@file(library_configuration.tcl) 12: set_db library C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz
+
+Threads Configured:2
+
+  Message Summary for Library C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz:
+  ***********************************************************************
+  Could not find an attribute in the library. [LBR-436]: 419
+  An unsupported construct was detected in this library. [LBR-40]: 2
+  ***********************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.028000, 1.000000, 25.000000) in library 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+  Setting attribute of root '/': 'library' = C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz
+@file(library_configuration.tcl) 16: set_db script_search_path {/home/cadence/TFG2020-21_RISC-V/syn/cadence}
+  Setting attribute of root '/': 'script_search_path' = /home/cadence/TFG2020-21_RISC-V/syn/cadence
+#@ End verbose source syn/cadence/library_configuration.tcl
+1 /home/cadence/TFG2020-21_RISC-V/syn/cadence
+@genus:root: 10> 
+@genus:root: 10> #----------------------------------------------------- 3. Read RTL
+@genus:root: 11> set stage "read_rtl"
+read_rtl
+@genus:root: 12> set logFile ${logDir}/read_rtl
+./log/read_rtl
+@genus:root: 13> set src_files [list "pd_defines.vh" \
+                   "$RV_ROOT/design/include/swerv_types.sv" \
+                   "$RV_ROOT/design/swerv_wrapper.sv" \
+                   "$RV_ROOT/design/mem.sv" \
+                   "$RV_ROOT/design/pic_ctrl.sv" \
+                   "$RV_ROOT/design/swerv.sv" \
+                   "$RV_ROOT/design/dma_ctrl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_aln_ctl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_compress_ctl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_ifc_ctl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_bp_ctl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_mem_ctl.sv" \
+                   "$RV_ROOT/design/ifu/ifu_iccm_mem.sv" \
+                   "$RV_ROOT/design/ifu/ifu.sv" \
+                   "$RV_ROOT/design/dec/dec_decode_ctl.sv" \
+                   "$RV_ROOT/design/dec/dec_gpr_ctl.sv" \
+                   "$RV_ROOT/design/dec/dec_ib_ctl.sv" \
+                   "$RV_ROOT/design/dec/dec_tlu_ctl.sv" \
+                   "$RV_ROOT/design/dec/dec_trigger.sv" \
+                   "$RV_ROOT/design/dec/dec.sv" \
+                   "$RV_ROOT/design/exu/exu_alu_ctl.sv" \
+                   "$RV_ROOT/design/exu/exu_mul_ctl.sv" \
+                   "$RV_ROOT/design/exu/exu_div_ctl.sv" \
+                   "$RV_ROOT/design/exu/exu.sv" \
+                   "$RV_ROOT/design/lsu/lsu.sv" \
+                   "$RV_ROOT/design/lsu/lsu_clkdomain.sv" \
+                   "$RV_ROOT/design/lsu/lsu_addrcheck.sv" \
+                   "$RV_ROOT/design/lsu/lsu_lsc_ctl.sv" \
+                   "$RV_ROOT/design/lsu/lsu_stbuf.sv" \
+                   "$RV_ROOT/design/lsu/lsu_bus_buffer.sv" \
+                   "$RV_ROOT/design/lsu/lsu_bus_intf.sv" \
+                   "$RV_ROOT/design/lsu/lsu_ecc.sv" \
+                   "$RV_ROOT/design/lsu/lsu_dccm_mem.sv" \
+                   "$RV_ROOT/design/lsu/lsu_dccm_ctl.sv" \
+                   "$RV_ROOT/design/lsu/lsu_trigger.sv" \
+                   "$RV_ROOT/design/dbg/dbg.sv" \
+                   "$RV_ROOT/design/dmi/dmi_wrapper.v" \
+                   "$RV_ROOT/design/dmi/dmi_jtag_to_core_sync.v" \
+                   "$RV_ROOT/design/dmi/rvjtag_tap.sv" \
+                   "$RV_ROOT/design/lib/svci_to_axi4.sv" \
+                   "$RV_ROOT/design/lib/ahb_to_axi4.sv" \
+                   "$RV_ROOT/design/lib/axi4_to_ahb.sv" \
+  "$RV_ROOT/design/lib/beh_lib.sv" \
+  "$RV_ROOT/design/ifu/ifu_ic_mem.sv"]
+pd_defines.vh /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include/swerv_types.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/swerv_wrapper.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/mem.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/pic_ctrl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/swerv.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_aln_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_compress_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_ifc_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_bp_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_iccm_mem.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_gpr_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_ib_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_tlu_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_trigger.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_alu_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_div_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_clkdomain.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_addrcheck.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_lsc_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_stbuf.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_bus_buffer.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_bus_intf.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_ecc.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_dccm_mem.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_dccm_ctl.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_trigger.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dbg/dbg.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi/dmi_wrapper.v /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi/dmi_jtag_to_core_sync.v /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi/rvjtag_tap.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib/svci_to_axi4.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib/ahb_to_axi4.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib/axi4_to_ahb.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib/beh_lib.sv /home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_ic_mem.sv
+@genus:root: 14> 
+@genus:root: 14> 
+@genus:root: 14> read_hdl -language sv $src_files
+@genus:root: 15> 
+@genus:root: 15> read_libs {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz}
+Freeing libraries in memory (C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz)
+
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.028000, 1.000000, 25.000000) in library 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz'.
+@genus:root: 16> 
+@genus:root: 16> current_design "swerv_wrapper"
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'design' named 'swerv_wrapper' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+
+Usage: current_design [<design>]
+
+    [<design>]:
+        the design 
+@genus:root: 17> current_design swerv_wrapper
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'design' named 'swerv_wrapper' could not be found.
+
+Usage: current_design [<design>]
+
+    [<design>]:
+        the design 
+@genus:root: 18> current_design [swerv_wrapper]
+invalid command name "swerv_wrapper"
+@genus:root: 19> current_design
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [current_design]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on find_unique_design
+@genus:root: 20> elaborate swerv_wrapper
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'swerv_wrapper' from file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/swerv_wrapper.sv'.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'ifu_bp_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_bp_ctl.sv' on line 1075.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[fence_i]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+        : Genus removes the flip-flop or latch inferred for an unused signal or variable. To preserve the flip-flop or latch, set the hdl_preserve_unused_registers attribute to true or use a pragma in the RTL.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[fence]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[mret]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[ecall]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[ebreak]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[csr_imm]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[csr_set]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'i1_dp[csr_clr]' in module 'dec_decode_ctl' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dec/dec_decode_ctl.sv' on line 666.
+Warning : In legacy_ui mode, Genus creates a blackbox as description for a module is not found. Black boxes represent unresolved references in the design and are usually not expected. Another possible reason is, some libraries are not read and the tool could not get the content for some macros or lib_cells. [CDFG-428]
+        : A blackbox was created for instance 'dccm_bank' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/lsu/lsu_dccm_mem.sv' on line 123.
+        : Check the kind of module a black box is. If it is a lib_cell or a macro, check why the corresponding .lib was not read in. This could be either due to a missing or faulty file or due to an incomplete init_lib_search_path attribute value making restricting access to the missing file. If it is a module of your design, verify whether the path to this module is a part of the files you read or else check that the init_hdl_search_path attribute is not missing some paths.
+Warning : In legacy_ui mode, Genus creates a blackbox as description for a module is not found. Black boxes represent unresolved references in the design and are usually not expected. Another possible reason is, some libraries are not read and the tool could not get the content for some macros or lib_cells. [CDFG-428]
+        : A blackbox was created for instance 'ic_way_tag' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_ic_mem.sv' on line 488.
+Warning : In legacy_ui mode, Genus creates a blackbox as description for a module is not found. Black boxes represent unresolved references in the design and are usually not expected. Another possible reason is, some libraries are not read and the tool could not get the content for some macros or lib_cells. [CDFG-428]
+        : A blackbox was created for instance 'ic_bank_sb_way_data' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_ic_mem.sv' on line 251.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'rvjtag_tap' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi/rvjtag_tap.sv' on line 95.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_bresp_ff' of module 'rvdff_fpga_WIDTH2' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dbg/dbg.sv' on line 701, column 34.
+        : Run check_design to check 'Undriven Port(s)/Pin(s)' section for all undriven module input ports. It is better to double confirm with designer if these undriven ports are expected. During syn_gen the undriven ports are controlled by attribute 'hdl_unconnected_value', the default value is 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_rresp_ff' of module 'rvdff_fpga_WIDTH2' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dbg/dbg.sv' on line 702, column 34.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'unc_miss_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 504, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'mb_rep_wayf2_ff' of module 'rvdff_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 505, column 177.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'mb_tagv_ff' of module 'rvdff_fpga_WIDTH4' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 506, column 171.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'ifu_iccm_acc_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 507, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'ifu_iccm_reg_acc_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 508, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_ic_req_ff2' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1051, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_rdy_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1052, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_rsp_vld_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1053, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_cmd_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1054, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'scvi_rsp_cmd_ff' of module 'rvdff_fpga_WIDTH2' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1055, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'scvi_rsp_tag_ff' of module 'rvdff_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1056, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_data_ff' of module 'rvdff_fpga_WIDTH64' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1057, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_cmd_beat_ff' of module 'rvdff_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1082, column 202.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_rd_addr_ff' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1083, column 200.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[0].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[1].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[2].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[3].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[4].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[5].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[6].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[0].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[1].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[2].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[3].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[4].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[5].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[6].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_WAY_STATUS[7].WAY_STATUS[7].ic_way_status' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1243, column 41.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[0].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[0].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[0].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[0].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[1].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[1].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[1].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[1].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[2].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[2].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[2].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[2].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[3].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[3].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[3].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[3].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[4].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[4].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[4].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[4].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[5].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[5].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[5].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[5].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[6].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[6].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[6].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[6].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[7].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[7].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[7].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[7].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[8].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[8].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[8].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[8].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[9].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[9].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[9].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[9].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[10].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[10].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[10].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[10].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[11].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[11].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[11].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[11].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[12].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[12].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[12].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[12].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[13].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[13].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[13].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[13].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[14].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[14].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[14].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[14].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[15].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[15].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[15].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[15].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[16].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[16].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[16].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[16].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[17].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[17].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[17].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[17].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[18].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[18].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[18].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[18].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[19].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[19].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[19].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[19].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[20].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[20].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[20].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[20].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[21].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[21].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[21].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[21].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[22].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[22].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[22].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[22].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[23].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[23].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[23].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[23].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[24].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[24].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[24].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[24].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[25].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[25].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[25].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[25].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[26].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[26].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[26].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[26].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[27].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[27].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[27].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[27].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[28].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[28].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[28].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[28].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[29].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[29].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[29].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[29].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[30].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[30].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[30].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[30].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[31].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[31].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[31].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[0].TAG_VALID[31].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[0].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[0].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[0].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[0].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[1].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[1].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[1].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[1].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[2].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[2].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[2].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[2].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[3].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[3].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[3].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[3].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[4].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[4].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[4].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[4].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[5].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[5].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[5].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[5].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[6].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[6].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[6].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[6].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[7].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[7].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[7].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[7].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[8].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[8].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[8].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[8].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[9].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[9].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[9].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[9].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[10].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[10].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[10].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[10].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[11].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[11].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[11].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[11].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[12].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[12].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[12].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[12].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[13].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[13].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[13].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[13].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[14].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[14].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[14].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[14].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[15].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[15].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[15].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[15].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[16].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[16].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[16].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[16].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[17].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[17].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[17].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[17].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[18].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[18].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[18].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[18].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[19].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[19].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[19].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[19].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[20].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[20].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[20].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[20].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[21].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[21].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[21].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[21].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[22].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[22].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[22].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[22].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[23].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[23].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[23].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[23].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[24].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[24].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[24].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[24].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[25].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[25].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[25].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[25].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[26].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[26].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[26].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[26].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[27].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[27].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[27].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[27].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[28].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[28].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[28].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[28].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[29].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[29].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[29].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[29].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[30].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[30].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[30].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[30].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[31].ic_way0_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1313, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[31].ic_way1_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1322, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[31].ic_way2_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1331, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'CLK_GRP_TAG_VALID[1].TAG_VALID[31].ic_way3_tagvalid_dup' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/ifu/ifu_mem_ctl.sv' on line 1339, column 48.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'rs1_sign_e1_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 74, column 39.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'rs2_sign_e1_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 75, column 39.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'low_e1_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 76, column 39.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'ld_rs1_byp_e1_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 77, column 39.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'ld_rs2_byp_e1_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 78, column 39.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'low_e2_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 96, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'low_e3_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu_mul_ctl.sv' on line 110, column 39.
+Warning : Undriven module output port. [ELABUTL-123]
+        : Undriven bits of output port 'exu_mp_pkt[prett]' in module 'exu' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu.sv' on line 159, column 35.
+Warning : Undriven module output port. [ELABUTL-123]
+        : Undriven bits of output port 'exu_mp_pkt[br_start_error]' in module 'exu' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu.sv' on line 159, column 35.
+Warning : Undriven module output port. [ELABUTL-123]
+        : Undriven bits of output port 'exu_mp_pkt[br_error]' in module 'exu' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu.sv' on line 159, column 35.
+Warning : Undriven module output port. [ELABUTL-123]
+        : Undriven bits of output port 'exu_mp_pkt[valid]' in module 'exu' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/exu/exu.sv' on line 159, column 35.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_vldff' of module 'rvdffsc_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 412, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_data_vldff' of module 'rvdffsc_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 413, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'rdbuf_vldff' of module 'rvdffsc_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 414, column 40.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'fifo_full_bus_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 417, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'dbg_dma_bubble_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 418, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'dec_tlu_stall_dma_ff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 419, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_postedff' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 420, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_tagff' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 421, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_sizeff' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 422, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'wrbuf_byteenff' of module 'rvdffs_fpga_WIDTH8' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 423, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'rdbuf_tagff' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 424, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'rdbuf_sizeff' of module 'rvdffs_fpga_WIDTH3' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 425, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'mstr_prtyff' of module 'rvdffs_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 426, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_mstr_validff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 428, column 43.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'clk' of instance 'axi_slv_sentff' of module 'rvdff_fpga_WIDTH1' in file '/home/cadence/TFG2020-21_RISC-V/src/eh1/design/dma_ctrl.sv' on line 429, column 43.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'swerv_wrapper'.
+Warning : Black-boxes are represented as unresolved references in the design. [TUI-273]
+        : Cannot resolve reference to 'ram_2048x39'.
+        : Run check_design to get all unresolved instance. To resolve the reference, either load a technology library containing the cell by appending to the 'library' attribute, or read in the hdl file containing the module before performing elaboration. As the design is incomplete, synthesis results may not correspond to the entire design.
+Warning : Black-boxes are represented as unresolved references in the design. [TUI-273]
+        : Cannot resolve reference to 'ram_64x21'.
+Warning : Black-boxes are represented as unresolved references in the design. [TUI-273]
+        : Cannot resolve reference to 'ram_256x34'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+UM:   timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                      elaborate
+design:swerv_wrapper
+@genus:root: 21> current_design
+design:swerv_wrapper
+@genus:root: 22> elaborate rvoclkhdr
+Error   : Could not find an HDL design. [CDFG-210] [elaborate]
+        : The design is 'rvoclkhdr'.
+        : This error may happen if you read a set of files, and you try to elaborate a design which description is not part of the files read. To fix this, check the name of the design you want to elaborate, or check if you have read all the expected RTL files.
+      timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                      elaborate
+1
+@genus:root: 23> source ../../syn/cadence/read_rtl_swerv.tcl > ${logFile}.log
+Error   : A command argument did not match any of the acceptable command options. [TUI-64] [parse_options]
+        : The argument in question is '>'.
+        : Check the command usage and correct the input to the command.
+
+Usage: source [-quiet] [-verbose] [-rsrc] [-rsrcid] [-echo] <string>
+
+    [-quiet]:
+        do not print line-by-line information 
+    [-verbose]:
+        print line-by-line information 
+    [-rsrc]:
+        skip unsupported option 
+    [-rsrcid]:
+        skip unsupported option 
+    [-echo]:
+        echo each line 
+    <string>:
+        the file to source 
+@genus:root: 24> ../../syn/cadence/read_rtl_swerv.tcl > ${logFile}.log
+invalid command name "../../syn/cadence/read_rtl_swerv.tcl"
+@genus:root: 25> source ../../syn/cadence/read_rtl_swerv.tcl > <${logFile}.log>
+Error   : A command argument did not match any of the acceptable command options. [TUI-64] [parse_options]
+        : The argument in question is '>'.
+
+Usage: source [-quiet] [-verbose] [-rsrc] [-rsrcid] [-echo] <string>
+
+    [-quiet]:
+        do not print line-by-line information 
+    [-verbose]:
+        print line-by-line information 
+    [-rsrc]:
+        skip unsupported option 
+    [-rsrcid]:
+        skip unsupported option 
+    [-echo]:
+        echo each line 
+    <string>:
+        the file to source 
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 6608s, ST: 310s, FG: 310s, CPU: 9.7%}, MEM {curr: 1.2G, peak: 1.2G, phys curr: 0.7G, phys peak: 0.7G}, SYS {load: 0.1, cpu: 2, total: 15.5G, free: 12.4G}
+Abnormal exit.

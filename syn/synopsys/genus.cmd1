@@ -1,5 +1,20 @@
-#----------------------------------------------------- Design files
-set src_files [list "$RV_ROOT/design/include/swerv_types.sv" \
+# Cadence Genus(TM) Synthesis Solution, Version 19.11-s087_1, built Aug 13 2019 11:48:07
+
+# Date: Fri Jan 08 18:25:09 2021
+# Host: portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+# OS:   CentOS Linux release 7.8.2003 (Core)
+
+set html_log_enable true
+set rptDir "./rpt"
+set netDir "./net"
+set logDir "./log"
+source ../../syn/cadence/proc.tcl
+set RV_ROOT $env(RV_ROOT)
+source ../../syn/cadence/library_configuration.tcl
+set stage "read_rtl"
+set logFile ${logDir}/read_rtl
+set src_files [list "pd_defines.vh" \
+                   "$RV_ROOT/design/include/swerv_types.sv" \
                    "$RV_ROOT/design/swerv_wrapper.sv" \
                    "$RV_ROOT/design/mem.sv" \
                    "$RV_ROOT/design/pic_ctrl.sv" \
@@ -39,15 +54,18 @@ set src_files [list "$RV_ROOT/design/include/swerv_types.sv" \
                    "$RV_ROOT/design/dmi/rvjtag_tap.sv" \
                    "$RV_ROOT/design/lib/svci_to_axi4.sv" \
                    "$RV_ROOT/design/lib/ahb_to_axi4.sv" \
-                   "$RV_ROOT/design/lib/axi4_to_ahb.sv"]
-
-read_file -rtl -format sverilog  $src_files
-
-read_hdl -language sv  $src_files
-
-# If the file contains several modules then it must be analyzed.
-analyze -format sverilog -lib WORK $RV_ROOT/design/lib/beh_lib.sv
-analyze -format sverilog -lib WORK $RV_ROOT/design/ifu/ifu_ic_mem.sv
-
+                   "$RV_ROOT/design/lib/axi4_to_ahb.sv" \
+  "$RV_ROOT/design/lib/beh_lib.sv" \
+  "$RV_ROOT/design/ifu/ifu_ic_mem.sv"]
+read_hdl -language sv $src_files
+read_libs {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz}
 current_design "swerv_wrapper"
-link
+current_design swerv_wrapper
+current_design [swerv_wrapper]
+current_design
+elaborate swerv_wrapper
+current_design
+elaborate rvoclkhdr
+source ../../syn/cadence/read_rtl_swerv.tcl > ${logFile}.log
+../../syn/cadence/read_rtl_swerv.tcl > ${logFile}.log
+source ../../syn/cadence/read_rtl_swerv.tcl > <${logFile}.log>

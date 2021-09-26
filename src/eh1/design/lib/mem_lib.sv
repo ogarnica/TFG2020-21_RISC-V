@@ -147,11 +147,33 @@ module ram_2048x39
 
    reg [38:0]   ram_core [2047:0];
 
-   always @(posedge CLK) begin
+   /*always @(posedge CLK) begin
       if (WE) begin// for active high WE - must be specified by user
          ram_core[ADR] <= D; Q <= 'x; end else
            Q <= ram_core[ADR];
+   end*/
+
+reg WEN;
+   always_comb begin
+	if(WE) begin
+		WEN=1'd0;
+	end else begin
+		WEN=1'd1;
+	end 
+	
    end
+
+
+
+   ST_SPHD_HIPERF_2048x39m4_Tl i_mem (.D(D), .A(ADR), .WEN(WEN), .CSN(1'd0), .CK(CLK), 
+       .TBYPASS(1'd0), .STDBY(1'd0), .IG(1'd0), .INITN(1'd1), 
+       .ATP(1'd0), .SLEEP(1'd1),  
+       .TCSN(1'd0), .TWEN(1'd0), .TED(1'd0), .TOD(1'd0), .TA(11'd0), 
+       .TBIST(1'd0), 
+       .Q(Q), 
+       .SE(1'd0), .SCTRLI(1'd0), .SDLI(1'd0), .SDRI(1'd0),
+       .SCTRLO(), .SDLO(), .SDRO() //SON OUTPUT
+   );
 
 
 
@@ -194,11 +216,30 @@ module ram_1024x39
 
    reg [38:0]   ram_core [1023:0];
 
-   always @(posedge CLK) begin
-      if (WE) begin// for active high WE - must be specified by user
-         ram_core[ADR] <= D; Q <= 'x; end else
-           Q <= ram_core[ADR];
+//mirar ta, 
+//adr añadir un bit, a es de 10bit y adr tiene 9
+
+reg WEN;
+reg[10:0] NewADR;
+   always_comb begin
+	if(WE) begin
+		WEN=1'd0;
+	end else begin
+		WEN=1'd1;
+	end 
+	
+	NewADR={1'd0, ADR};
    end
+
+   ST_SPHD_HIPERF_2048x39m4_Tl i_mem (.D(D), .A(NewADR), .WEN(WEN), .CSN(1'd0), .CK(CLK), 
+       .TBYPASS(1'd0), .STDBY(1'd0), .IG(1'd0), .INITN(1'd1), 
+       .ATP(1'd0), .SLEEP(1'd1),  
+       .TCSN(1'd0), .TWEN(1'd0), .TED(1'd0), .TOD(1'd0), .TA(11'd0), 
+       .TBIST(1'd0), 
+       .Q(Q), 
+       .SE(1'd0), .SCTRLI(1'd0), .SDLI(1'd0), .SDRI(1'd0),
+       .SCTRLO(), .SDLO(), .SDRO() //SON OUTPUT
+   );
 
 
 
@@ -533,12 +574,31 @@ module ram_256x34
 
    reg [33:0]   ram_core [255:0];
 
-   always @(posedge CLK) begin
+   /*always @(posedge CLK) begin
       if (WE) begin// for active high WE - must be specified by user
          ram_core[ADR] <= D; Q <= 'x; end else
            Q <= ram_core[ADR];
+   end*/
+reg WEN;
+	always_comb begin
+	if(WE) begin
+		WEN=1'd0;
+	end else begin
+		WEN=1'd1;
+	end 
+	
    end
 
+
+   ST_SPHD_HIPERF_256x34m4_Tl i_mem (.D(D), .A(ADR), .WEN(WEN), .CSN(1'd0), .CK(CLK), 
+       .TBYPASS(1'd0), .STDBY(1'd0), .IG(1'd0), .INITN(1'd1), 
+       .ATP(1'd0), .SLEEP(1'd1),  
+       .TCSN(1'd0), .TWEN(1'd0), .TED(1'd0), .TOD(1'd0), .TA(8'd0), 
+       .TBIST(1'd0), 
+       .Q(Q), 
+       .SE(1'd0), .SCTRLI(1'd0), .SDLI(1'd0), .SDRI(1'd0),
+       .SCTRLO(), .SDLO(), .SDRO() //SON OUTPUT
+   );
 
 
 
@@ -884,12 +944,31 @@ module ram_64x21
 
    reg [20:0]   ram_core [63:0];
 
-   always @(posedge CLK) begin
-      if (WE) begin// for active high WE - must be specified by user
-         ram_core[ADR] <= D; Q <= 'x; end else
-           Q <= ram_core[ADR];
+   //always @(posedge CLK) begin
+   //   if (WE) begin// for active high WE - must be specified by user
+   //      ram_core[ADR] <= D; Q <= 'x; end else
+   //        Q <= ram_core[ADR];
+   //end
+reg WEN;
+	always_comb begin
+	if(WE) begin
+		WEN=1'd0;
+	end else begin
+		WEN=1'd1;
+	end 
+	
    end
+	
 
+   ST_SPHD_HIPERF_64x21m4_Tl i_mem (.D(D), .A(ADR), .WEN(WEN), .CSN(1'd0), .CK(CLK), 
+       .TBYPASS(1'd0), .STDBY(1'd0), .IG(1'd0), .INITN(1'd1), 
+       .ATP(1'd0), .SLEEP(1'd1),  
+       .TCSN(1'd0), .TWEN(1'd0), .TED(1'd0), .TOD(1'd0), .TA(6'd0), 
+       .TBIST(1'd0), 
+       .Q(Q), 
+       .SE(1'd0), .SCTRLI(1'd0), .SDLI(1'd0), .SDRI(1'd0),
+       .SCTRLO(), .SDLO(), .SDRO() //SON OUTPUT
+   );
 
 endmodule // ram_64x21
 

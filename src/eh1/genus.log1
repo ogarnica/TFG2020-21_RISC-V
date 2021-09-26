@@ -1,0 +1,177 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 19.11-s087_1, built Tue Aug 13 02:48:07 PDT 2019
+Options: 
+Date:    Sun May 23 12:55:54 2021
+Host:    portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB) (16266828KB)
+PID:     1672
+OS:      CentOS Linux release 7.8.2003 (Core)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Sourcing GUI preferences file /home/cadence/.cadence/genus/gui.tcl...
+Finished loading tool scripts (5 seconds elapsed).
+
+WARNING: This version of the tool is 649 days old.
+@genus:root: 1> pwd
+/home/cadence/TFG2020-21_RISC-V/src/eh1
+@genus:root: 2> cd ..
+@genus:root: 3> cd ..
+@genus:root: 4> pwd
+/home/cadence/TFG2020-21_RISC-V
+@genus:root: 5> clear
+@genus:root: 6> set html_log_enable true
+true
+@genus:root: 7> set rptDir "./syn/reportNoLimpio"
+./syn/reportNoLimpio
+@genus:root: 8> set netDir "./syn/netNoLimpio"
+./syn/netNoLimpio
+@genus:root: 9> set logDir "./syn/logNoLimpio"
+./syn/logNoLimpio
+@genus:root: 10> 
+@genus:root: 10> source syn/scriptNoLimpio/proc.tcl
+Sourcing './syn/scriptNoLimpio/proc.tcl' (Sun May 23 13:03:06 CEST 2021)...
+#@ Begin verbose source syn/scriptNoLimpio/proc.tcl
+@file(proc.tcl) 1: proc report_name ...
+@file(proc.tcl) 5: proc reports ...
+#@ End verbose source syn/scriptNoLimpio/proc.tcl
+@genus:root: 11> 
+@genus:root: 11> #----------------------------------------------------- 1. Environment variables
+@genus:root: 12> set RV_ROOT $env(RV_ROOT)
+/home/cadence/TFG2020-21_RISC-V/src/eh1
+@genus:root: 13> set_db init_hdl_search_path {/home/cadence/TFG2020-21_RISC-V/src/eh1/configs/snapshots/default_pd \
+                             /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib \
+                             /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include \
+     /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi}
+  Setting attribute of root '/': 'init_hdl_search_path' = /home/cadence/TFG2020-21_RISC-V/src/eh1/configs/snapshots/default_pd  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi
+1 {/home/cadence/TFG2020-21_RISC-V/src/eh1/configs/snapshots/default_pd  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/lib  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/include  /home/cadence/TFG2020-21_RISC-V/src/eh1/design/dmi}
+@genus:root: 14> clear
+@genus:root: 15> set_db init_lib_search_path {/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs \
+     /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs  \
+     /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs \
+     /usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs \
+/home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs
+     }
+  Setting attribute of root '/': 'init_lib_search_path' = /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs  /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs   /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs  /usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs  /home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs
+     
+1 {/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs  /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs   /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs  /usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs  /home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs
+     }
+@genus:root: 16> set_db library {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+1
+@genus:root: 17> set_db library {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.db }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.db'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.db' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.db ' cannot be set for attribute 'library'.
+1
+@genus:root: 18> set_db library {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal_2ey.lib }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal_2ey.lib'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal_2ey.lib' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal_2ey.lib ' cannot be set for attribute 'library'.
+1
+@genus:root: 19> set_db library {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib ' cannot be set for attribute 'library'.
+1
+@genus:root: 20> set_db library {C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'C28SOI_SC_12_CORE_LR_tt28_1.00V_25C.lib.gz C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz
+SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib ' cannot be set for attribute 'library'.
+1
+@genus:root: 21> clear
+@genus:root: 22> set_db library {SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib }
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib ' cannot be set for attribute 'library'.
+1
+@genus:root: 23> set_db library {SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib}
+Error   : File error. [FILE-100] [set_db]
+        : Cannot open file 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'
+Error   : A library file does not exist. [LBR-68] [set_db]
+        : File 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [set_db]
+        : The value 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' cannot be set for attribute 'library'.
+1
+@genus:root: 24> help set_db
+Commands:
+  set_db: set attributes on objects 
+
+Usage: set_db [-quiet] [-verbose] [-dbu] [-index <string>] <string> <string> [<string>]
+
+    [-quiet]:
+        keeps quiet unless there are problems 
+    [-verbose]:
+        enables verbose 
+    [-dbu]:
+        indicates that attribute (coord, pt, rect, polygon, area, etc.) will be in database units 
+    [-index <string>]:
+        list of indices in a form of pairs of index_name value or a object name 
+    <string>:
+        <start> can be any object list (or collection) or <shorthand> (e.g., nets, insts, etc) 
+    <string>:
+        the <chain> is in the form [.<attribute_name1>[.<attribute_name2>]...] 
+    [<string>]:
+        the attribute value 
+
+
+@genus:root: 25> set_db library {home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib}
+
+Threads Configured:2
+
+  Message Summary for Library SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib:
+  ***********************************************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 9
+  An unsupported construct was detected in this library. [LBR-40]: 2
+  ***********************************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.028000, 0.900000, 25.000000) in library 'SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+  Setting attribute of root '/': 'library' = home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib
+1 home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 1531s, ST: 70s, FG: 70s, CPU: 9.5%}, MEM {curr: 0.8G, peak: 0.8G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.3, cpu: 2, total: 15.5G, free: 7.5G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 1532s, ST: 70s, FG: 70s, CPU: 9.5%}, MEM {curr: 0.8G, peak: 0.8G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.3, cpu: 2, total: 15.5G, free: 7.5G}
+Abnormal exit.
