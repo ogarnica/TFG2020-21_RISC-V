@@ -1,0 +1,753 @@
+[06/02 09:07:11      0s] 
+[06/02 09:07:11      0s] Cadence Innovus(TM) Implementation System.
+[06/02 09:07:11      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[06/02 09:07:11      0s] 
+[06/02 09:07:11      0s] Version:	v19.11-s128_1, built Tue Aug 20 20:54:34 PDT 2019
+[06/02 09:07:11      0s] Options:	
+[06/02 09:07:11      0s] Date:		Wed Jun  2 09:07:11 2021
+[06/02 09:07:11      0s] Host:		portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (1core*4cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+[06/02 09:07:11      0s] OS:		CentOS Linux release 7.8.2003 (Core)
+[06/02 09:07:11      0s] 
+[06/02 09:07:11      0s] License:
+[06/02 09:07:11      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[06/02 09:07:11      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[06/02 09:07:21      9s] @(#)CDS: Innovus v19.11-s128_1 (64bit) 08/20/2019 20:54 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 09:07:21      9s] @(#)CDS: NanoRoute 19.11-s128_1 NR190815-2055/19_11-UB (database version 18.20, 469.7.1) {superthreading v1.51}
+[06/02 09:07:21      9s] @(#)CDS: AAE 19.11-s034 (64bit) 08/20/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 09:07:21      9s] @(#)CDS: CTE 19.11-s040_1 () Aug  1 2019 08:53:57 ( )
+[06/02 09:07:21      9s] @(#)CDS: SYNTECH 19.11-e010_1 () Jul 15 2019 20:31:02 ( )
+[06/02 09:07:21      9s] @(#)CDS: CPE v19.11-s006
+[06/02 09:07:21      9s] @(#)CDS: IQuantus/TQuantus 19.1.2-s245 (64bit) Thu Aug 1 10:22:01 PDT 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 09:07:21      9s] @(#)CDS: OA 22.60-p020 Mon May 13 19:21:36 2019
+[06/02 09:07:21      9s] @(#)CDS: SGN 18.10-d003 (18-Jul-2018) (64 bit executable, Qt5.9.1)
+[06/02 09:07:21      9s] @(#)CDS: RCDB 11.14.18
+[06/02 09:07:21      9s] @(#)CDS: STYLUS 19.10-s008_1 (06/27/2019 02:55 PDT)
+[06/02 09:07:21      9s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_24601_portatil_cadence_hSiXEi.
+
+[06/02 09:07:21      9s] Change the soft stacksize limit to 0.2%RAM (84 mbytes). Set global soft_stack_size_limit to change the value.
+[06/02 09:07:21      9s] 
+[06/02 09:07:21      9s] **INFO:  MMMC transition support version v31-84 
+[06/02 09:07:21      9s] 
+[06/02 09:07:21      9s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[06/02 09:07:21      9s] <CMD> suppressMessage ENCEXT-2799
+[06/02 09:07:22      9s] <CMD> getVersion
+[06/02 09:07:22      9s] [INFO] Loading PVS 19.10 fill procedures
+[06/02 09:07:22     10s] <CMD> win
+[06/02 09:09:27     23s] <CMD> encMessage warning 1
+[06/02 09:09:27     23s] <CMD> encMessage debug 0
+[06/02 09:09:27     23s] <CMD> encMessage info 1
+[06/02 09:09:27     23s] <CMD> is_common_ui_mode
+[06/02 09:09:27     23s] <CMD> restoreDesign /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat swerv_wrapper
+[06/02 09:09:28     23s] #% Begin load design ... (date=06/02 09:09:28, mem=517.2M)
+[06/02 09:09:28     23s] Set Default Input Pin Transition as 0.1 ps.
+[06/02 09:09:28     23s] Loading design 'swerv_wrapper' saved by 'Innovus' '19.11-s128_1' on 'Wed Jun 2 08:33:56 2021'.
+[06/02 09:09:30     25s] % Begin Load MMMC data ... (date=06/02 09:09:30, mem=519.4M)
+[06/02 09:09:30     25s] % End Load MMMC data ... (date=06/02 09:09:30, total cpu=0:00:00.0, real=0:00:00.0, peak res=519.5M, current mem=519.5M)
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/technology.lef ...
+[06/02 09:09:30     25s] **WARN: (IMPLF-122):	The direction of the layer 'IA' is the same as
+[06/02 09:09:30     25s] the previous routing layer. Make sure this is on purpose or correct
+[06/02 09:09:30     25s] the direction of the layer. In most cases, the routing layers
+[06/02 09:09:30     25s] alternate in direction between HORIZONTAL and VERTICAL.
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/viarule_generate.lef ...
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/sites.lef ...
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef ...
+[06/02 09:09:30     25s] WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+[06/02 09:09:30     25s] The LEF parser will ignore this statement.
+[06/02 09:09:30     25s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef at line 2.
+[06/02 09:09:30     25s] Set DBUPerIGU to M1 pitch 136.
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef ...
+[06/02 09:09:30     25s] WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+[06/02 09:09:30     25s] The LEF parser will ignore this statement.
+[06/02 09:09:30     25s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef at line 2.
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_IO_BUMP_6U1X2T8XLB_soc.lef ...
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_IO_EXT_ALLF_CORESUPPLY_EG_soc.lef ...
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_IO_EXT_CSF_BASIC_EG_soc.lef ...
+[06/02 09:09:30     25s] 
+[06/02 09:09:30     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_SC_12_PR_LR_soc.lef ...
+[06/02 09:09:31     25s] 
+[06/02 09:09:31     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/C28SOI_IO_EXT_ALLF_FBBRBB_SUBSTRATEBIAS_LR_EG_soc.lef ...
+[06/02 09:09:31     25s] 
+[06/02 09:09:31     25s] Loading LEF file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef ...
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCP[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCP[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'REFIOA' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'REFIOA' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'REFIOB' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'REFIOB' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-201):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-201' for more detail.
+[06/02 09:09:31     25s] **WARN: (IMPLF-200):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 09:09:31     25s] Type 'man IMPLF-200' for more detail.
+[06/02 09:09:31     25s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[06/02 09:09:31     25s] To increase the message display limit, refer to the product command reference manual.
+[06/02 09:09:31     25s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[06/02 09:09:31     25s] To increase the message display limit, refer to the product command reference manual.
+[06/02 09:09:31     25s] 
+[06/02 09:09:31     25s] viaInitial starts at Wed Jun  2 09:09:31 2021
+viaInitial ends at Wed Jun  2 09:09:31 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[06/02 09:09:31     25s] Loading view definition file from /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/viewDefinition.tcl
+[06/02 09:09:31     25s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs/C28SOI_SC_12_CLK_LR_tt28_1.00V_25C.lib.gz' ...
+[06/02 09:09:31     26s] Read 332 cells in library 'C28SOI_SC_12_CLK_LR' 
+[06/02 09:09:31     26s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs/C28SOI_SC_12_CORE_LR_tt28_0.95V_25C.lib.gz' ...
+[06/02 09:09:33     28s] Read 383 cells in library 'C28SOI_SC_12_CORE_LR' 
+[06/02 09:09:33     28s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs/C28SOI_IO_EXT_CSF_BASIC_EG_tt28_1.00V_1.80V_25C.lib.gz' ...
+[06/02 09:09:33     28s] Read 82 cells in library 'C28SOI_IO_EXT_CSF_BASIC_EG' 
+[06/02 09:09:33     28s] Reading nominal_library_set timing library '/usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz' ...
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_ANTPROTGVFILLERSNPW8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 09:09:33     28s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[06/02 09:09:33     28s] Read 32 cells in library 'C28SOI_SC_12_PR_LR' 
+[06/02 09:09:33     28s] Reading nominal_library_set timing library '/home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib' ...
+[06/02 09:09:33     28s] Read 3 cells in library 'SPHD_HIPERF_Tl_210506' 
+[06/02 09:09:33     28s] *** End library_loading (cpu=0.04min, real=0.03min, mem=43.0M, fe_cpu=0.48min, fe_real=2.37min, fe_mem=715.9M) ***
+[06/02 09:09:33     28s] % Begin Load netlist data ... (date=06/02 09:09:33, mem=565.2M)
+[06/02 09:09:33     28s] *** Begin netlist parsing (mem=715.9M) ***
+[06/02 09:09:33     28s] Created 832 new cells from 5 timing libraries.
+[06/02 09:09:33     28s] Reading netlist ...
+[06/02 09:09:33     28s] Backslashed names will retain backslash and a trailing blank character.
+[06/02 09:09:33     28s] Reading verilogBinary netlist '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.v.bin'
+[06/02 09:09:33     28s] Reading binary database version 2 in 1-threaded mode
+[06/02 09:09:33     28s] 
+[06/02 09:09:33     28s] *** Memory Usage v#1 (Current mem = 731.910M, initial mem = 256.801M) ***
+[06/02 09:09:33     28s] *** End netlist parsing (cpu=0:00:00.2, real=0:00:00.0, mem=731.9M) ***
+[06/02 09:09:33     28s] % End Load netlist data ... (date=06/02 09:09:33, total cpu=0:00:00.2, real=0:00:00.0, peak res=602.5M, current mem=602.5M)
+[06/02 09:09:33     28s] Top level cell is swerv_wrapper.
+[06/02 09:09:34     29s] Hooked 832 DB cells to tlib cells.
+[06/02 09:09:34     29s] Starting recursive module instantiation check.
+[06/02 09:09:34     29s] No recursion found.
+[06/02 09:09:34     29s] Building hierarchical netlist for Cell swerv_wrapper ...
+[06/02 09:09:34     29s] *** Netlist is unique.
+[06/02 09:09:34     29s] Setting Std. cell height to 1200 DBU (smallest netlist inst).
+[06/02 09:09:34     29s] ** info: there are 1120 modules.
+[06/02 09:09:34     29s] ** info: there are 74196 stdCell insts.
+[06/02 09:09:34     29s] ** info: there are 1428 Pad insts.
+[06/02 09:09:34     29s] ** info: there are 28 macros.
+[06/02 09:09:34     29s] 
+[06/02 09:09:34     29s] *** Memory Usage v#1 (Current mem = 829.336M, initial mem = 256.801M) ***
+[06/02 09:09:34     29s] *info: set bottom ioPad orient R0
+[06/02 09:09:34     29s] Initializing I/O assignment ...
+[06/02 09:09:34     29s] Adjusting Core to Left to: 24.2560.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE12TEG_DV' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE12TEG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_92800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_95800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_3000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_186600' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_80000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_125800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_95000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_110500' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_93800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_184600' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_90800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'COREECO8T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'COREECO12T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG_DG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG_DV' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE16T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (IMPFP-3961):	The techSite 'CORE12T_NG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 09:09:34     29s] Type 'man IMPFP-3961' for more detail.
+[06/02 09:09:34     29s] **WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+[06/02 09:09:34     29s] To increase the message display limit, refer to the product command reference manual.
+[06/02 09:09:34     29s] 
+[06/02 09:09:34     29s] Honor LEF defined pitches for advanced node
+[06/02 09:09:34     29s] Set Default Net Delay as 1000 ps.
+[06/02 09:09:34     29s] Set Default Net Load as 0.5 pF. 
+[06/02 09:09:34     29s] Set Default Input Pin Transition as 0.1 ps.
+[06/02 09:09:34     29s] Set Shrink Factor to 0.90000
+[06/02 09:09:34     29s] Loading preference file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/gui.pref.tcl ...
+[06/02 09:09:34     29s] ##  Process: 28            (User Set)               
+[06/02 09:09:34     29s] ##     Node: (not set)                           
+[06/02 09:09:34     29s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[06/02 09:09:34     29s] Applying the recommended capacitance filtering threshold values for 28nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[06/02 09:09:34     29s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[06/02 09:09:34     29s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[06/02 09:09:34     29s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[06/02 09:09:34     29s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[06/02 09:09:34     29s] Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+[06/02 09:09:34     29s] addRing command will ignore shorts while creating rings.
+[06/02 09:09:34     29s] addRing command will disallow rings to go over rows.
+[06/02 09:09:34     29s] addRing command will consider rows while creating rings.
+[06/02 09:09:34     29s] The ring targets are set to core/block ring wires.
+[06/02 09:09:34     30s] Extraction setup Delayed 
+[06/02 09:09:34     30s] *Info: initialize multi-corner CTS.
+[06/02 09:09:34     30s] Reading timing constraints file '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/mmmc/modes/nominal_constraints/nominal_constraints.sdc' ...
+[06/02 09:09:34     30s] Current (total cpu=0:00:30.1, real=0:02:23, peak res=878.3M, current mem=857.5M)
+[06/02 09:09:35     30s] Number of path exceptions in the constraint file = 2
+[06/02 09:09:35     30s] Number of paths exceptions after getting compressed = 2
+[06/02 09:09:35     30s] INFO (CTE): Constraints read successfully.
+[06/02 09:09:35     30s] Ending "Constraint file reading stats" (total cpu=0:00:00.7, real=0:00:01.0, peak res=909.4M, current mem=909.4M)
+[06/02 09:09:35     30s] Current (total cpu=0:00:30.8, real=0:02:24, peak res=909.4M, current mem=909.4M)
+[06/02 09:09:35     30s] Reading latency file '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/mmmc/views/nominal_analysis_view/latency.sdc' ...
+[06/02 09:09:35     30s] Creating Cell Server ...(0, 1, 1, 1)
+[06/02 09:09:35     30s] Summary for sequential cells identification: 
+[06/02 09:09:35     30s]   Identified SBFF number: 106
+[06/02 09:09:35     30s]   Identified MBFF number: 0
+[06/02 09:09:35     30s]   Identified SB Latch number: 0
+[06/02 09:09:35     30s]   Identified MB Latch number: 0
+[06/02 09:09:35     30s]   Not identified SBFF number: 0
+[06/02 09:09:35     30s]   Not identified MBFF number: 0
+[06/02 09:09:35     30s]   Not identified SB Latch number: 0
+[06/02 09:09:35     30s]   Not identified MB Latch number: 0
+[06/02 09:09:35     30s]   Number of sequential cells which are not FFs: 84
+[06/02 09:09:35     30s] Total number of combinational cells: 557
+[06/02 09:09:35     30s] Total number of sequential cells: 190
+[06/02 09:09:35     30s] Total number of tristate cells: 0
+[06/02 09:09:35     30s] Total number of level shifter cells: 0
+[06/02 09:09:35     30s] Total number of power gating cells: 0
+[06/02 09:09:35     30s] Total number of isolation cells: 0
+[06/02 09:09:35     30s] Total number of power switch cells: 0
+[06/02 09:09:35     30s] Total number of pulse generator cells: 0
+[06/02 09:09:35     30s] Total number of always on buffers: 0
+[06/02 09:09:35     30s] Total number of retention cells: 0
+[06/02 09:09:35     30s] List of usable buffers: C12T28SOI_LR_BFX100_P0 C12T28SOI_LR_BFX134_P0 C12T28SOI_LR_BFX16_P0 C12T28SOI_LR_BFX13_P0 C12T28SOI_LR_BFX25_P0 C12T28SOI_LR_BFX21_P0 C12T28SOI_LR_BFX29_P0 C12T28SOI_LR_BFX4_P0 C12T28SOI_LR_BFX33_P0 C12T28SOI_LR_BFX42_P0 C12T28SOI_LR_BFX50_P0 C12T28SOI_LR_BFX58_P0 C12T28SOI_LR_BFX67_P0 C12T28SOI_LR_BFX8_P0 C12T28SOI_LR_BFX6_P0 C12T28SOI_LR_BFX75_P0 C12T28SOI_LR_BFX84_P0 C12T28SOI_LR_CNBFX133_P0 C12T28SOI_LR_CNBFX133_P10 C12T28SOI_LR_CNBFX133_P16 C12T28SOI_LR_CNBFX133_P4 C12T28SOI_LR_CNBFX15_P0 C12T28SOI_LR_CNBFX15_P10 C12T28SOI_LR_CNBFX15_P4 C12T28SOI_LR_CNBFX15_P16 C12T28SOI_LR_CNBFX22_P0 C12T28SOI_LR_CNBFX22_P10 C12T28SOI_LR_CNBFX22_P4 C12T28SOI_LR_CNBFX22_P16 C12T28SOI_LR_CNBFX30_P0 C12T28SOI_LR_CNBFX30_P10 C12T28SOI_LR_CNBFX30_P4 C12T28SOI_LR_CNBFX30_P16 C12T28SOI_LR_CNBFX38_P0 C12T28SOI_LR_CNBFX38_P10 C12T28SOI_LR_CNBFX38_P4 C12T28SOI_LR_CNBFX38_P16 C12T28SOI_LR_CNBFX44_P0 C12T28SOI_LR_CNBFX44_P10 C12T28SOI_LR_CNBFX44_P16 C12T28SOI_LR_CNBFX44_P4 C12T28SOI_LR_CNBFX4_P0 C12T28SOI_LR_CNBFX4_P10 C12T28SOI_LR_CNBFX4_P4 C12T28SOI_LR_CNBFX4_P16 C12T28SOI_LR_CNBFX52_P0 C12T28SOI_LR_CNBFX52_P10 C12T28SOI_LR_CNBFX52_P4 C12T28SOI_LR_CNBFX52_P16 C12T28SOI_LR_CNBFX59_P0 C12T28SOI_LR_CNBFX59_P10 C12T28SOI_LR_CNBFX59_P4 C12T28SOI_LR_CNBFX59_P16 C12T28SOI_LR_CNBFX70_P0 C12T28SOI_LR_CNBFX70_P10 C12T28SOI_LR_CNBFX70_P16 C12T28SOI_LR_CNBFX70_P4 C12T28SOI_LR_CNBFX7_P0 C12T28SOI_LR_CNBFX7_P10 C12T28SOI_LR_CNBFX7_P4 C12T28SOI_LR_CNBFX7_P16 C12T28SOI_LR_CNBFX94_P0 C12T28SOI_LR_CNBFX94_P10 C12T28SOI_LR_CNBFX94_P16 C12T28SOI_LR_CNBFX94_P4
+[06/02 09:09:35     30s] Total number of usable buffers: 65
+[06/02 09:09:35     30s] List of unusable buffers:
+[06/02 09:09:35     30s] Total number of unusable buffers: 0
+[06/02 09:09:35     30s] List of usable inverters: C12T28SOI_LR_IVX100_P0 C12T28SOI_LR_IVX134_P0 C12T28SOI_LR_IVX17_P0 C12T28SOI_LR_IVX13_P0 C12T28SOI_LR_IVX25_P0 C12T28SOI_LR_IVX21_P0 C12T28SOI_LR_IVX29_P0 C12T28SOI_LR_IVX4_P0 C12T28SOI_LR_IVX33_P0 C12T28SOI_LR_IVX50_P0 C12T28SOI_LR_IVX58_P0 C12T28SOI_LR_IVX67_P0 C12T28SOI_LR_IVX8_P0 C12T28SOI_LR_IVX6_P0 C12T28SOI_LR_IVX75_P0 C12T28SOI_LR_IVX84_P0 C12T28SOI_LR_CNIVX133_P0 C12T28SOI_LR_CNIVX133_P10 C12T28SOI_LR_CNIVX133_P16 C12T28SOI_LR_CNIVX133_P4 C12T28SOI_LR_CNIVX16_P0 C12T28SOI_LR_CNIVX16_P10 C12T28SOI_LR_CNIVX16_P4 C12T28SOI_LR_CNIVX16_P16 C12T28SOI_LR_CNIVX23_P0 C12T28SOI_LR_CNIVX23_P10 C12T28SOI_LR_CNIVX23_P4 C12T28SOI_LR_CNIVX23_P16 C12T28SOI_LR_CNIVX31_P0 C12T28SOI_LR_CNIVX31_P10 C12T28SOI_LR_CNIVX31_P4 C12T28SOI_LR_CNIVX31_P16 C12T28SOI_LR_CNIVX39_P0 C12T28SOI_LR_CNIVX39_P10 C12T28SOI_LR_CNIVX39_P4 C12T28SOI_LR_CNIVX39_P16 C12T28SOI_LR_CNIVX47_P0 C12T28SOI_LR_CNIVX47_P10 C12T28SOI_LR_CNIVX47_P4 C12T28SOI_LR_CNIVX47_P16 C12T28SOI_LR_CNIVX55_P0 C12T28SOI_LR_CNIVX55_P10 C12T28SOI_LR_CNIVX55_P16 C12T28SOI_LR_CNIVX55_P4 C12T28SOI_LR_CNIVX5_P0 C12T28SOI_LR_CNIVX5_P10 C12T28SOI_LR_CNIVX5_P4 C12T28SOI_LR_CNIVX5_P16 C12T28SOI_LR_CNIVX61_P0 C12T28SOI_LR_CNIVX61_P10 C12T28SOI_LR_CNIVX61_P4 C12T28SOI_LR_CNIVX61_P16 C12T28SOI_LR_CNIVX70_P0 C12T28SOI_LR_CNIVX70_P10 C12T28SOI_LR_CNIVX70_P16 C12T28SOI_LR_CNIVX70_P4 C12T28SOI_LR_CNIVX8_P0 C12T28SOI_LR_CNIVX8_P10 C12T28SOI_LR_CNIVX8_P4 C12T28SOI_LR_CNIVX8_P16 C12T28SOI_LR_CNIVX94_P0 C12T28SOI_LR_CNIVX94_P10 C12T28SOI_LR_CNIVX94_P4 C12T28SOI_LR_CNIVX94_P16
+[06/02 09:09:35     30s] Total number of usable inverters: 64
+[06/02 09:09:35     30s] List of unusable inverters:
+[06/02 09:09:35     30s] Total number of unusable inverters: 0
+[06/02 09:09:35     30s] List of identified usable delay cells: C12T28SOI_LR_DLYHFM4X15_P0 C12T28SOI_LR_DLYHFM4X15_P10 C12T28SOI_LR_DLYHFM4X15_P16 C12T28SOI_LR_DLYHFM4X15_P4 C12T28SOI_LR_DLYHFM4X7_P0 C12T28SOI_LR_DLYHFM4X7_P10 C12T28SOI_LR_DLYHFM4X7_P4 C12T28SOI_LR_DLYHFM4X7_P16 C12T28SOI_LR_DLYHFM8X15_P0 C12T28SOI_LR_DLYHFM8X15_P10 C12T28SOI_LR_DLYHFM8X15_P4 C12T28SOI_LR_DLYHFM8X15_P16 C12T28SOI_LR_DLYHFM8X54_P0 C12T28SOI_LR_DLYHFM8X54_P10 C12T28SOI_LR_DLYHFM8X54_P16 C12T28SOI_LR_DLYHFM8X54_P4 C12T28SOI_LR_DLYHFM8X7_P0 C12T28SOI_LR_DLYHFM8X7_P10 C12T28SOI_LR_DLYHFM8X7_P4 C12T28SOI_LR_DLYHFM8X7_P16
+[06/02 09:09:35     30s] Total number of identified usable delay cells: 20
+[06/02 09:09:35     30s] List of identified unusable delay cells:
+[06/02 09:09:35     30s] Total number of identified unusable delay cells: 0
+[06/02 09:09:35     30s] Creating Cell Server, finished. 
+[06/02 09:09:35     30s] 
+[06/02 09:09:35     30s] Deleting Cell Server ...
+[06/02 09:09:35     31s] **WARN: (IMPSYC-2):	Timing information is not defined for cell IO_PMOSBIAS_EXT_1V8_NEG_CSF_FC_LIN; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[06/02 09:09:35     31s] Type 'man IMPSYC-2' for more detail.
+[06/02 09:09:35     31s] **WARN: (IMPSYC-2):	Timing information is not defined for cell IO_NMOSBIAS_EXT_1V8_POS_CSF_FC_LIN; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[06/02 09:09:35     31s] Type 'man IMPSYC-2' for more detail.
+[06/02 09:09:35     31s] Reading floorplan file - /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.fp.gz (mem = 1070.9M).
+[06/02 09:09:35     31s] % Begin Load floorplan data ... (date=06/02 09:09:35, mem=914.1M)
+[06/02 09:09:35     31s] *info: reset 130666 existing net BottomPreferredLayer and AvoidDetour
+[06/02 09:09:36     31s] net ignore based on current view = 0
+[06/02 09:09:36     31s] Deleting old partition specification.
+[06/02 09:09:36     31s] Set FPlanBox to (0 0 14461600 14461600)
+[06/02 09:09:36     31s] 
+[06/02 09:09:36     31s] Honor LEF defined pitches for advanced node
+[06/02 09:09:36     31s]  ... processed partition successfully.
+[06/02 09:09:36     31s] Reading binary special route file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.fp.spr.gz (Created by Innovus v19.11-s128_1 on Wed Jun  2 08:32:54 2021, version: 1)
+[06/02 09:09:36     31s] Ending "Read special route file" (total cpu=0:00:00.1, real=0:00:00.0, peak res=944.7M, current mem=944.7M)
+[06/02 09:09:36     31s] There are 3028 io inst loaded
+[06/02 09:09:36     31s] There are 2 nets with weight being set
+[06/02 09:09:36     31s] There are 21 nets with bottomPreferredRoutingLayer being set
+[06/02 09:09:36     31s] There are 2 nets with avoidDetour being set
+[06/02 09:09:36     31s] Extracting standard cell pins and blockage ...... 
+[06/02 09:09:36     31s] Pin and blockage extraction finished
+[06/02 09:09:36     31s] % End Load floorplan data ... (date=06/02 09:09:36, total cpu=0:00:00.7, real=0:00:01.0, peak res=1014.7M, current mem=958.5M)
+[06/02 09:09:36     31s] Reading congestion map file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.route.congmap.gz ...
+[06/02 09:09:36     31s] % Begin Load SymbolTable ... (date=06/02 09:09:36, mem=958.7M)
+[06/02 09:09:38     34s] Suppress "**WARN ..." messages.
+[06/02 09:09:38     34s] routingBox: (108 100) (14461508 14461500)
+[06/02 09:09:38     34s] coreBox:    (115008 115000) (14346592 14345800)
+[06/02 09:09:38     34s] Un-suppress "**WARN ..." messages.
+[06/02 09:10:01     56s] % End Load SymbolTable ... (date=06/02 09:10:01, total cpu=0:00:24.8, real=0:00:25.0, peak res=4343.4M, current mem=4343.4M)
+[06/02 09:10:01     56s] Loading place ...
+[06/02 09:10:01     56s] % Begin Load placement data ... (date=06/02 09:10:01, mem=4343.4M)
+[06/02 09:10:01     56s] Reading placement file - /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.place.gz.
+[06/02 09:10:01     56s] ** Reading stdCellPlacement_binary (Created by Innovus v19.11-s128_1 on Wed Jun  2 08:33:13 2021, version# 2) ...
+[06/02 09:13:19    254s] Read Views for adaptive view pruning ...
+[06/02 09:13:19    254s] Read 0 views from Binary DB for adaptive view pruning
+[06/02 09:13:19    254s] *** Checked 4 GNC rules.
+[06/02 09:13:19    254s] *** applyConnectGlobalNets disabled.
+[06/02 09:13:19    254s] *** Completed restorePlace (cpu=0:03:18 real=0:03:18 mem=13559.7M) ***
+[06/02 09:13:19    254s] Total net length = 1.307e+07 (6.373e+06 6.693e+06) (ext = 0.000e+00)
+[06/02 09:13:20    255s] % End Load placement data ... (date=06/02 09:13:20, total cpu=0:03:19, real=0:03:19, peak res=13413.9M, current mem=13410.4M)
+[06/02 09:13:20    255s] Reading PG file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.pg.gz
+[06/02 09:13:31    266s] *** Completed restorePGFile (cpu=0:00:10.7 real=0:00:11.0 mem=14758.7M) ***
+[06/02 09:13:31    266s] % Begin Load routing data ... (date=06/02 09:13:31, mem=14612.0M)
+[06/02 09:13:31    266s] Reading routing file - /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.route.gz.
+[06/02 09:13:31    266s] Reading Innovus routing data (Created by Innovus v19.11-s128_1 on Wed Jun  2 08:33:20 2021 Format: 19.1) ...
+[06/02 09:13:31    266s] *** Total 103129 nets are successfully restored.
+[06/02 09:13:31    266s] *** Completed restoreRoute (cpu=0:00:00.6 real=0:00:00.0 mem=14877.7M) ***
+[06/02 09:13:31    266s] % End Load routing data ... (date=06/02 09:13:31, total cpu=0:00:00.6, real=0:00:00.0, peak res=14731.3M, current mem=14731.1M)
+[06/02 09:13:31    266s] Loading Drc markers ...
+[06/02 09:13:31    266s] ... 3754 markers are loaded ...
+[06/02 09:13:31    266s] ... 0 geometry drc markers are loaded ...
+[06/02 09:13:31    266s] ... 0 antenna drc markers are loaded ...
+[06/02 09:13:31    266s] TAT_INFO: restoreCongMap REAL = 3 : CPU = 0 : MEM = 0.
+[06/02 09:13:31    266s] Reading property file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.prop
+[06/02 09:13:31    266s] Extracting macro/IO cell pins and blockage ...... 
+[06/02 09:13:32    267s] Pin and blockage extraction finished
+[06/02 09:13:32    267s] *** Completed restoreProperty (cpu=0:00:00.5 real=0:00:01.0 mem=14884.7M) ***
+[06/02 09:13:36    271s] Set Default Input Pin Transition as 0.1 ps.
+[06/02 09:13:36    271s] Loading preRoute extraction data from directory '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/extraction/' ...
+[06/02 09:13:36    271s] Restore PreRoute RC Grid meta data successful.
+[06/02 09:13:36    271s] Extraction setup Started 
+[06/02 09:13:36    271s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[06/02 09:13:36    271s] Process node set using 'setDesignMode' is less than or equal to 32nm, for which captable file(s) would be ignored as preRoute extraction would instead use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[06/02 09:13:37    272s] Generating auto layer map file.
+[06/02 09:13:38    272s] Restore PreRoute Pattern Extraction data successful in header.
+[06/02 09:13:38    272s] Loading preRoute extracted patterns from file '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.techData.gz' ...
+[06/02 09:13:38    272s] Restore PreRoute Pattern Extraction data successful.
+[06/02 09:13:38    272s] Completed (cpu: 0:00:00.9 real: 0:00:02.0)
+[06/02 09:13:38    272s] Set Shrink Factor to 0.90000 (from technology file)
+[06/02 09:13:38    272s] Summary of Active RC-Corners : 
+[06/02 09:13:38    272s]  
+[06/02 09:13:38    272s]  Analysis View: nominal_analysis_view
+[06/02 09:13:38    272s]     RC-Corner Name        : nominal_rc_corner
+[06/02 09:13:38    272s]     RC-Corner Index       : 0
+[06/02 09:13:38    272s]     RC-Corner Temperature : 25 Celsius
+[06/02 09:13:38    272s]     RC-Corner Cap Table   : ''
+[06/02 09:13:38    272s]     RC-Corner PreRoute Res Factor         : 1
+[06/02 09:13:38    272s]     RC-Corner PreRoute Cap Factor         : 1
+[06/02 09:13:38    272s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[06/02 09:13:38    272s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[06/02 09:13:38    272s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[06/02 09:13:38    272s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[06/02 09:13:38    272s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[06/02 09:13:38    272s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[06/02 09:13:38    272s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[06/02 09:13:38    272s]     RC-Corner Technology file: '/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/mmmc/nominal_rc_corner/qrcTechFile'
+[06/02 09:13:38    272s] LayerId::1 widthSet size::1
+[06/02 09:13:38    272s] LayerId::2 widthSet size::1
+[06/02 09:13:38    272s] LayerId::3 widthSet size::1
+[06/02 09:13:38    272s] LayerId::4 widthSet size::1
+[06/02 09:13:38    272s] LayerId::5 widthSet size::1
+[06/02 09:13:38    272s] LayerId::6 widthSet size::1
+[06/02 09:13:38    272s] LayerId::7 widthSet size::1
+[06/02 09:13:38    272s] LayerId::8 widthSet size::1
+[06/02 09:13:38    272s] LayerId::9 widthSet size::1
+[06/02 09:13:38    273s] Checksum of RCGrid density data read::(180 180) passed::1
+[06/02 09:13:38    273s] Restored RC grid for preRoute extraction.
+[06/02 09:13:38    273s] Initializing multi-corner resistance tables ...
+[06/02 09:13:38    273s] ReadRoutingBlockageFactor status::1
+[06/02 09:13:38    273s] Restore PreRoute Blockage data successful.
+[06/02 09:13:38    273s] pesRestorePreRouteExtractionData::readRCGridUnitRC called for corner::nominal_rc_corner
+[06/02 09:13:38    273s] RCCorner in design data Name::nominal_rc_corner Tech::/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/libs/mmmc/nominal_rc_corner/qrcTechFile 25.000000 1.000000 1.000000 
+[06/02 09:13:38    273s] RCCorner in saved data Name::nominal_rc_corner Tech::/usr/local/cmos28fdsoi_12/Foundation_Cadence_TechnoKit_cmos028FDSOI_6U1x_2T8x_LB/3.3-04/QRC_TECHFILE/nominal/qrcTechFile 25.000000 1.000000 1.000000 
+[06/02 09:13:39    273s] Unit RC read status::1
+[06/02 09:13:39    273s] Number of RC corner to be extracted::0
+[06/02 09:13:39    273s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[06/02 09:13:39    273s] Restore PreRoute all RC Grid data successful.Start generating vias ...
+[06/02 09:13:39    273s] #WARNING (NRDB-975) Adjacent routing LAYERs M6 IA has the same preferred routing direction HORIZONTAL. This may cause routing problems for NanoRoute.
+[06/02 09:13:39    273s] Extracting standard cell pins and blockage ...... 
+[06/02 09:13:39    274s] Pin and blockage extraction finished
+[06/02 09:13:39    274s] Via generation completed successfully.
+[06/02 09:13:40    275s] Generating auto layer map file.
+[06/02 09:13:41    275s] Restore PreRoute Pattern Extraction data failed.
+[06/02 09:13:41    275s] Initializing preRoute extraction patterns for new vias... Generating auto layer map file.
+[06/02 09:13:42    276s] Completed (cpu: 0:00:01.9 real: 0:00:03.0)
+[06/02 09:13:42    276s] % Begin Load power constraints ... (date=06/02 09:13:42, mem=15594.7M)
+[06/02 09:13:42    276s] % End Load power constraints ... (date=06/02 09:13:42, total cpu=0:00:00.1, real=0:00:00.0, peak res=15594.9M, current mem=15594.9M)
+[06/02 09:13:42    276s] % Begin load AAE data ... (date=06/02 09:13:42, mem=15594.9M)
+[06/02 09:13:43    277s] AAE DB initialization (MEM=15917.3 CPU=0:00:00.8 REAL=0:00:01.0) 
+[06/02 09:13:43    277s] % End load AAE data ... (date=06/02 09:13:43, total cpu=0:00:01.1, real=0:00:01.0, peak res=15759.1M, current mem=15759.1M)
+[06/02 09:13:43    277s] Restoring CCOpt config...
+[06/02 09:13:44    278s] Creating Cell Server ...(0, 0, 0, 0)
+[06/02 09:13:44    278s] Summary for sequential cells identification: 
+[06/02 09:13:44    278s]   Identified SBFF number: 106
+[06/02 09:13:44    278s]   Identified MBFF number: 0
+[06/02 09:13:44    278s]   Identified SB Latch number: 0
+[06/02 09:13:44    278s]   Identified MB Latch number: 0
+[06/02 09:13:44    278s]   Not identified SBFF number: 0
+[06/02 09:13:44    278s]   Not identified MBFF number: 0
+[06/02 09:13:44    278s]   Not identified SB Latch number: 0
+[06/02 09:13:44    278s]   Not identified MB Latch number: 0
+[06/02 09:13:44    278s]   Number of sequential cells which are not FFs: 84
+[06/02 09:13:44    278s]  Visiting view : nominal_analysis_view
+[06/02 09:13:44    278s]    : PowerDomain = none : Weighted F : unweighted  = 8.00 (1.000) with rcCorner = 0
+[06/02 09:13:44    278s]    : PowerDomain = none : Weighted F : unweighted  = 4.30 (1.000) with rcCorner = -1
+[06/02 09:13:44    278s]  Visiting view : nominal_analysis_view
+[06/02 09:13:44    278s]    : PowerDomain = none : Weighted F : unweighted  = 8.00 (1.000) with rcCorner = 0
+[06/02 09:13:44    278s]    : PowerDomain = none : Weighted F : unweighted  = 4.30 (1.000) with rcCorner = -1
+[06/02 09:13:44    278s]  Setting StdDelay to 8.00
+[06/02 09:13:44    278s] Creating Cell Server, finished. 
+[06/02 09:13:44    278s] 
+[06/02 09:13:44    278s]   Extracting original clock gating for jtag_tck...
+[06/02 09:13:44    278s]     clock_tree jtag_tck contains 1 sinks and 0 clock gates.
+[06/02 09:13:44    278s]       Found 1 implicit ignore or stop or exclude pin - run report_ccopt_clock_trees -list_special_pins for more details.
+[06/02 09:13:44    278s]     Extraction for jtag_tck complete.
+[06/02 09:13:44    278s]   Extracting original clock gating for jtag_tck done.
+[06/02 09:13:44    278s]   Extracting original clock gating for clk...
+[06/02 09:13:44    278s]     clock_tree clk contains 1 sinks and 0 clock gates.
+[06/02 09:13:44    278s]       Found 1 implicit ignore or stop or exclude pin - run report_ccopt_clock_trees -list_special_pins for more details.
+[06/02 09:13:44    278s]     Extraction for clk complete.
+[06/02 09:13:44    278s]   Extracting original clock gating for clk done.
+[06/02 09:13:44    278s]   The skew group clk/nominal_constraints was created. It contains 1 sinks and 1 sources.
+[06/02 09:13:44    278s]   The skew group jtag_tck/nominal_constraints was created. It contains 1 sinks and 1 sources.
+[06/02 09:13:44    278s]   Added 1 ignore pin (of 1 specified) to skew group 1. Skew group now contains 1 ignore pin.
+[06/02 09:13:44    278s]   Added 1 ignore pin (of 1 specified) to skew group 3. Skew group now contains 1 ignore pin.
+[06/02 09:13:44    278s]   The skew group clk/nominal_constraints was created. It contains 1 sinks and 1 sources.
+[06/02 09:13:44    278s]   The skew group jtag_tck/nominal_constraints was created. It contains 1 sinks and 1 sources.
+[06/02 09:13:44    278s] Restoring CCOpt config done.
+[06/02 09:13:45    279s] Deleting Cell Server ...
+[06/02 09:13:45    279s] Creating Cell Server ...(0, 1, 1, 1)
+[06/02 09:13:45    279s] Summary for sequential cells identification: 
+[06/02 09:13:45    279s]   Identified SBFF number: 106
+[06/02 09:13:45    279s]   Identified MBFF number: 0
+[06/02 09:13:45    279s]   Identified SB Latch number: 0
+[06/02 09:13:45    279s]   Identified MB Latch number: 0
+[06/02 09:13:45    279s]   Not identified SBFF number: 0
+[06/02 09:13:45    279s]   Not identified MBFF number: 0
+[06/02 09:13:45    279s]   Not identified SB Latch number: 0
+[06/02 09:13:45    279s]   Not identified MB Latch number: 0
+[06/02 09:13:45    279s]   Number of sequential cells which are not FFs: 84
+[06/02 09:13:45    279s] Total number of combinational cells: 557
+[06/02 09:13:45    279s] Total number of sequential cells: 190
+[06/02 09:13:45    279s] Total number of tristate cells: 0
+[06/02 09:13:45    279s] Total number of level shifter cells: 0
+[06/02 09:13:45    279s] Total number of power gating cells: 0
+[06/02 09:13:45    279s] Total number of isolation cells: 0
+[06/02 09:13:45    279s] Total number of power switch cells: 0
+[06/02 09:13:45    279s] Total number of pulse generator cells: 0
+[06/02 09:13:45    279s] Total number of always on buffers: 0
+[06/02 09:13:45    279s] Total number of retention cells: 0
+[06/02 09:13:45    279s] List of usable buffers: C12T28SOI_LR_BFX100_P0 C12T28SOI_LR_BFX134_P0 C12T28SOI_LR_BFX16_P0 C12T28SOI_LR_BFX13_P0 C12T28SOI_LR_BFX25_P0 C12T28SOI_LR_BFX21_P0 C12T28SOI_LR_BFX29_P0 C12T28SOI_LR_BFX4_P0 C12T28SOI_LR_BFX33_P0 C12T28SOI_LR_BFX42_P0 C12T28SOI_LR_BFX50_P0 C12T28SOI_LR_BFX58_P0 C12T28SOI_LR_BFX67_P0 C12T28SOI_LR_BFX8_P0 C12T28SOI_LR_BFX6_P0 C12T28SOI_LR_BFX75_P0 C12T28SOI_LR_BFX84_P0 C12T28SOI_LR_CNBFX133_P0 C12T28SOI_LR_CNBFX133_P10 C12T28SOI_LR_CNBFX133_P16 C12T28SOI_LR_CNBFX133_P4 C12T28SOI_LR_CNBFX15_P0 C12T28SOI_LR_CNBFX15_P10 C12T28SOI_LR_CNBFX15_P4 C12T28SOI_LR_CNBFX15_P16 C12T28SOI_LR_CNBFX22_P0 C12T28SOI_LR_CNBFX22_P10 C12T28SOI_LR_CNBFX22_P4 C12T28SOI_LR_CNBFX22_P16 C12T28SOI_LR_CNBFX30_P0 C12T28SOI_LR_CNBFX30_P10 C12T28SOI_LR_CNBFX30_P4 C12T28SOI_LR_CNBFX30_P16 C12T28SOI_LR_CNBFX38_P0 C12T28SOI_LR_CNBFX38_P10 C12T28SOI_LR_CNBFX38_P4 C12T28SOI_LR_CNBFX38_P16 C12T28SOI_LR_CNBFX44_P0 C12T28SOI_LR_CNBFX44_P10 C12T28SOI_LR_CNBFX44_P16 C12T28SOI_LR_CNBFX44_P4 C12T28SOI_LR_CNBFX4_P0 C12T28SOI_LR_CNBFX4_P10 C12T28SOI_LR_CNBFX4_P4 C12T28SOI_LR_CNBFX4_P16 C12T28SOI_LR_CNBFX52_P0 C12T28SOI_LR_CNBFX52_P10 C12T28SOI_LR_CNBFX52_P4 C12T28SOI_LR_CNBFX52_P16 C12T28SOI_LR_CNBFX59_P0 C12T28SOI_LR_CNBFX59_P10 C12T28SOI_LR_CNBFX59_P4 C12T28SOI_LR_CNBFX59_P16 C12T28SOI_LR_CNBFX70_P0 C12T28SOI_LR_CNBFX70_P10 C12T28SOI_LR_CNBFX70_P16 C12T28SOI_LR_CNBFX70_P4 C12T28SOI_LR_CNBFX7_P0 C12T28SOI_LR_CNBFX7_P10 C12T28SOI_LR_CNBFX7_P4 C12T28SOI_LR_CNBFX7_P16 C12T28SOI_LR_CNBFX94_P0 C12T28SOI_LR_CNBFX94_P10 C12T28SOI_LR_CNBFX94_P16 C12T28SOI_LR_CNBFX94_P4
+[06/02 09:13:45    279s] Total number of usable buffers: 65
+[06/02 09:13:45    279s] List of unusable buffers:
+[06/02 09:13:45    279s] Total number of unusable buffers: 0
+[06/02 09:13:45    279s] List of usable inverters: C12T28SOI_LR_IVX100_P0 C12T28SOI_LR_IVX134_P0 C12T28SOI_LR_IVX17_P0 C12T28SOI_LR_IVX13_P0 C12T28SOI_LR_IVX25_P0 C12T28SOI_LR_IVX21_P0 C12T28SOI_LR_IVX29_P0 C12T28SOI_LR_IVX4_P0 C12T28SOI_LR_IVX33_P0 C12T28SOI_LR_IVX50_P0 C12T28SOI_LR_IVX58_P0 C12T28SOI_LR_IVX67_P0 C12T28SOI_LR_IVX8_P0 C12T28SOI_LR_IVX6_P0 C12T28SOI_LR_IVX75_P0 C12T28SOI_LR_IVX84_P0 C12T28SOI_LR_CNIVX133_P0 C12T28SOI_LR_CNIVX133_P10 C12T28SOI_LR_CNIVX133_P16 C12T28SOI_LR_CNIVX133_P4 C12T28SOI_LR_CNIVX16_P0 C12T28SOI_LR_CNIVX16_P10 C12T28SOI_LR_CNIVX16_P4 C12T28SOI_LR_CNIVX16_P16 C12T28SOI_LR_CNIVX23_P0 C12T28SOI_LR_CNIVX23_P10 C12T28SOI_LR_CNIVX23_P4 C12T28SOI_LR_CNIVX23_P16 C12T28SOI_LR_CNIVX31_P0 C12T28SOI_LR_CNIVX31_P10 C12T28SOI_LR_CNIVX31_P4 C12T28SOI_LR_CNIVX31_P16 C12T28SOI_LR_CNIVX39_P0 C12T28SOI_LR_CNIVX39_P10 C12T28SOI_LR_CNIVX39_P4 C12T28SOI_LR_CNIVX39_P16 C12T28SOI_LR_CNIVX47_P0 C12T28SOI_LR_CNIVX47_P10 C12T28SOI_LR_CNIVX47_P4 C12T28SOI_LR_CNIVX47_P16 C12T28SOI_LR_CNIVX55_P0 C12T28SOI_LR_CNIVX55_P10 C12T28SOI_LR_CNIVX55_P16 C12T28SOI_LR_CNIVX55_P4 C12T28SOI_LR_CNIVX5_P0 C12T28SOI_LR_CNIVX5_P10 C12T28SOI_LR_CNIVX5_P4 C12T28SOI_LR_CNIVX5_P16 C12T28SOI_LR_CNIVX61_P0 C12T28SOI_LR_CNIVX61_P10 C12T28SOI_LR_CNIVX61_P4 C12T28SOI_LR_CNIVX61_P16 C12T28SOI_LR_CNIVX70_P0 C12T28SOI_LR_CNIVX70_P10 C12T28SOI_LR_CNIVX70_P16 C12T28SOI_LR_CNIVX70_P4 C12T28SOI_LR_CNIVX8_P0 C12T28SOI_LR_CNIVX8_P10 C12T28SOI_LR_CNIVX8_P4 C12T28SOI_LR_CNIVX8_P16 C12T28SOI_LR_CNIVX94_P0 C12T28SOI_LR_CNIVX94_P10 C12T28SOI_LR_CNIVX94_P4 C12T28SOI_LR_CNIVX94_P16
+[06/02 09:13:45    279s] Total number of usable inverters: 64
+[06/02 09:13:45    279s] List of unusable inverters:
+[06/02 09:13:45    279s] Total number of unusable inverters: 0
+[06/02 09:13:45    279s] List of identified usable delay cells: C12T28SOI_LR_DLYHFM4X15_P0 C12T28SOI_LR_DLYHFM4X15_P10 C12T28SOI_LR_DLYHFM4X15_P16 C12T28SOI_LR_DLYHFM4X15_P4 C12T28SOI_LR_DLYHFM4X7_P0 C12T28SOI_LR_DLYHFM4X7_P10 C12T28SOI_LR_DLYHFM4X7_P4 C12T28SOI_LR_DLYHFM4X7_P16 C12T28SOI_LR_DLYHFM8X15_P0 C12T28SOI_LR_DLYHFM8X15_P10 C12T28SOI_LR_DLYHFM8X15_P4 C12T28SOI_LR_DLYHFM8X15_P16 C12T28SOI_LR_DLYHFM8X54_P0 C12T28SOI_LR_DLYHFM8X54_P10 C12T28SOI_LR_DLYHFM8X54_P16 C12T28SOI_LR_DLYHFM8X54_P4 C12T28SOI_LR_DLYHFM8X7_P0 C12T28SOI_LR_DLYHFM8X7_P10 C12T28SOI_LR_DLYHFM8X7_P4 C12T28SOI_LR_DLYHFM8X7_P16
+[06/02 09:13:45    279s] Total number of identified usable delay cells: 20
+[06/02 09:13:45    279s] List of identified unusable delay cells:
+[06/02 09:13:45    279s] Total number of identified unusable delay cells: 0
+[06/02 09:13:45    279s] Creating Cell Server, finished. 
+[06/02 09:13:45    279s] 
+[06/02 09:13:45    279s] Deleting Cell Server ...
+[06/02 09:13:45    279s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.11-s128_1. They will be removed in the next release. 
+[06/02 09:13:45    279s] timing_enable_default_delay_arc
+[06/02 09:13:45    279s] #% End load design ... (date=06/02 09:13:45, total cpu=0:04:16, real=0:04:17, peak res=15766.0M, current mem=13686.3M)
+[06/02 09:13:45    279s] 
+[06/02 09:13:45    279s] *** Summary of all messages that are not suppressed in this session:
+[06/02 09:13:45    279s] Severity  ID               Count  Summary                                  
+[06/02 09:13:45    279s] WARNING   IMPLF-200         2546  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[06/02 09:13:45    279s] WARNING   IMPLF-201         3298  Pin '%s' in macro '%s' has no ANTENNADIF...
+[06/02 09:13:45    279s] WARNING   IMPLF-122            1  The direction of the layer '%s' is the s...
+[06/02 09:13:45    279s] WARNING   IMPFP-3961         106  The techSite '%s' has no related standar...
+[06/02 09:13:45    279s] WARNING   IMPSYC-2             2  Timing information is not defined for ce...
+[06/02 09:13:45    279s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[06/02 09:13:45    279s] WARNING   TECHLIB-302         20  No function defined for cell '%s'. The c...
+[06/02 09:13:45    279s] *** Message Summary: 5974 warning(s), 0 error(s)
+[06/02 09:13:45    279s] 
+[06/02 09:14:14    307s] <CMD> setDrawView fplan
+[06/02 09:14:14    307s] <CMD> encMessage warning 1
+[06/02 09:14:14    307s] <CMD> encMessage debug 0
+[06/02 09:14:14    307s] <CMD> encMessage info 1
+[06/02 09:16:02    320s] <CMD> routeDesign
+[06/02 09:16:02    320s] #% Begin routeDesign (date=06/02 09:16:02, mem=14290.7M)
+[06/02 09:16:02    320s] ### Time Record (routeDesign) is installed.
+[06/02 09:16:02    320s] #routeDesign: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 14290.71 (MB), peak = 15765.97 (MB)
+[06/02 09:16:02    320s] #**INFO: setDesignMode -flowEffort standard
+[06/02 09:16:02    320s] #**INFO: multi-cut via swapping will be performed after routing.
+[06/02 09:16:02    320s] #**INFO: All auto set options tuned by routeDesign will be restored to their original settings on command completion.
+[06/02 09:16:02    320s] OPERPROF: Starting checkPlace at level 1, MEM:14571.3M
+[06/02 09:16:02    320s] #spOpts: N=28 autoPA advPA 
+[06/02 09:16:11    328s] OPERPROF:   Starting spInitSiteArr at level 2, MEM:20252.3M
+[06/02 09:16:11    329s] OPERPROF:     Starting spiInitFpSiteArr at level 3, MEM:20252.3M
+[06/02 09:16:13    331s] **WARN: (IMPSP-362):	Site 'CORE12T' has one std.Cell height, so ignoring its X-symmetry.
+[06/02 09:16:13    331s] Type 'man IMPSP-362' for more detail.
+[06/02 09:16:13    331s] Core basic site is CORE12T
+[06/02 09:16:13    331s] Use non-trimmed site array because memory saving is not enough.
+[06/02 09:16:14    332s] SiteArray: non-trimmed site array dimensions = 11859 x 104644
+[06/02 09:16:14    332s] SiteArray: use 4,966,739,968 bytes
+[06/02 09:16:14    332s] SiteArray: current memory after site array memory allocation 25036.0M
+[06/02 09:16:14    332s] SiteArray: FP blocked sites are writable
+[06/02 09:16:30    348s] OPERPROF:     Finished spiInitFpSiteArr at level 3, CPU:18.890, REAL:18.808, MEM:26845.0M
+[06/02 09:16:33    351s] OPERPROF:   Finished spInitSiteArr at level 2, CPU:22.300, REAL:22.228, MEM:26847.0M
+[06/02 09:16:33    351s] Begin checking placement ... (start mem=14571.3M, init mem=26847.0M)
+[06/02 09:16:34    352s] OPERPROF:   Starting checkPlace/Loop-Through-Inst-Misc-Oper at level 2, MEM:26847.0M
+[06/02 09:16:35    353s] OPERPROF:   Finished checkPlace/Loop-Through-Inst-Misc-Oper at level 2, CPU:1.330, REAL:1.330, MEM:26847.0M
+[06/02 09:16:37    355s] OPERPROF:   Starting checkPlace/Loop-Through-Inst-Misc-Oper at level 2, MEM:26847.0M
+[06/02 09:16:38    356s] OPERPROF:   Finished checkPlace/Loop-Through-Inst-Misc-Oper at level 2, CPU:1.410, REAL:1.407, MEM:26847.0M
+[06/02 09:16:38    356s] OPERPROF:   Starting checkPlace/Loop-Through-Inst-Misc-Oper at level 2, MEM:26847.0M
+[06/02 09:18:16    454s] OPERPROF:   Finished checkPlace/Loop-Through-Inst-Misc-Oper at level 2, CPU:97.970, REAL:97.892, MEM:34660.0M
+[06/02 09:18:16    454s] OPERPROF:   Starting checkPlace/Vio-Check at level 2, MEM:34660.0M
+[06/02 09:18:38    476s] OPERPROF:   Finished checkPlace/Vio-Check at level 2, CPU:21.550, REAL:21.562, MEM:34660.0M
+[06/02 09:18:52    490s] *info: Placed = 38864884       (Fixed = 28)
+[06/02 09:18:52    490s] *info: Unplaced = 0           
+[06/02 09:18:54    492s] Placement Density:100.00%(202297954/202297954)
+[06/02 09:18:54    492s] Placement Density (including fixed std cells):100.00%(202297954/202297954)
+[06/02 09:18:56    494s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:34660.0M
+[06/02 09:19:02    501s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:6.230, REAL:6.228, MEM:26232.3M
+[06/02 09:19:03    501s] Finished checkPlace (total: cpu=0:03:01, real=0:03:01; vio checks: cpu=0:02:19, real=0:02:18; mem=21889.3M)
+[06/02 09:19:04    502s] OPERPROF: Finished checkPlace at level 1, CPU:182.090, REAL:181.869, MEM:20973.3M
+[06/02 09:19:04    502s] **WARN: (IMPCK-8086):	The command changeUseClockNetStatus is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[06/02 09:19:04    502s] 
+[06/02 09:19:04    502s] changeUseClockNetStatus Option :  -noFixedNetWires 
+[06/02 09:19:04    502s] *** Changed status on (0) nets in Clock.
+[06/02 09:19:04    502s] *** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=20973.3M) ***
+[06/02 09:19:04    502s] #Start route 2 clock and analog nets...
+[06/02 09:19:04    502s] % Begin globalDetailRoute (date=06/02 09:19:04, mem=14379.1M)
+[06/02 09:19:04    502s] 
+[06/02 09:19:04    502s] globalDetailRoute
+[06/02 09:19:04    502s] 
+[06/02 09:19:04    502s] #setNanoRouteMode -drouteEndIteration 5
+[06/02 09:19:04    502s] #setNanoRouteMode -drouteUseMultiCutViaEffort "high"
+[06/02 09:19:04    502s] #setNanoRouteMode -routeAntennaCellName "C12T28SOI_LR_ANTPROT3"
+[06/02 09:19:04    502s] #setNanoRouteMode -routeConcurrentMinimizeViaCountEffort "high"
+[06/02 09:19:04    502s] #setNanoRouteMode -routeInsertAntennaDiode true
+[06/02 09:19:04    502s] #setNanoRouteMode -routeReserveSpaceForMultiCut true
+[06/02 09:19:04    502s] #setNanoRouteMode -routeTopRoutingLayer 9
+[06/02 09:19:04    502s] #setNanoRouteMode -routeUseAutoVia "true"
+[06/02 09:19:04    502s] #setNanoRouteMode -routeWithEco true
+[06/02 09:19:04    502s] #setNanoRouteMode -routeWithLithoDriven true
+[06/02 09:19:04    502s] #setNanoRouteMode -routeWithSiDriven true
+[06/02 09:19:04    502s] #setNanoRouteMode -routeWithTimingDriven true
+[06/02 09:19:04    502s] ### Time Record (globalDetailRoute) is installed.
+[06/02 09:19:04    502s] #Start globalDetailRoute on Wed Jun  2 09:19:04 2021
+[06/02 09:19:04    502s] #
+[06/02 09:19:04    502s] ### Time Record (Pre Callback) is installed.
+[06/02 09:19:04    502s] RC Grid backup saved.
+[06/02 09:19:15    514s] ### Time Record (Pre Callback) is uninstalled.
+[06/02 09:19:15    514s] ### Time Record (DB Import) is installed.
+[06/02 09:19:15    514s] ### Time Record (Timing Data Generation) is installed.
+[06/02 09:19:15    514s] ### Time Record (Timing Data Generation) is uninstalled.
+[06/02 09:19:17    515s] #WARNING (NRDB-975) Adjacent routing LAYERs M6 IA has the same preferred routing direction HORIZONTAL. This may cause routing problems for NanoRoute.
+[06/02 09:19:17    516s] LayerId::1 widthSet size::1
+[06/02 09:19:17    516s] LayerId::2 widthSet size::1
+[06/02 09:19:17    516s] LayerId::3 widthSet size::1
+[06/02 09:19:17    516s] LayerId::4 widthSet size::1
+[06/02 09:19:17    516s] LayerId::5 widthSet size::1
+[06/02 09:19:17    516s] LayerId::6 widthSet size::1
+[06/02 09:19:17    516s] LayerId::7 widthSet size::1
+[06/02 09:19:17    516s] LayerId::8 widthSet size::1
+[06/02 09:19:17    516s] LayerId::9 widthSet size::1
+[06/02 09:19:17    516s] Skipped RC grid update for preRoute extraction.
+[06/02 09:19:17    516s] Initializing multi-corner resistance tables ...
+[06/02 09:19:28    526s] #WARNING (NRIG-1303) Congestion map does not match the GCELL grid, clearing map.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7973_ic_rd_hit_2 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7973_ic_rd_hit_2 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7972_ic_rd_hit_0 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7972_ic_rd_hit_0 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7971_ic_rd_hit_3 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7971_ic_rd_hit_3 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7970_ic_tag_perr is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7970_ic_tag_perr is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7969_ic_rd_data_9 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7969_ic_rd_data_9 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7968_ic_rd_data_13 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7968_ic_rd_data_13 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7967_ic_rd_data_18 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7967_ic_rd_data_18 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7966_ic_rd_data_25 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7966_ic_rd_data_25 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7965_ic_rd_data_31 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7965_ic_rd_data_31 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7964_ic_rd_data_20 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7964_ic_rd_data_20 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 09:20:25    581s] #WARNING (EMS-27) Message (NRIG-34) has exceeded the current message display limit of 20.
+[06/02 09:20:25    581s] #To increase the message display limit, refer to the product command reference manual.
+[06/02 09:21:09    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/clk of net clk because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_l of net rst_l because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/dbg_rst_l of net dbg_rst_l because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[31] of net rst_vec[31] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[30] of net rst_vec[30] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[29] of net rst_vec[29] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[28] of net rst_vec[28] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[27] of net rst_vec[27] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[26] of net rst_vec[26] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[25] of net rst_vec[25] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[24] of net rst_vec[24] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[23] of net rst_vec[23] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[22] of net rst_vec[22] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[21] of net rst_vec[21] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[20] of net rst_vec[20] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[19] of net rst_vec[19] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[18] of net rst_vec[18] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[17] of net rst_vec[17] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[16] of net rst_vec[16] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[15] of net rst_vec[15] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 09:21:10    625s] #WARNING (EMS-27) Message (NRIG-39) has exceeded the current message display limit of 20.
+[06/02 09:21:10    625s] #To increase the message display limit, refer to the product command reference manual.
+[06/02 09:21:13    628s] ### Net info: total nets: 130666
+[06/02 09:21:13    628s] ### Net info: dirty nets: 536
+[06/02 09:21:13    628s] ### Net info: marked as disconnected nets: 0
+[06/02 09:21:22    637s] #num needed restored net=130664
+[06/02 09:21:22    637s] #need_extraction net=130664 (total=130666)
+[06/02 09:21:22    637s] ### Net info: fully routed nets: 0
+[06/02 09:21:22    637s] ### Net info: trivial (< 2 pins) nets: 53201
+[06/02 09:21:22    637s] ### Net info: unrouted nets: 77465
+[06/02 09:21:22    637s] ### Net info: re-extraction nets: 0
+[06/02 09:21:22    637s] ### Net info: ignored nets: 0
+[06/02 09:21:22    637s] ### Net info: skip routing nets: 130664
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN clk in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dbg_bus_clk_en in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dbg_rst_l in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN debug_brkpt_status in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt0[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt0[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt1[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt1[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt2[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt2[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt3[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt3[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[10] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[11] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[12] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[13] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[14] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[15] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (NRDB-733) PIN dma_axi_araddr[16] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 09:27:10    965s] #WARNING (EMS-27) Message (NRDB-733) has exceeded the current message display limit of 20.
+[06/02 09:27:10    965s] #To increase the message display limit, refer to the product command reference manual.
+[06/02 09:27:46   1001s] ### Time Record (DB Import) is uninstalled.
+[06/02 09:27:46   1001s] #NanoRoute Version 19.11-s128_1 NR190815-2055/19_11-UB
+[06/02 09:27:46   1001s] #RTESIG:78da95d4cf4bc330140770cffe158f6e870adbcc7b697e1d553c08b2499d5e4b75dd56e8
+[06/02 09:27:46   1001s] #       5a68d3c3fe7b23886cac36b1d77c78f9f6e52593e9fb630a119a05e2bc43d219c23245c3
+[06/02 09:27:46   1001s] #       348a3931216ed1646ee9ed3eba9e4c572f6b420e02e2b2b6c5ae6867d077450b5d616d59
+[06/02 09:27:46   1001s] #       ef6e7e0831b06d5f40fcd134d50c36c73a3f949fb029b6795fd90b2d809d141cd75ce199
+[06/02 09:27:46   1001s] #       1ed89e1bfac7f6821444796f9b08625bb475de1e677f512d20da97bbbda39d6dddc2e0fe
+[06/02 09:27:46   1001s] #       9a31d8e655f71b60c8a8f3160d10a324b00513cc7d106fab26b7830e194b0221f7074324
+[06/02 09:27:46   1001s] #       0a411a92f15340e4086e825c32e64d86428008830a702102a0e2404115b5f724100d0618
+[06/02 09:27:46   1001s] #       1e6012af21a2001350876bd0210d20e10f4e12038c84e8506ccafe307e3f90dc647b478c
+[06/02 09:27:46   1001s] #       bb67c18b1224881e90d6a45f574fd9739add2dd72fe96acd3d1112d7c180ab8c8930107d
+[06/02 09:27:46   1001s] #       fff9891b7f4f5026dadb2b298dd7283708c673c714c98b78838efb874a71e937090b3063
+[06/02 09:27:46   1001s] #       f374f505f229f466
+[06/02 09:27:46   1001s] #
+[06/02 09:27:46   1001s] #Skip comparing routing design signature in db-snapshot flow
+[06/02 09:27:47   1002s] #RTESIG:78da95d4cf4bc330140770cffe158f6e870adbcc7b697e1d553c08b2499d5e4b75dd56e8
+[06/02 09:27:47   1002s] #       5a68d3c3fe7b23886cac36b1d77c78f9f6e52593e9fb630a119a05e2bc43d219c23245c3
+[06/02 09:27:47   1002s] #       348a3931216ed1646ee9ed3eba9e4c572f6b420e02e2b2b6c5ae6867d077450b5d616d59
+[06/02 09:27:47   1002s] #       ef6e7e0831b06d5f40fcd134d50c36c73a3f949fb029b6795fd90b2d809d141cd75ce199
+[06/02 09:27:47   1002s] #       1ed89e1bfac7f6821444796f9b08625bb475de1e677f512d20da97bbbda39d6dddc2e0fe
+[06/02 09:27:47   1002s] #       9a31d8e655f71b60c8a8f3160d10a324b00513cc7d106fab26b7830e194b0221f7074324
+[06/02 09:27:47   1002s] #       0a411a92f15340e4086e825c32e64d86428008830a702102a0e2404115b5f724100d0618
+[06/02 09:27:47   1002s] #       1e6012af21a2001350876bd0210d20e10f4e12038c84e8506ccafe307e3f90dc647b478c
+[06/02 09:27:47   1002s] #       bb67c18b1224881e90d6a45f574fd9739add2dd72fe96acd3d1112d7c180ab8c8930107d
+[06/02 09:27:47   1002s] #       fff9891b7f4f5026dadb2b298dd7283708c673c714c98b78838efb874a71e937090b3063
+[06/02 09:27:47   1002s] #       f374f505f229f466
+[06/02 09:27:47   1002s] #
+[06/02 09:28:21   1036s] ### Time Record (Data Preparation) is installed.
+[06/02 09:28:21   1036s] #Start routing data preparation on Wed Jun  2 09:28:21 2021
+[06/02 09:28:21   1036s] #
+[06/02 09:28:26   1039s] #Found 1 nets which trigger voltage spacing rules.
+[06/02 09:28:26   1039s] #Minimum voltage of a net in the design = 0.000.
+[06/02 09:28:26   1039s] #Maximum voltage of a net in the design = 1.800.
+[06/02 09:28:26   1039s] #Voltage range [0.000 - 1.000] has 130660 nets.
+[06/02 09:28:26   1039s] #Voltage range [0.000 - 0.000] has 3 nets.
+[06/02 09:28:26   1039s] #Voltage range [1.000 - 1.000] has 2 nets.
+[06/02 09:28:26   1039s] #Voltage range [1.800 - 1.800] has 1 net.
+[06/02 09:28:30   1043s] ### Time Record (Cell Pin Access) is installed.
+[06/02 09:28:30   1043s] #Restoring pin access data from file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFILLER.dat/swerv_wrapper.apa ...
+[06/02 09:28:30   1043s] #Done restoring pin access data

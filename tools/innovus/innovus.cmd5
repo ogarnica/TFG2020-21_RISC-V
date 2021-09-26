@@ -1,0 +1,52 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Thu Jun  3 15:31:12 2021                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.11-s128_1 (64bit) 08/20/2019 20:54 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.11-s128_1 NR190815-2055/19_11-UB (database version 18.20, 469.7.1) {superthreading v1.51}
+#@(#)CDS: AAE 19.11-s034 (64bit) 08/20/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.11-s040_1 () Aug  1 2019 08:53:57 ( )
+#@(#)CDS: SYNTECH 19.11-e010_1 () Jul 15 2019 20:31:02 ( )
+#@(#)CDS: CPE v19.11-s006
+#@(#)CDS: IQuantus/TQuantus 19.1.2-s245 (64bit) Thu Aug 1 10:22:01 PDT 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+is_common_ui_mode
+restoreDesign /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat swerv_wrapper
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+createLib swerv_wrapper_library -copyTech {}
+createLib swerv_wrapper_library -copyTech {}
+createLib swerv_wrapper_library -copyTech {/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/technology.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/viarule_generate.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/sites.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_BUMP_6U1X2T8XLB_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_ALLF_CORESUPPLY_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_CSF_BASIC_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_PR_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_ALLF_FBBRBB_SUBSTRATEBIAS_LR_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef}
+createLib
+createLib -help
+createLib swerv_wrapper_library -referenceTech {/home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/technology.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/viarule_generate.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/sites.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_CORE_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_CLK_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_BUMP_6U1X2T8XLB_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_ALLF_CORESUPPLY_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_CSF_BASIC_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_SC_12_PR_LR_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/C28SOI_IO_EXT_ALLF_FBBRBB_SUBSTRATEBIAS_LR_EG_soc.lef /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_FINAL.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef}
+createLib swerv_wrapper_library -referenceTech technology.lef
+createLib swerv_wrapper_library -referenceTech ./swerv_wrapper_FINAL.dat/libs/lef/SPHD_HIPERF_Tl_210506.lef
+reset_parasitics
+extractRC
+rcOut -spef swerv_wrapper.spef -rc_corner nominal_rc_corner
+reset_parasitics
+extractRC
+createLib -help
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -signoff -pathReports -drvReports -slackReports -numPaths 50 -prefix swerv_wrapper_signOff -outDir timingReports
+reset_parasitics
+extractRC
+rcOut -spef swerv_wrapper.spef -rc_corner nominal_rc_corner
+setExtractRCMode -help
+setExtractRCMode -effortLevel high
+reset_parasitics
+extractRC
+rcOut -spef swerv_wrapper.spef -rc_corner nominal_rc_corner

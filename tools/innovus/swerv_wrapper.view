@@ -1,0 +1,9 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+create_rc_corner -name nominal_rc_corner -T {25} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0} -qx_tech_file {/usr/local/cmos28fdsoi_12/Foundation_Cadence_TechnoKit_cmos028FDSOI_6U1x_2T8x_LB/3.3-04/QRC_TECHFILE/nominal/qrcTechFile}
+create_op_cond -name nominal_op_cond -library_file {/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs/C28SOI_SC_12_CORE_LR_tt28_0.90V_25C.lib.gz} -P {1.0} -V {0.90} -T {25}
+create_library_set -name nominal_library_set -timing {/usr/local/cmos28fdsoi_12/C28SOI_SC_12_CLK_LR/5.1-06.81/libs/C28SOI_SC_12_CLK_LR_tt28_0.90V_25C.lib.gz  /usr/local/cmos28fdsoi_12/C28SOI_SC_12_CORE_LR/5.1-05.81/libs/C28SOI_SC_12_CORE_LR_tt28_0.90V_25C.lib.gz  /usr/local/cmos28fdsoi_12/C28SOI_IO_EXT_CSF_BASIC_EG_6U1X2T8XLB/7.0-03.82/libs/C28SOI_IO_EXT_CSF_BASIC_EG_tt28_0.90V_1.80V_25C.lib.gz  /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_0.90V_25C.lib.gz  /home/cadence/TFG2020-21_RISC-V/mem/C28SOI_SPHD_HIPERF_Tl_210506/4.6.a-00.00/libs/SPHD_HIPERF_Tl_210506_tt28_0.90V_0.90V_25C_nominal.lib}
+create_constraint_mode -name nominal_constraints -sdc_files {netlistFiles/constraints.sdc}
+create_delay_corner -name nominal_delay_corner -library_set {nominal_library_set} -rc_corner {nominal_rc_corner}
+create_analysis_view -name nominal_analysis_view -constraint_mode {nominal_constraints} -delay_corner {nominal_delay_corner}
+set_analysis_view -setup {nominal_analysis_view} -hold {nominal_analysis_view}

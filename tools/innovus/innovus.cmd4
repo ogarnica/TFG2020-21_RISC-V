@@ -1,0 +1,247 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Wed Jun  2 19:57:06 2021                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.11-s128_1 (64bit) 08/20/2019 20:54 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.11-s128_1 NR190815-2055/19_11-UB (database version 18.20, 469.7.1) {superthreading v1.51}
+#@(#)CDS: AAE 19.11-s034 (64bit) 08/20/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.11-s040_1 () Aug  1 2019 08:53:57 ( )
+#@(#)CDS: SYNTECH 19.11-e010_1 () Jul 15 2019 20:31:02 ( )
+#@(#)CDS: CPE v19.11-s006
+#@(#)CDS: IQuantus/TQuantus 19.1.2-s245 (64bit) Thu Aug 1 10:22:01 PDT 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+encMessage warning 0
+encMessage debug 0
+encMessage info 0
+is_common_ui_mode
+restoreDesign /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFillers.dat swerv_wrapper
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+setExtractRCMode -engine postRoute
+setExtractRCMode -effortLevel signoff
+timeDesign -signoff -outDir signOffTimingReports
+timeDesign -signoff -setup -reportOnly -outDir signOffTimingReports
+timeDesign -signoff -hold -reportOnly -outDir signOffTimingReports
+setDrawView place
+fit
+setIoFlowFlag 0
+help *ports*
+report_ports
+help report_ports
+report_ports > ports.txt
+create_bump -cell BUMP_FC61A_96X96_VDD -pitch {40 40} -loc {40 40} -pattern_array {38 38}
+create_bump -cell BUMP_FC61A_96X96_VDD -pitch {40 40} -loc {40 40} -pattern_array {38 38}
+create_bump -cell BUMP_FC61A_96X96_VDD -pitch {40 40} -loc {40 40} -pattern_array {38 38}
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {140 140} -loc {140 140} -pattern_array {38 38}
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {140 140} -loc {140 140} -pattern_array {38 38}
+uiSetTool ruler
+uiSetTool select
+deleteBumps -all
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {140 140} -loc {140 140} -pattern_array {38 38}
+setDrawView ameba
+setDrawView ameba
+setDrawView place
+setLayerPreference allLayers -isVisible 0
+setLayerPreference bump -isVisible 1
+setLayerPreference bumpBack -isVisible 1
+setLayerPreference bumpConnect -isVisible 1
+deleteBumps -all
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {500 500} -loc {350 350} -pattern_array {40 40}
+uiSetTool ruler
+setLayerPreference allLayers -isVisible 1
+fit
+zoomOut
+uiSetTool ruler
+fit
+setLayerPreference allLayers -isVisible 0
+setLayerPreference bump -isVisible 1
+setLayerPreference allLayers -isVisible 1
+highlight -index 1
+fit
+uiSetTool select
+zoomOut
+zoomIn
+setLayerPreference allLayers -isVisible 0
+setLayerPreference bump -isVisible 1
+zoomIn
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 1 0
+panPage -1 0
+panPage -1 0
+zoomIn
+panPage 1 0
+panPage 0 1
+panPage 1 0
+uiSetTool ruler
+setLayerPreference allLayers -isVisible 1
+setLayerPreference allLayers -isVisible 0
+deleteBumps -all
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {300 300} -loc {350 350} -pattern_array {40 40}
+setLayerPreference bump -isVisible 1
+fit
+deleteBumps -all
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {350 350} -loc {350 350} -pattern_array {40 40}
+deleteBumps -all
+create_bump -cell BUMP_FC44S_72X72_SIGNAL -pitch {350 350} -loc {350 350} -pattern_array {40 40}
+saveIoFile swerv_wrapper_bumps
+assignBump
+setDrawView fplan
+uiSetTool select
+fit
+zoomIn
+selectObject Bump Bump_899
+selectObject Bump Bump_900
+selectObject Bump Bump_901
+assignPGBumps -nets vdd -selected
+deselectAll
+selectObject Bump Bump_900
+fit
+zoomIn
+zoomIn
+zoomBox 5908.32300 6127.52700 8478.97700 8206.97300
+panPage 0 1
+zoomIn
+panPage 0 1
+panPage -1 0
+deselectAll
+setFlipChipMode -route_style 45DegreeRoute
+fcroute -type signal -designStyle pio -layerChangeBotLayer LB -layerChangeTopLayer LB -routeWidth 1 -nets clk
+fit
+setLayerPreference LB -isVisible 1
+setLayerPreference LV -isVisible 1
+setLayerPreference M1 -isVisible 1
+setLayerPreference M1 -isVisible 0
+setLayerPreference node_layer -isVisible 1
+setLayerPreference node_layer -isVisible 0
+setLayerPreference node_gird -isVisible 1
+setLayerPreference node_gird -isVisible 0
+setFlipChipMode -route_style 45DegreeRoute
+fcroute -type signal -designStyle pio -layerChangeBotLayer LB -layerChangeTopLayer LB -routeWidth 1
+setLayerPreference allLayers -isVisible 1
+setDrawView place
+setDrawView ameba
+setDrawView fplan
+setDrawView ameba
+setLayerPreference bumpConnect -isVisible 0
+setLayerPreference bumpBack -isVisible 0
+setLayerPreference bump -isVisible 0
+zoomIn
+zoomIn
+panPage 0 1
+panPage 1 0
+panPage 1 0
+panPage -1 0
+panPage 0 1
+zoomIn
+zoomIn
+panPage 1 0
+panPage 1 0
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+setLayerPreference allLayers -isVisible 0
+setDrawView fplan
+fit
+fit
+setLayerPreference stdCell -isVisible 1
+setLayerPreference coverCell -isVisible 1
+setLayerPreference phyCell -isVisible 1
+setLayerPreference io -isVisible 1
+setLayerPreference areaIo -isVisible 1
+setLayerPreference blackBox -isVisible 1
+setLayerPreference pinObj -isVisible 1
+setLayerPreference cellBlkgObj -isVisible 1
+setLayerPreference block -isVisible 1
+setLayerPreference hinst -isVisible 1
+setLayerPreference pwrdm -isVisible 1
+setLayerPreference netRect -isVisible 1
+setLayerPreference substrateNoise -isVisible 1
+setLayerPreference powerNet -isVisible 1
+setLayerPreference wire -isVisible 1
+setLayerPreference allLayers -isVisible 1
+setDrawView place
+zoomIn
+panPage 0 1
+panPage 0 1
+panPage 0 1
+setLayerPreference instanceCell -isVisible 0
+setLayerPreference instanceCell -isVisible 1
+setLayerPreference instanceCell -isVisible 0
+setLayerPreference instanceCell -isVisible 1
+setLayerPreference node_module -isVisible 0
+setLayerPreference node_cell -isVisible 1
+setLayerPreference node_blockage -isVisible 1
+setLayerPreference node_row -isVisible 1
+setLayerPreference node_blockage -isVisible 0
+setLayerPreference node_row -isVisible 0
+zoomIn
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 -1
+panPage 0 -1
+zoomIn
+panPage 0 -1
+zoomIn
+panPage 0 -1
+zoomIn
+zoomOut
+fit
+setLayerPreference node_inst -isVisible 0
+setLayerPreference node_cell -isVisible 0
+setLayerPreference node_floorplan -isVisible 1
+setLayerPreference node_floorplan -isVisible 0
+setLayerPreference allLayers -isVisible 0
+setLayerPreference node_bump -isVisible 1
+zoomIn
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage 0 -1
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+zoomIn
+panPage -1 0
+fit
+setLayerPreference patch -isVisible 1
+setLayerPreference via -isVisible 1
+setLayerPreference wire -isVisible 1
+setLayerPreference metalFill -isVisible 1
+setLayerPreference unknowState -isVisible 1
+setLayerPreference shield -isVisible 1
+setLayerPreference trim -isVisible 1
+setLayerPreference allLayers -isVisible 1
+ui_view_box
+ui_view_box
+dbquery -area {-7678.537 -723.08 22140.137 15184.68} -objType inst
+dbquery -area {-7678.537 -723.08 22140.137 15184.68} -objType regular
+dbquery -area {-7678.537 -723.08 22140.137 15184.68} -objType special
+saveDesign swerv_wrapper_FINAL
+saveDesign swerv_wrapper_FINAL

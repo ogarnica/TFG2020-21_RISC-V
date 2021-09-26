@@ -1,0 +1,239 @@
+[06/02 19:43:36      0s] 
+[06/02 19:43:36      0s] Cadence Innovus(TM) Implementation System.
+[06/02 19:43:36      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[06/02 19:43:36      0s] 
+[06/02 19:43:36      0s] Version:	v19.11-s128_1, built Tue Aug 20 20:54:34 PDT 2019
+[06/02 19:43:36      0s] Options:	
+[06/02 19:43:36      0s] Date:		Wed Jun  2 19:43:36 2021
+[06/02 19:43:36      0s] Host:		portatil (x86_64 w/Linux 3.10.0-1127.13.1.el7.x86_64) (1core*4cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+[06/02 19:43:36      0s] OS:		CentOS Linux release 7.8.2003 (Core)
+[06/02 19:43:36      0s] 
+[06/02 19:43:36      0s] License:
+[06/02 19:43:36      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[06/02 19:43:36      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[06/02 19:43:46      8s] @(#)CDS: Innovus v19.11-s128_1 (64bit) 08/20/2019 20:54 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 19:43:46      8s] @(#)CDS: NanoRoute 19.11-s128_1 NR190815-2055/19_11-UB (database version 18.20, 469.7.1) {superthreading v1.51}
+[06/02 19:43:46      8s] @(#)CDS: AAE 19.11-s034 (64bit) 08/20/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 19:43:46      8s] @(#)CDS: CTE 19.11-s040_1 () Aug  1 2019 08:53:57 ( )
+[06/02 19:43:46      8s] @(#)CDS: SYNTECH 19.11-e010_1 () Jul 15 2019 20:31:02 ( )
+[06/02 19:43:46      8s] @(#)CDS: CPE v19.11-s006
+[06/02 19:43:46      8s] @(#)CDS: IQuantus/TQuantus 19.1.2-s245 (64bit) Thu Aug 1 10:22:01 PDT 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[06/02 19:43:46      8s] @(#)CDS: OA 22.60-p020 Mon May 13 19:21:36 2019
+[06/02 19:43:46      8s] @(#)CDS: SGN 18.10-d003 (18-Jul-2018) (64 bit executable, Qt5.9.1)
+[06/02 19:43:46      8s] @(#)CDS: RCDB 11.14.18
+[06/02 19:43:46      8s] @(#)CDS: STYLUS 19.10-s008_1 (06/27/2019 02:55 PDT)
+[06/02 19:43:46      8s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_16653_portatil_cadence_IvmoN4.
+
+[06/02 19:43:46      8s] Change the soft stacksize limit to 0.2%RAM (84 mbytes). Set global soft_stack_size_limit to change the value.
+[06/02 19:43:46      9s] 
+[06/02 19:43:46      9s] **INFO:  MMMC transition support version v31-84 
+[06/02 19:43:46      9s] 
+[06/02 19:43:46      9s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[06/02 19:43:46      9s] <CMD> suppressMessage ENCEXT-2799
+[06/02 19:43:46      9s] <CMD> getVersion
+[06/02 19:43:47      9s] [INFO] Loading PVS 19.10 fill procedures
+[06/02 19:43:47      9s] <CMD> win
+[06/02 19:44:36     15s] <CMD> encMessage warning 0
+[06/02 19:44:36     15s] Suppress "**WARN ..." messages.
+[06/02 19:44:36     15s] <CMD> encMessage debug 0
+[06/02 19:44:36     15s] <CMD> encMessage info 0
+[06/02 19:44:38     17s] **WARN: (IMPLF-122):	The direction of the layer 'IA' is the same as
+[06/02 19:44:38     17s] the previous routing layer. Make sure this is on purpose or correct
+[06/02 19:44:38     17s] the direction of the layer. In most cases, the routing layers
+[06/02 19:44:38     17s] alternate in direction between HORIZONTAL and VERTICAL.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[4]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[5]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCP[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCP[6]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'REFIOA' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'REFIOA' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'REFIOB' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'REFIOB' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_FC_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[0]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[1]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[2]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-201):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (IMPLF-200):	Pin 'ASRCN[3]' in macro 'IO_PMOSBIAS_EXT_1V8_POS_CSF_CL_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[06/02 19:44:39     17s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[06/02 19:44:39     17s] To increase the message display limit, refer to the product command reference manual.
+[06/02 19:44:39     17s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[06/02 19:44:39     17s] To increase the message display limit, refer to the product command reference manual.
+[06/02 19:44:39     17s] Loading view definition file from /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFillers.dat/viewDefinition.tcl
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERPFOP16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE2'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_FILLERFLPCHKAE16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT4'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT32'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_DECAPXT16'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LR_ANTPROTGVFILLERSNPW8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT8'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] **WARN: (TECHLIB-302):	No function defined for cell 'C12T28SOI_LRF_DECAPXT64'. The cell will only be used for analysis. (File /usr/local/cmos28fdsoi_12/C28SOI_SC_12_PR_LR/5.3.a-00.80/libs/C28SOI_SC_12_PR_LR_tt28_1.00V_25C.lib.gz)
+[06/02 19:44:41     20s] *** End library_loading (cpu=0.04min, real=0.03min, mem=36.0M, fe_cpu=0.34min, fe_real=1.08min, fe_mem=716.9M) ***
+[06/02 19:44:42     21s] *** Netlist is unique.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE12TEG_DV' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE12TEG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_92800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_95800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_3000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_186600' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_80000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_125800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_95000' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_110500' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_93800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_184600' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'SITE_IO_90800' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'COREECO8T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'COREECO12T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG_DG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG_DV' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE16TEG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE16T' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (IMPFP-3961):	The techSite 'CORE12T_NG' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[06/02 19:44:42     21s] **WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+[06/02 19:44:42     21s] To increase the message display limit, refer to the product command reference manual.
+[06/02 19:44:42     21s] Loading preference file /home/cadence/TFG2020-21_RISC-V/tools/innovus/swerv_wrapper_postFillers.dat/gui.pref.tcl ...
+[06/02 19:44:42     21s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[06/02 19:44:43     22s] **WARN: (IMPSYC-2):	Timing information is not defined for cell IO_PMOSBIAS_EXT_1V8_NEG_CSF_FC_LIN; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[06/02 19:44:43     22s] **WARN: (IMPSYC-2):	Timing information is not defined for cell IO_NMOSBIAS_EXT_1V8_POS_CSF_FC_LIN; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the check_library command to verify if the timing library has complete information after the design is loaded.
+[06/02 19:45:05     44s] Loading place ...
+[06/02 19:48:14    232s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.11-s128_1. They will be removed in the next release. 
+[06/02 19:48:14    232s] timing_enable_default_delay_arc
+[06/02 19:49:32    267s] <CMD> ecoRoute -target
+[06/02 19:49:32    267s] ### Time Record (ecoRoute) is installed.
+[06/02 19:49:32    267s] #% Begin globalDetailRoute (date=06/02 19:49:32, mem=15491.6M)
+[06/02 19:49:32    267s] 
+[06/02 19:49:32    267s] globalDetailRoute -target
+[06/02 19:49:32    267s] 
+[06/02 19:49:32    267s] #setNanoRouteMode -droutePostRouteSpreadWire "auto"
+[06/02 19:49:32    267s] #setNanoRouteMode -drouteUseMultiCutViaEffort "high"
+[06/02 19:49:32    267s] #setNanoRouteMode -routeAntennaCellName "C12T28SOI_LR_ANTPROT3"
+[06/02 19:49:32    267s] #setNanoRouteMode -routeInsertAntennaDiode true
+[06/02 19:49:32    267s] #setNanoRouteMode -routeTopRoutingLayer 9
+[06/02 19:49:32    267s] #setNanoRouteMode -routeUseAutoVia "true"
+[06/02 19:49:32    267s] #setNanoRouteMode -routeWithEco true
+[06/02 19:49:32    267s] #setNanoRouteMode -routeWithLithoDriven true
+[06/02 19:49:32    267s] ### Time Record (globalDetailRoute) is installed.
+[06/02 19:49:32    267s] #Start globalDetailRoute on Wed Jun  2 19:49:32 2021
+[06/02 19:49:32    267s] #
+[06/02 19:49:32    267s] ### Time Record (Pre Callback) is installed.
+[06/02 19:49:32    268s] ### Time Record (Pre Callback) is uninstalled.
+[06/02 19:49:32    268s] ### Time Record (DB Import) is installed.
+[06/02 19:49:32    268s] ### Time Record (Timing Data Generation) is installed.
+[06/02 19:49:32    268s] ### Time Record (Timing Data Generation) is uninstalled.
+[06/02 19:49:33    269s] #WARNING (NRDB-975) Adjacent routing LAYERs M6 IA has the same preferred routing direction HORIZONTAL. This may cause routing problems for NanoRoute.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7973_ic_rd_hit_2 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7973_ic_rd_hit_2 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7972_ic_rd_hit_0 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7972_ic_rd_hit_0 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7971_ic_rd_hit_3 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7971_ic_rd_hit_3 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7970_ic_tag_perr is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7970_ic_tag_perr is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7969_ic_rd_data_9 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7969_ic_rd_data_9 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7968_ic_rd_data_13 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7968_ic_rd_data_13 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7967_ic_rd_data_18 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7967_ic_rd_data_18 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7966_ic_rd_data_25 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7966_ic_rd_data_25 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7965_ic_rd_data_31 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7965_ic_rd_data_31 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin vdds of instance FE_OCPC7964_ic_rd_data_20 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (NRIG-34) Power/Ground pin gnds of instance FE_OCPC7964_ic_rd_data_20 is not connected to any power/ground net. Use command globalNetConnect to connect the power/ground pin to a power/ground net.
+[06/02 19:50:30    324s] #WARNING (EMS-27) Message (NRIG-34) has exceeded the current message display limit of 20.
+[06/02 19:50:30    324s] #To increase the message display limit, refer to the product command reference manual.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/clk of net clk because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_l of net rst_l because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/dbg_rst_l of net dbg_rst_l because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[31] of net rst_vec[31] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[30] of net rst_vec[30] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[29] of net rst_vec[29] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[28] of net rst_vec[28] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[27] of net rst_vec[27] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[26] of net rst_vec[26] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[25] of net rst_vec[25] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[24] of net rst_vec[24] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[23] of net rst_vec[23] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[22] of net rst_vec[22] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[21] of net rst_vec[21] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[20] of net rst_vec[20] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[19] of net rst_vec[19] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[18] of net rst_vec[18] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[17] of net rst_vec[17] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[16] of net rst_vec[16] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (NRIG-39) NanoRoute cannot route to pin PIN/rst_vec[15] of net rst_vec[15] because it might be a logical pin and does not have physical shapes. To fix the problem, check the pin connection in the netlist and ensure the pin shapes exist in the floorplan.
+[06/02 19:51:05    360s] #WARNING (EMS-27) Message (NRIG-39) has exceeded the current message display limit of 20.
+[06/02 19:51:05    360s] #To increase the message display limit, refer to the product command reference manual.
+[06/02 19:51:08    362s] ### Net info: total nets: 130698
+[06/02 19:51:08    362s] ### Net info: dirty nets: 0
+[06/02 19:51:08    362s] ### Net info: marked as disconnected nets: 0
+[06/02 19:51:17    370s] #num needed restored net=0
+[06/02 19:51:17    370s] #need_extraction net=0 (total=130698)
+[06/02 19:51:17    370s] ### Net info: fully routed nets: 77497
+[06/02 19:51:17    370s] ### Net info: trivial (< 2 pins) nets: 53201
+[06/02 19:51:17    370s] ### Net info: unrouted nets: 0
+[06/02 19:51:17    370s] ### Net info: re-extraction nets: 0
+[06/02 19:51:17    370s] ### Net info: ignored nets: 0
+[06/02 19:51:17    370s] ### Net info: skip routing nets: 0
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN clk in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dbg_bus_clk_en in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dbg_rst_l in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN debug_brkpt_status in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt0[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt0[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt1[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt1[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt2[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt2[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt3[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dec_tlu_perfcnt3[1] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[0] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[10] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[11] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[12] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[13] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[14] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[15] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (NRDB-733) PIN dma_axi_araddr[16] in CELL_VIEW swerv_wrapper does not have physical port.
+[06/02 19:55:16    609s] #WARNING (EMS-27) Message (NRDB-733) has exceeded the current message display limit of 20.
+[06/02 19:55:16    609s] #To increase the message display limit, refer to the product command reference manual.
